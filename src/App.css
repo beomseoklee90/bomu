@@ -60,13 +60,29 @@
 /* Horizontal scrolling for navigation menu */
 .nav-scroll-container {
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
   cursor: grab;
+  /* Show scrollbar on mobile devices */
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* IE and Edge */
 }
 
+/* Custom scrollbar styling for WebKit browsers */
 .nav-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  height: 4px; /* Horizontal scrollbar height */
+}
+
+.nav-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05); /* Light gray track */
+  border-radius: 10px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); /* Darker thumb */
+  border-radius: 10px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3); /* Even darker on hover */
 }
 
 .nav-scroll-container:active {
