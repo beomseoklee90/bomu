@@ -68,21 +68,34 @@
 
 /* Custom scrollbar styling for WebKit browsers */
 .nav-scroll-container::-webkit-scrollbar {
-  height: 4px; /* Horizontal scrollbar height */
+  height: 6px; /* Increased horizontal scrollbar height */
 }
 
 .nav-scroll-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05); /* Light gray track */
+  background: rgba(0, 0, 0, 0.1); /* Slightly darker track */
   border-radius: 10px;
 }
 
 .nav-scroll-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2); /* Darker thumb */
+  background: rgba(0, 0, 0, 0.4); /* Much darker thumb for visibility */
   border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for contrast */
 }
 
 .nav-scroll-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3); /* Even darker on hover */
+  background: rgba(0, 0, 0, 0.5); /* Even darker on hover */
+}
+
+/* Add a visual indicator for scrollable content */
+.nav-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+  pointer-events: none;
 }
 
 .nav-scroll-container:active {
