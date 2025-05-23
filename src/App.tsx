@@ -78,7 +78,7 @@ Another hobby is analyzing famous quotes and write an article on Instagram and s
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Main container with thick padding */}
+      {/* Main container with thick padding - v2 */}
       <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col">
         {/* Navigation bar */}
         <div className="w-full mb-8 overflow-x-auto nav-scroll-container">
