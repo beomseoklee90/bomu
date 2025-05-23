@@ -75,9 +75,9 @@ function App() {
       {/* Main container with thick padding */}
       <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col">
         {/* Navigation bar */}
-        <div className="w-full mb-8">
+        <div className="w-full mb-8 overflow-x-auto nav-scroll-container">
           <NavigationMenu className="w-full justify-start">
-            <NavigationMenuList className="w-full justify-start flex-wrap gap-2">
+            <NavigationMenuList className="w-full justify-start flex-nowrap gap-2 min-w-max">
               {menuItems.map((item) => (
                 <NavigationMenuItem key={item}>
                   <NavigationMenuLink

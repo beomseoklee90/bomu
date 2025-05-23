@@ -56,3 +56,19 @@
   border: none;
   margin: 0.5rem 0;
 }
+
+/* Horizontal scrolling for navigation menu */
+.nav-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  cursor: grab;
+}
+
+.nav-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.nav-scroll-container:active {
+  cursor: grabbing;
+}
