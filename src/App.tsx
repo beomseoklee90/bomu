@@ -43,13 +43,12 @@ function App() {
 ⦁	Low code platform <br>
 * designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,
     
-    `<h3>My Philosophy</h3> 2018-01-01 ~ Present
+    `<h4>I believe that insights are the energy that make me grow</h4> <br>
+I try to learn whatever I can experience.
 <hr>
-* User-centered design approach <br>
-* Continuous learning and improvement <br>
-* Building scalable and maintainable solutions <br>
-* Creating intuitive and accessible user experiences <br>
-* Focusing on performance and optimization <br>`,
+⦁	I consider coworkers and bosses as partners that I sincerely support and cheer up. After behaving like this, the working life have become happy. After I realized that it is valuable, I have less conflicts with them with genuine mutual respect. Even if a conflict occurs, I can understand and acknowledge their complains easily, I can politely express my opinion in a way they can accept comfortably.<br>
+⦁	Having a pure motivation to contribute to my company without pressure to do well have been my driving force to produce meaningful achievements in my company. Previously when I was less professional, I was stressed out easily, being obsessed with satisfying the expectation from the coworkers and boss. Now, I work as if I were a innocent kid, and creating meaningful results to my company.<br>
+⦁	Everyday I reflect on myself. I analyze all the things I have done in a day. In terms of work, I check whether the way of cooperation was appropriate, whether I did best, what I have learned, whether I managed my emotion. With these insights I improve myself tomorrow<br>`,
     
     `<h3>Hobbies</h3> 2010-01-01 ~ Present
 <hr>
