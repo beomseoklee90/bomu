@@ -43,20 +43,20 @@ function App() {
 ⦁	Low code platform <br>
 * designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,
     
-    `<h2>I believe that insights are the energy that make me grow</h2> <br>
+    `<h3>I believe that insights are the energy that make me grow</h3> <br>
 I try to learn whatever I can experience.
 <hr>
 ⦁	I consider coworkers and bosses as partners that I sincerely support and cheer up. After behaving like this, the working life have become happy. After I realized that it is valuable, I have less conflicts with them with genuine mutual respect. Even if a conflict occurs, I can understand and acknowledge their complains easily, I can politely express my opinion in a way they can accept comfortably.<br>
 ⦁	Having a pure motivation to contribute to my company without pressure to do well have been my driving force to produce meaningful achievements in my company. Previously when I was less professional, I was stressed out easily, being obsessed with satisfying the expectation from the coworkers and boss. Now, I work as if I were a innocent kid, and creating meaningful results to my company.<br>
 ⦁	Everyday I reflect on myself. I analyze all the things I have done in a day. In terms of work, I check whether the way of cooperation was appropriate, whether I did best, what I have learned, whether I managed my emotion. With these insights I improve myself tomorrow<br>`,
     
-    `<h3>Hobbies</h3> 2010-01-01 ~ Present
+    `<h3>My hobby is learning new things</h3> <br>
+I love learning new things. DJ, Computer Science.<br>
+Another hobby is analyzing famous quotes and write an article on Instagram and share it with friends 
 <hr>
-* Photography - 2015-01-01 ~ Present <br>
-* Hiking - 2018-06-15 ~ Present <br>
-* Playing guitar - 2010-03-22 ~ Present <br>
-* Reading - 2005-01-01 ~ Present <br>
-* Cooking - 2019-05-10 ~ Present <br>`,
+⦁	I love music. I believe music is one of the best medium that can free ourselves from the suppressed emotion and stresses. Music can help us express our emotion regardless of the mood. We can sing a song for love, friendship, happniess, breakup, frustration. In my case, not only I express my feeling through music, but also I create a song for listeners to empathize all together. Now, it has been only few months since I started to learn music production. These days I am building an EDM song, specifically house genre that expresses gratitude for all my friends.<br>
+⦁	These days, I am learning AI starting from low level math, and algorithm. I consider Computer Science as a mean to make the world a better place. Many web applications are already creating great values to many companies, and I believe more AI models can innovate the world. <br>
+⦁	I try to learn insights that many historical figures have left. For example, Steve Jobs talked about the importance to inspiring the people around him. He explained that the leadership does not come from making people move. It comes from encouraging people to follow us by themselves. I upload this kind of information on Instagram for my friends.<br>`,
     
     `<h3>Voice Samples</h3> 2023-05-10 ~ Present
 <hr>
