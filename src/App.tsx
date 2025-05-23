@@ -1,34 +1,58 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle
+} from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeSection, setActiveSection] = useState('self introduction')
+  const [contentHtml, setContentHtml] = useState('<p>Welcome to my profile. Click on a navigation item to see content.</p>')
+
+  const handleNavClick = (section: string) => {
+    setActiveSection(section)
+    setContentHtml(`<p>This is the ${section} section content.</p>`)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen flex flex-col">
+      {/* Main container with thick padding */}
+      <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col">
+        {/* Navigation bar */}
+        <div className="w-full mb-8">
+          <NavigationMenu className="w-full justify-start">
+            <NavigationMenuList className="w-full justify-start flex-wrap gap-2">
+              {['self introduction', 'professional experience', 'philosophy', 'hobby', 'voicee'].map((item) => (
+                <NavigationMenuItem key={item}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      activeSection === item ? "bg-zinc-200 dark:bg-zinc-800" : ""
+                    )}
+                    onClick={() => handleNavClick(item)}
+                  >
+                    {item}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Gray content area */}
+        <div className="flex-1 bg-gray-200 rounded-lg p-6 md:p-8">
+          {/* Content div where innerHTML can be added */}
+          <div 
+            className="content-area h-full"
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
