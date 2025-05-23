@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }
 
 .logo {
@@ -39,4 +40,64 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Custom styling for content area elements */
+.content-area h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-area hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+  margin: 0.5rem 0;
+}
+
+/* Horizontal scrolling for navigation menu */
+.nav-scroll-container {
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  /* Show scrollbar on mobile devices */
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* IE and Edge */
+}
+
+/* Custom scrollbar styling for WebKit browsers */
+.nav-scroll-container::-webkit-scrollbar {
+  height: 6px; /* Increased horizontal scrollbar height */
+}
+
+.nav-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Slightly darker track */
+  border-radius: 10px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4); /* Much darker thumb for visibility */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for contrast */
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); /* Even darker on hover */
+}
+
+/* Add a visual indicator for scrollable content */
+.nav-scroll-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 20px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.05));
+  pointer-events: none;
+}
+
+.nav-scroll-container:active {
+  cursor: grabbing;
 }
