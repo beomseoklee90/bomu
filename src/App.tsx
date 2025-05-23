@@ -9,13 +9,41 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 
+const menuName = ['self introduction', 'professional experience', 'philosophy', 'hobby', 'voicee']
+const innerHtml = [
+  "",
+  "",
+  "",
+  "",
+  "",
+]
 function App() {
   const [activeSection, setActiveSection] = useState('self introduction')
   const [contentHtml, setContentHtml] = useState('<p>Welcome to my profile. Click on a navigation item to see content.</p>')
 
   const handleNavClick = (section: string) => {
+    let html = "";
     setActiveSection(section)
-    setContentHtml(`<p>This is the ${section} section content.</p>`)
+    switch (section) {
+      case menuName[0]:
+        html = innerHtml[0]
+        break;
+      case menuName[1]:
+        html = innerHtml[1]
+        break;
+      case menuName[2]:
+        html = innerHtml[2]
+        break;
+      case menuName[3]:
+        html = innerHtml[3]
+        break;
+      case menuName[4]:
+        html = innerHtml[4]
+        break;
+      default:
+        break;
+    }
+    setContentHtml(html)
   }
 
   return (
@@ -26,7 +54,7 @@ function App() {
         <div className="w-full mb-8">
           <NavigationMenu className="w-full justify-start">
             <NavigationMenuList className="w-full justify-start flex-wrap gap-2">
-              {['self introduction', 'professional experience', 'philosophy', 'hobby', 'voicee'].map((item) => (
+              {menuName.map((item) => (
                 <NavigationMenuItem key={item}>
                   <NavigationMenuLink
                     className={cn(
@@ -46,7 +74,7 @@ function App() {
         {/* Gray content area */}
         <div className="flex-1 bg-gray-200 rounded-lg p-6 md:p-8">
           {/* Content div where innerHTML can be added */}
-          <div 
+          <div
             className="content-area h-full"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
