@@ -77,7 +77,7 @@ Error generating stack: `+l.message+`
 <h3>Powertask</h3> 2020-10 ~ 2021-11
 <hr>
 ⦁	Low code platform <br>
-* designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,`<h4>I believe that insights are the energy that make me grow</h4> <br>
+* designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,`<h2>I believe that insights are the energy that make me grow</h2> <br>
 I try to learn whatever I can experience.
 <hr>
 ⦁	I consider coworkers and bosses as partners that I sincerely support and cheer up. After behaving like this, the working life have become happy. After I realized that it is valuable, I have less conflicts with them with genuine mutual respect. Even if a conflict occurs, I can understand and acknowledge their complains easily, I can politely express my opinion in a way they can accept comfortably.<br>
