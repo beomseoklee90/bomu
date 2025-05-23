@@ -22,43 +22,43 @@ function App() {
     `<p>Welcome to my profile. This is my self introduction.</p>`,
     
     `<h3>ABC Company</h3> 2020-01-01 ~ 2022-12-31
-     <hr>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-    <h3>ABC Company</h3> 2020-01-01 ~ 2022-12-31
-     <hr>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-      * Contribution1 <br>
-     ` 
+<hr>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>
+<h3>XYZ Corporation</h3> 2020-01-01 ~ 2022-12-31
+<hr>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>
+* Contribution1 <br>`,
     
-    `<h2>My Philosophy</h2>
-    <p>I believe in creating intuitive and accessible user experiences.</p>
-    <ul>
-      <li>User-centered design approach</li>
-      <li>Continuous learning and improvement</li>
-      <li>Building scalable and maintainable solutions</li>
-    </ul>`,
+    `<h3>My Philosophy</h3> 2018-01-01 ~ Present
+<hr>
+* User-centered design approach <br>
+* Continuous learning and improvement <br>
+* Building scalable and maintainable solutions <br>
+* Creating intuitive and accessible user experiences <br>
+* Focusing on performance and optimization <br>`,
     
-    `<h2>Hobbies</h2>
-    <ul>
-      <li>Photography - 2015-01-01 ~ Present</li>
-      <li>Hiking - 2018-06-15 ~ Present</li>
-      <li>Playing guitar - 2010-03-22 ~ Present</li>
-    </ul>`,
+    `<h3>Hobbies</h3> 2010-01-01 ~ Present
+<hr>
+* Photography - 2015-01-01 ~ Present <br>
+* Hiking - 2018-06-15 ~ Present <br>
+* Playing guitar - 2010-03-22 ~ Present <br>
+* Reading - 2005-01-01 ~ Present <br>
+* Cooking - 2019-05-10 ~ Present <br>`,
     
-    `<h2>Voice Samples</h2>
-    <p>2023-05-10 ~ Present</p>
-    <ul>
-      <li>English narration samples</li>
-      <li>Podcast recordings</li>
-      <li>Voice acting demos</li>
-    </ul>`
+    `<h3>Voice Samples</h3> 2023-05-10 ~ Present
+<hr>
+* English narration samples <br>
+* Podcast recordings <br>
+* Voice acting demos <br>
+* Technical presentations <br>
+* Educational content <br>`
   ]
 
   const [activeSection, setActiveSection] = useState(menuItems[0])
