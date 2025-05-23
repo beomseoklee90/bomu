@@ -21,20 +21,27 @@ function App() {
   const htmlContents = [
     `<p>Welcome to my profile. This is my self introduction.</p>`,
     
-    `<h3>ABC Company</h3> 2020-01-01 ~ 2022-12-31
+    `<h3>DENZAI</h3> 2025-03 ~ now
 <hr>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>
-<h3>XYZ Corporation</h3> 2020-01-01 ~ 2022-12-31
+* built scrapping logic to collect about 10,000 pictures that transformed 3 months work into 1 week task. <br>
+⦁	security standard certification consulting company selection strategy document - contributed to decision making for executives<br>
+⦁	Identified the origin of the problem and solved it from the 3rd party SaaS platform by the way of problem-solving thoughts through the communication with technical support team that had not been solved for more than 1 month within 1 week.  <br>
+<h3>Axrossroad</h3> 2023-10 ~ 2024-12
 <hr>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>
-* Contribution1 <br>`,
+⦁	Accomodation reservation system <br>
+⦁	Reflected clients requirements in a design document, developed the feature, wrote test specification document, blackbox tested with the all possible input patterns, added new tables and new data, deployed the source code<br>
+⦁	Java Struts, MySQL, Jquery, Jenkins based system <br>
+<h3>Human Resocia</h3> 2022-11 ~ 2023-8
+<hr>
+* express highway patrol system <br>
+⦁	Jquery, Bootstrap new version source migration task, built validation annotation class and applied to every datepickers, developed Junit unit test, trouble-shooted errors, deployed the source code  sing Jenkins, Database data input, whitebox test, blackbox tested<br>
+⦁	Java Spring Boot, MySQL, Jquery, Bootstrap, Jenklns based system <br>
+* Creating intuitive and accessible user experiences <br>
+* Focusing on performance and optimization <br>
+<h3>Powertask</h3> 2020-10 ~ 2021-11
+<hr>
+⦁	Low code platform <br>
+* designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,
     
     `<h3>My Philosophy</h3> 2018-01-01 ~ Present
 <hr>
