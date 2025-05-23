@@ -21,21 +21,21 @@ function App() {
   const htmlContents = [
     `<p>Welcome to my profile. This is my self introduction.</p>`,
     
-    `<h2>ABC Company</h2>
-    2020-01-01 ~ 2022-12-31
-    <ul>
-      <li>Led development of core product features</li>
-      <li>Implemented responsive design patterns</li>
-      <li>Collaborated with cross-functional teams</li>
-    </ul>
-    
-    <h2>XYZ Corporation</h2>
-    2018-03-15 ~ 2019-12-31
-    <ul>
-      <li>Developed frontend components using React</li>
-      <li>Optimized application performance</li>
-      <li>Mentored junior developers</li>
-    </ul>`,
+    `<h3>ABC Company</h3> 2020-01-01 ~ 2022-12-31
+     <hr>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+    <h3>ABC Company</h3> 2020-01-01 ~ 2022-12-31
+     <hr>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+      * Contribution1 <br>
+     ` 
     
     `<h2>My Philosophy</h2>
     <p>I believe in creating intuitive and accessible user experiences.</p>
