@@ -1,34 +1,120 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle
+} from "@/components/ui/navigation-menu"
+import { cn } from "@/lib/utils"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const menuItems = [
+    'self introduction',
+    'professional experience',
+    'philosophy',
+    'hobby'
+  ]
+
+  const htmlContents = [
+    `<h3>a chameleon</h3> <br>
+Ethical philosopher for life
+<hr>
+⦁	Whatever we do, I believe that we need clear philosophy for the current assignment. So, before starting whatever, I think about the reason for doing it, what values I can create, the best way to make it real. So many tasks that I have performed have great completeness. I try to produce the message from the result that I built. This is reflected on the documents that I have written.<br>
+⦁	My development philosophy is as follows. My deep faith is that all the small choices lead to the quality of the system. It also affects the happiness of my coworkers and boss, because the source code that I have built affects all of them. The documents that I write have an impact on the communication between coworkers and me. The testing influences the trust between our team and clients. That is why I check best practices and carefully choose skill stacks and think about the architecture<br>
+⦁	Regarding management related tasks, I am almost new. However, I'm learning many things. The most important thing is lthe ethics. I never try to have a fight to whoever I meet. I respect all the people I meet daily. However, we can't avoid even tiny conflicts. In this perspective, I believe a conflict must not be a failure for communication. It should be an opportunity to understand each other. The way we think is different. So, sometimes we need to understand these. However, since I pay attention to my bosses and coworkers, our relationships are great.<br>`,
+    
+    `<h3>DENZAI</h3> 2025-03 ~ now
+<hr>
+* built scrapping logic to collect about 10,000 pictures that transformed 3 months work into 1 week task. <br>
+⦁	security standard certification consulting company selection strategy document - contributed to decision making for executives<br>
+⦁	Identified the origin of the problem and solved it from the 3rd party SaaS platform by the way of problem-solving thoughts through the communication with technical support team that had not been solved for more than 1 month within 1 week.  <br>
+<h3>Axrossroad</h3> 2023-10 ~ 2024-12
+<hr>
+⦁	Accomodation reservation system <br>
+⦁	Reflected clients requirements in a design document, developed the feature, wrote test specification document, blackbox tested with the all possible input patterns, added new tables and new data, deployed the source code<br>
+⦁	Java Struts, MySQL, Jquery, Jenkins based system <br>
+<h3>Human Resocia</h3> 2022-11 ~ 2023-8
+<hr>
+* express highway patrol system <br>
+⦁	Jquery, Bootstrap new version source migration task, built validation annotation class and applied to every datepickers, developed Junit unit test, trouble-shooted errors, deployed the source code  sing Jenkins, Database data input, whitebox test, blackbox tested<br>
+⦁	Java Spring Boot, MySQL, Jquery, Bootstrap, Jenklns based system <br>
+* Creating intuitive and accessible user experiences <br>
+* Focusing on performance and optimization <br>
+<h3>Powertask</h3> 2020-10 ~ 2021-11
+<hr>
+⦁	Low code platform <br>
+* designed, developed, maintained cloud/backend from scratch, set VPC, route table, subnet, Load Balancer, EC2 WAS, KMS, Route53, ACM, Typescript, whitebox, blackbox tested, MongoDB, MySQL, Reactjs <br>`,
+    
+    `<h3>I believe that insights are the energy that make me grow</h3> <br>
+I try to learn whatever I can experience.
+<hr>
+⦁	I consider coworkers and bosses as partners that I sincerely support and cheer up. After behaving like this, the working life have become happy. After I realized that it is valuable, I have less conflicts with them with genuine mutual respect. Even if a conflict occurs, I can understand and acknowledge their complains easily, I can politely express my opinion in a way they can accept comfortably.<br>
+⦁	Having a pure motivation to contribute to my company without pressure to do well have been my driving force to produce meaningful achievements in my company. Previously when I was less professional, I was stressed out easily, being obsessed with satisfying the expectation from the coworkers and boss. Now, I work as if I were a innocent kid, and creating meaningful results to my company.<br>
+⦁	Everyday I reflect on myself. I analyze all the things I have done in a day. In terms of work, I check whether the way of cooperation was appropriate, whether I did best, what I have learned, whether I managed my emotion. With these insights I improve myself tomorrow<br>`,
+    
+    `<h3>My hobby is learning new things</h3> <br>
+I love learning new things. DJ, Computer Science.<br>
+Another hobby is analyzing famous quotes and write an article on Instagram and share it with friends 
+<hr>
+⦁	I love music. I believe music is one of the best medium that can free ourselves from the suppressed emotion and stresses. Music can help us express our emotion regardless of the mood. We can sing a song for love, friendship, happniess, breakup, frustration. In my case, not only I express my feeling through music, but also I create a song for listeners to empathize all together. Now, it has been only few months since I started to learn music production. These days I am building an EDM song, specifically house genre that expresses gratitude for all my friends.<br>
+⦁	These days, I am learning AI starting from low level math, and algorithm. I consider Computer Science as a mean to make the world a better place. Many web applications are already creating great values to many companies, and I believe more AI models can innovate the world. <br>
+⦁	I try to learn insights that many historical figures have left. For example, Steve Jobs talked about the importance to inspiring the people around him. He explained that the leadership does not come from making people move. It comes from encouraging people to follow us by themselves. I upload this kind of information on Instagram for my friends.<br>`,
+    
+    `<h3>Voice Samples</h3> 2023-05-10 ~ Present
+<hr>
+* English narration samples <br>
+* Podcast recordings <br>
+* Voice acting demos <br>
+* Technical presentations <br>
+* Educational content <br>`
+  ]
+
+  const [activeSection, setActiveSection] = useState(menuItems[0])
+  const [contentHtml, setContentHtml] = useState(htmlContents[0])
+
+  const handleNavClick = (section: string) => {
+    setActiveSection(section)
+    const index = menuItems.indexOf(section)
+    setContentHtml(htmlContents[index])
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="min-h-screen flex flex-col">
+      {/* Main container with thick padding - v2 */}
+      <div className="p-8 md:p-12 lg:p-16 flex-1 flex flex-col">
+        {/* Navigation bar */}
+        <div className="w-full mb-8 overflow-x-auto nav-scroll-container">
+          <NavigationMenu className="w-full justify-start">
+            <NavigationMenuList className="w-full justify-start flex-nowrap gap-2 min-w-max">
+              {menuItems.map((item) => (
+                <NavigationMenuItem key={item}>
+                  <NavigationMenuLink
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      activeSection === item ? "bg-zinc-200 dark:bg-zinc-800" : ""
+                    )}
+                    onClick={() => handleNavClick(item)}
+                  >
+                    {item}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        {/* Gray content area */}
+        <div className="flex-1 bg-gray-200 rounded-lg p-6 md:p-8">
+          {/* Content div where innerHTML can be added */}
+          <div 
+            className="content-area h-full"
+            dangerouslySetInnerHTML={{ __html: contentHtml }}
+          />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
