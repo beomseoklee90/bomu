@@ -1,0 +1,661 @@
+동사의 형태 변화[중급]
+<style>
+  .jlpt-vocab-sheet {
+    width: 100%;
+    box-sizing: border-box;
+    font-family:
+      "Pretendard",
+      "Noto Sans KR",
+      "Noto Sans JP",
+      sans-serif;
+    color: #252525;
+    background: #ffffff;
+  }
+
+  .jlpt-vocab-sheet *,
+  .jlpt-vocab-sheet *::before,
+  .jlpt-vocab-sheet *::after {
+    box-sizing: border-box;
+  }
+
+  .jlpt-vocab-header {
+    padding: 48px 28px 38px;
+    background: #287d2f;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .jlpt-vocab-header__title {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 46px);
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+  }
+
+  .jlpt-vocab-header__subtitle {
+    margin: 18px 0 0;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(15px, 2vw, 21px);
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .jlpt-vocab-level {
+    padding: 34px 30px 42px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  .jlpt-vocab-level:last-child {
+    border-bottom: 0;
+  }
+
+  .jlpt-vocab-level__heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 0 0 24px;
+    color: #1671c4;
+    font-size: clamp(21px, 2.6vw, 30px);
+    font-weight: 900;
+    line-height: 1.4;
+  }
+
+  .jlpt-vocab-level__heading::before {
+    content: "";
+    display: block;
+    flex: 0 0 auto;
+    width: 7px;
+    height: 42px;
+    border-radius: 999px;
+    background: #1671c4;
+  }
+
+  .jlpt-vocab-level__note {
+    margin: -12px 0 22px 20px;
+    color: #747474;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .jlpt-vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+  }
+
+  .jlpt-vocab-card {
+    display: flex;
+    min-width: 0;
+    min-height: 142px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 21px 12px 17px;
+    border: 1px solid #e3e5e8;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 2px 7px rgba(20, 30, 40, 0.035);
+    text-align: center;
+  }
+
+  .jlpt-vocab-card__jp {
+    margin: 0;
+    font-family:
+      "Noto Sans JP",
+      "Yu Gothic",
+      sans-serif;
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 500;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+
+  .jlpt-vocab-card__jp ruby {
+    ruby-position: over;
+  }
+
+  .jlpt-vocab-card__jp rt {
+    color: #936541;
+    font-size: 0.42em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .jlpt-vocab-card__ko {
+    margin-top: 10px;
+    color: #656565;
+    font-size: clamp(15px, 1.7vw, 20px);
+    font-weight: 600;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+
+  .jlpt-vocab-level--n4 .jlpt-vocab-level__heading {
+    color: #8758ba;
+  }
+
+  .jlpt-vocab-level--n4 .jlpt-vocab-level__heading::before {
+    background: #8758ba;
+  }
+
+  .jlpt-vocab-level--n3 .jlpt-vocab-level__heading {
+    color: #d46b24;
+  }
+
+  .jlpt-vocab-level--n3 .jlpt-vocab-level__heading::before {
+    background: #d46b24;
+  }
+
+  @media (max-width: 880px) {
+    .jlpt-vocab-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .jlpt-vocab-header {
+      padding: 36px 18px 30px;
+    }
+
+    .jlpt-vocab-level {
+      padding: 28px 16px 34px;
+    }
+
+    .jlpt-vocab-grid {
+      gap: 10px;
+    }
+
+    .jlpt-vocab-card {
+      min-height: 124px;
+      padding: 18px 8px 14px;
+    }
+
+    .jlpt-vocab-level__note {
+      margin-left: 0;
+    }
+  }
+</style>
+
+<section class="jlpt-vocab-sheet">
+
+  <header class="jlpt-vocab-header">
+    <h1 class="jlpt-vocab-header__title">
+      일본어 말하기 트레이닝 · N5–N3
+    </h1>
+
+    <p class="jlpt-vocab-header__subtitle">
+      자유 문장 생성을 위한 레벨별 핵심 명사 세트
+    </p>
+  </header>
+
+  <!-- N5 -->
+
+  <section class="jlpt-vocab-level jlpt-vocab-level--n5">
+    <h2 class="jlpt-vocab-level__heading">
+      N5 명사 · 일상과 기본 자기소개
+    </h2>
+
+    <p class="jlpt-vocab-level__note">
+      단어 하나를 골라 です・ですか・ではありません 문장을 만들어 보세요.
+    </p>
+
+    <div class="jlpt-vocab-grid">
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>学生<rt>がくせい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">학생</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>学校<rt>がっこう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">학교</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>先生<rt>せんせい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">선생님</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>会社<rt>かいしゃ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">회사</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>会社員<rt>かいしゃいん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">회사원</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>友達<rt>ともだち</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">친구</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>家族<rt>かぞく</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">가족</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>名前<rt>なまえ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">이름</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>日本語<rt>にほんご</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">일본어</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>韓国人<rt>かんこくじん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">한국인</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>今日<rt>きょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">오늘</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>昨日<rt>きのう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">어제</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>時間<rt>じかん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">시간</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>電車<rt>でんしゃ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">전철</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>食事<rt>しょくじ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">식사</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>料理<rt>りょうり</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">요리</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>天気<rt>てんき</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">날씨</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>写真<rt>しゃしん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">사진</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>部屋<rt>へや</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">방</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>買い物<rt>かいもの</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">쇼핑</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- N4 -->
+
+  <section class="jlpt-vocab-level jlpt-vocab-level--n4">
+    <h2 class="jlpt-vocab-level__heading">
+      N4 명사 · 생활과 경험
+    </h2>
+
+    <p class="jlpt-vocab-level__note">
+      현재와 과거를 바꾸며 です・でした 문장을 만들어 보세요.
+    </p>
+
+    <div class="jlpt-vocab-grid">
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>経験<rt>けいけん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">경험</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>予定<rt>よてい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">예정</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>約束<rt>やくそく</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">약속</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>準備<rt>じゅんび</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">준비</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>趣味<rt>しゅみ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">취미</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>旅行<rt>りょこう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">여행</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>運転<rt>うんてん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">운전</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>会議<rt>かいぎ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">회의</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>仕事<rt>しごと</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">일</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>生活<rt>せいかつ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">생활</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>文化<rt>ぶんか</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">문화</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>習慣<rt>しゅうかん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">습관</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>交通<rt>こうつう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">교통</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>場所<rt>ばしょ</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">장소</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>理由<rt>りゆう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">이유</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>意見<rt>いけん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">의견</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>説明<rt>せつめい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">설명</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>連絡<rt>れんらく</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">연락</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>失敗<rt>しっぱい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">실패</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>成功<rt>せいこう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">성공</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- N3 -->
+
+  <section class="jlpt-vocab-level jlpt-vocab-level--n3">
+    <h2 class="jlpt-vocab-level__heading">
+      N3 명사 · 업무와 추상 표현
+    </h2>
+
+    <p class="jlpt-vocab-level__note">
+      의견, 상황, 변화처럼 조금 더 복잡한 내용을 명사문으로 말해 보세요.
+    </p>
+
+    <div class="jlpt-vocab-grid">
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>環境<rt>かんきょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">환경</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>状況<rt>じょうきょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">상황</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>状態<rt>じょうたい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">상태</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>関係<rt>かんけい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">관계</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>結果<rt>けっか</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">결과</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>原因<rt>げんいん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">원인</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>目的<rt>もくてき</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">목적</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>方法<rt>ほうほう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">방법</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>内容<rt>ないよう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">내용</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>情報<rt>じょうほう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">정보</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>資料<rt>しりょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">자료</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>制度<rt>せいど</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">제도</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>条件<rt>じょうけん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">조건</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>責任<rt>せきにん</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">책임</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>立場<rt>たちば</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">입장</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>印象<rt>いんしょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">인상</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>特徴<rt>とくちょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">특징</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>変化<rt>へんか</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">변화</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>影響<rt>えいきょう</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">영향</div>
+      </article>
+
+      <article class="jlpt-vocab-card">
+        <p class="jlpt-vocab-card__jp">
+          <ruby>可能性<rt>かのうせい</rt></ruby>
+        </p>
+        <div class="jlpt-vocab-card__ko">가능성</div>
+      </article>
+
+    </div>
+  </section>
+
+</section>

@@ -1,0 +1,1296 @@
+편의점 여행 일본어
+<style>
+  /* =========================================
+     TRAVEL JAPANESE / SELF-STUDY MATERIAL
+     Parent wrapper already exists.
+     This TXT file should contain only child elements.
+  ========================================= */
+
+  .tj-title {
+    margin: 8px 0 12px;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 1.35;
+    letter-spacing: -0.7px;
+    color: #202124;
+  }
+
+  .tj-subtitle {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #5f6368;
+  }
+
+  .tj-section-title {
+    margin: 42px 0 20px;
+    padding-bottom: 11px;
+    border-bottom: 2px solid #202124;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+  }
+
+  .tj-subhead {
+    margin: 28px 0 13px;
+    font-size: 19px;
+    font-weight: 850;
+    line-height: 1.5;
+    color: #202124;
+  }
+
+  .tj-lead {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #303134;
+  }
+
+  .tj-note {
+    margin: 18px 0;
+    padding: 16px 17px;
+    border-radius: 12px;
+    background: #f2f5f7;
+    color: #3c4043;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tj-important {
+    margin: 20px 0;
+    padding: 18px;
+    border: 2px solid #202124;
+    border-radius: 14px;
+    background: #fff;
+    font-size: 15px;
+    line-height: 1.85;
+  }
+
+  .tj-warning {
+    margin: 20px 0;
+    padding: 17px 18px;
+    border-left: 5px solid #8a6d1d;
+    border-radius: 4px 12px 12px 4px;
+    background: #fffaf0;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tj-tip {
+    margin: 18px 0;
+    padding: 16px 17px;
+    border-left: 5px solid #202124;
+    border-radius: 4px 12px 12px 4px;
+    background: #f5f5f5;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+
+  /* =========================================
+     DIALOGUE BLOCK
+  ========================================= */
+
+  .tj-dialogue {
+    margin: 24px 0 30px;
+    padding: 20px;
+    border: 1px solid #dedede;
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .tj-role {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #eeeeee;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.2px;
+    color: #444;
+  }
+
+  .tj-jp-main {
+    margin: 2px 0 5px;
+    font-size: 22px;
+    font-weight: 850;
+    line-height: 1.9;
+    color: #202124;
+  }
+
+  .tj-jp-standard {
+    margin-top: 4px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.9;
+    color: #404347;
+  }
+
+  .tj-hira {
+    margin-top: 2px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #777;
+  }
+
+  .tj-ko {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.75;
+    color: #333;
+  }
+
+
+  /* =========================================
+     LEVEL-BY-LEVEL EXPLANATION
+  ========================================= */
+
+  .tj-level {
+    margin: 16px 0;
+    padding: 17px 18px;
+    border-radius: 14px;
+    line-height: 1.85;
+  }
+
+  .tj-level-title {
+    margin-bottom: 9px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .tj-level-text {
+    font-size: 14px;
+    color: #3c4043;
+  }
+
+  .tj-level-basic {
+    border: 2px solid #202124;
+    background: #fff;
+  }
+
+  .tj-level-n4 {
+    border: 1px solid #bfc4c8;
+    background: #f3f6f8;
+  }
+
+  .tj-level-n3 {
+    border: 1px dashed #90969b;
+    background: #fafafa;
+  }
+
+  .tj-level-advanced {
+    border: 1px dashed #777;
+    background: #f7f7f7;
+  }
+
+
+  /* =========================================
+     BREAKDOWN / GRAMMAR
+  ========================================= */
+
+  .tj-breakdown {
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f7f7f7;
+  }
+
+  .tj-breakdown-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .tj-breakdown-line {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tj-part {
+    display: inline-block;
+    margin: 2px 4px 2px 0;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: #fff;
+    font-weight: 850;
+  }
+
+  .tj-part-meaning {
+    margin-left: 4px;
+    font-size: 13px;
+    color: #666;
+  }
+
+  .tj-grammar {
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f4f4f4;
+  }
+
+  .tj-grammar-title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  .tj-grammar-formula {
+    margin: 13px 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #202124;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 850;
+    line-height: 1.8;
+    text-align: center;
+  }
+
+  .tj-grammar-example {
+    margin: 11px 0;
+    padding: 13px 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+
+  /* =========================================
+     REPLACEABLE WORD SLOT
+  ========================================= */
+
+  .tj-slot {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    font-weight: 900;
+  }
+
+  .tj-swap {
+    margin: 18px 0;
+    padding: 18px;
+    border: 2px dashed #999;
+    border-radius: 14px;
+    background: #fcfcfc;
+  }
+
+  .tj-swap-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .tj-swap-text {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  .tj-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+  }
+
+  .tj-chip {
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    background: #fff;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .tj-chip strong {
+    font-weight: 900;
+  }
+
+
+  /* =========================================
+     WORD / VOCABULARY
+  ========================================= */
+
+  .tj-vocab {
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f7f7f7;
+  }
+
+  .tj-vocab-title {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 900;
+  }
+
+  .tj-vocab-row {
+    display: grid;
+    grid-template-columns: minmax(100px, 0.8fr) minmax(100px, 0.8fr) minmax(140px, 1.4fr);
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .tj-vocab-row:last-child {
+    border-bottom: 0;
+  }
+
+  .tj-vocab-jp {
+    font-weight: 850;
+  }
+
+  .tj-vocab-reading {
+    color: #666;
+  }
+
+  .tj-vocab-ko {
+    color: #333;
+  }
+
+
+  /* =========================================
+     COMPARE / NUANCE
+  ========================================= */
+
+  .tj-vs {
+    margin: 20px 0;
+    border: 1px solid #d8d8d8;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .tj-vs-title {
+    padding: 12px 15px;
+    background: #ededed;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .tj-vs-body {
+    padding: 16px 17px;
+  }
+
+  .tj-vs-item {
+    padding: 11px 0;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tj-vs-item + .tj-vs-item {
+    border-top: 1px solid #e5e5e5;
+  }
+
+
+  /* =========================================
+     "TEACHER-LIKE" EXPLANATION
+  ========================================= */
+
+  .tj-teacher {
+    margin: 18px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f7f7f7;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #3c4043;
+  }
+
+  .tj-teacher-title {
+    margin-bottom: 9px;
+    font-size: 16px;
+    font-weight: 900;
+    color: #202124;
+  }
+
+  .tj-question-box {
+    margin: 16px 0;
+    padding: 15px 16px;
+    border-left: 4px solid #777;
+    background: #fafafa;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .tj-question-box strong {
+    font-weight: 900;
+  }
+
+
+  /* =========================================
+     DEEP DIVE LINK
+  ========================================= */
+
+  .tj-deep-dive {
+    display: block;
+    margin: 18px 0;
+    padding: 14px 16px;
+    border: 1px solid #bfc4c8;
+    border-radius: 12px;
+    background: #f3f6f8;
+    color: #202124;
+    font-size: 14px;
+    font-weight: 850;
+    line-height: 1.7;
+    text-decoration: none;
+  }
+
+  .tj-deep-dive:hover {
+    text-decoration: underline;
+  }
+
+
+  /* =========================================
+     PRACTICE
+  ========================================= */
+
+  .tj-practice {
+    margin: 20px 0;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f7f7f7;
+  }
+
+  .tj-practice-title {
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: 900;
+  }
+
+  .tj-practice ul {
+    margin: 8px 0 0;
+    padding-left: 22px;
+  }
+
+  .tj-practice li {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .tj-answer {
+    margin-top: 12px;
+    padding: 13px 14px;
+    border-radius: 10px;
+    background: #eeeeee;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+
+  /* =========================================
+     TABLE
+  ========================================= */
+
+  .tj-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .tj-table th,
+  .tj-table td {
+    padding: 11px 10px;
+    border: 1px solid #d8d8d8;
+    vertical-align: top;
+    text-align: left;
+  }
+
+  .tj-table th {
+    background: #f2f2f2;
+    font-weight: 900;
+  }
+
+
+  /* =========================================
+     SEPARATOR
+  ========================================= */
+
+  .tj-divider {
+    height: 1px;
+    margin: 34px 0;
+    border: 0;
+    background: #dadce0;
+  }
+
+
+  /* =========================================
+     JAPANESE RUBY
+  ========================================= */
+
+  ruby {
+    ruby-position: over;
+  }
+
+  rt {
+    font-size: 0.55em;
+    font-weight: 500;
+    color: #666;
+  }
+
+
+  /* =========================================
+     MOBILE
+  ========================================= */
+
+  @media (max-width: 640px) {
+    .tj-title {
+      font-size: 26px;
+    }
+
+    .tj-section-title {
+      font-size: 21px;
+    }
+
+    .tj-subhead {
+      font-size: 18px;
+    }
+
+    .tj-jp-main {
+      font-size: 20px;
+    }
+
+    .tj-jp-standard {
+      font-size: 16px;
+    }
+
+    .tj-dialogue,
+    .tj-level,
+    .tj-breakdown,
+    .tj-grammar,
+    .tj-swap,
+    .tj-vocab,
+    .tj-teacher,
+    .tj-practice,
+    .tj-important,
+    .tj-warning,
+    .tj-tip {
+      padding: 15px;
+    }
+
+    .tj-vocab-row {
+      grid-template-columns: 1fr;
+      gap: 2px;
+      padding: 12px 0;
+    }
+
+    .tj-table {
+      font-size: 13px;
+    }
+
+    .tj-table th,
+    .tj-table td {
+      padding: 9px 7px;
+    }
+  }
+</style>
+
+<h1 class="tj-title">여행 일본어 · 편의점 완전 공략</h1>
+
+<p class="tj-subtitle">
+  편의점에서 외운 문장 몇 개만 말하는 것이 아니라,
+  실제로 직원에게 질문하고, 직원의 대답을 이해하고,
+  원하는 상품이 없을 때 다른 방법을 물어볼 수 있도록 연습합니다.
+  같은 문장도 학습 단계에 따라 다르게 이해할 수 있도록 설명합니다.
+</p>
+
+<div class="tj-important">
+  <strong>📌 이 자료를 공부하는 방법</strong><br><br>
+
+  일본어를 처음 배우고 있다면 문법을 전부 이해하려고 하지 않아도 됩니다.
+  먼저 실제 상황에서 자주 사용하는 문장을 하나의 표현으로 익혀 주세요.<br><br>
+
+  문법을 조금씩 배우고 있다면 문장을 단어와 문법 단위로 나누어 살펴보세요.
+  이미 JLPT N4~N3 정도의 문법을 공부하고 있다면
+  왜 이런 형태가 사용되는지까지 확인하면 실제 회화 표현을 훨씬 깊게 이해할 수 있습니다.
+</div>
+
+
+<h2 class="tj-section-title">1. 편의점에서 원하는 물건 찾기</h2>
+
+<p class="tj-lead">
+  여행 중에는 평소 준비하지 못한 물건이 갑자기 필요할 수 있습니다.
+  면도기, 우산, 밴드, 충전기처럼 상품 이름만 바꾸면
+  같은 문장으로 여러 가지 물건의 위치를 물어볼 수 있습니다.
+</p>
+
+
+<div class="tj-dialogue">
+
+  <span class="tj-role">여행자</span>
+
+  <div class="tj-jp-main">
+    すみません、<span class="tj-slot">カミソリ</span>はどこにありますか。
+  </div>
+
+  <div class="tj-jp-standard">
+    すみません、<span class="tj-slot">カミソリ</span>はどこにありますか。
+  </div>
+
+  <div class="tj-hira">
+    すみません、かみそりは どこに ありますか。
+  </div>
+
+  <div class="tj-ko">
+    저기요, 면도기는 어디에 있나요?
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-basic">
+
+  <div class="tj-level-title">🌱 처음 배우는 단계</div>
+
+  <div class="tj-level-text">
+    지금은 문장을 다음과 같이 나누어 이해하면 충분합니다.<br><br>
+
+    <strong>すみません</strong> → 저기요 / 실례합니다<br>
+    <strong>カミソリ</strong> → 면도기<br>
+    <strong>どこにありますか</strong> → 어디에 있나요?<br><br>
+
+    편의점 직원에게 말을 걸 때 먼저
+    <strong>すみません</strong>이라고 말한 뒤,
+    찾는 물건과 <strong>どこにありますか</strong>를 연결하면 됩니다.<br><br>
+
+    처음에는
+    <strong>「カミソリはどこにありますか」</strong>를
+    하나의 문장으로 익혀도 괜찮습니다.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-n4">
+
+  <div class="tj-level-title">🌿 JLPT N4 정도라면</div>
+
+  <div class="tj-level-text">
+    이 문장에서는 <strong>ある</strong>가 사용되고 있습니다.<br><br>
+
+    <strong>ある</strong>는 물건이나 장소처럼
+    사람이 아닌 것이 존재할 때 사용하는 동사입니다.<br><br>
+
+    <strong>ある → あります</strong><br><br>
+
+    따라서<br><br>
+
+    <strong>どこにありますか</strong><br>
+    = 어디에 있습니까?<br><br>
+
+    라는 의미가 됩니다.<br><br>
+
+    여기서 <strong>に</strong>는 물건이 존재하는 장소를 나타냅니다.
+  </div>
+
+</div>
+
+
+<div class="tj-breakdown">
+
+  <div class="tj-breakdown-title">🔎 문장을 조각별로 살펴보기</div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">すみません</span>
+    <span class="tj-part-meaning">저기요 / 실례합니다 / 죄송합니다</span>
+  </div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">カミソリ</span>
+    <span class="tj-part-meaning">면도기</span>
+  </div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">は</span>
+    <span class="tj-part-meaning">여기서는 ‘면도기는’ 정도의 느낌</span>
+  </div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">どこ</span>
+    <span class="tj-part-meaning">어디</span>
+  </div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">に</span>
+    <span class="tj-part-meaning">존재하는 장소를 나타냄</span>
+  </div>
+
+  <div class="tj-breakdown-line">
+    <span class="tj-part">ありますか</span>
+    <span class="tj-part-meaning">있습니까?</span>
+  </div>
+
+</div>
+
+
+<div class="tj-teacher">
+
+  <div class="tj-teacher-title">💬 강사가 설명한다면</div>
+
+  한국어에서는 보통
+  “면도기 어디 있어요?”라고 말합니다.<br><br>
+
+  일본어에서도 실제 회화에서는
+  <strong>カミソリ、どこですか。</strong>
+  처럼 더 짧게 말할 수도 있습니다.<br><br>
+
+  하지만 처음 공부할 때는
+  <strong>カミソリはどこにありますか。</strong>
+  를 익혀두면 좋습니다.<br><br>
+
+  이 문장 구조를 익혀두면
+  면도기뿐 아니라 편의점에서 찾을 수 있는 거의 모든 물건에 응용할 수 있기 때문입니다.
+</div>
+
+
+<div class="tj-swap">
+
+  <div class="tj-swap-title">🔄 밑줄 친 상품 이름을 바꾸어 말해보세요</div>
+
+  <div class="tj-swap-text">
+    <strong>すみません、<span class="tj-slot">カミソリ</span>はどこにありますか。</strong><br><br>
+
+    밑줄 친 자리에 아래 단어를 넣으면
+    같은 문장으로 여러 가지 상품의 위치를 물어볼 수 있습니다.
+  </div>
+
+  <div class="tj-chip-row">
+    <span class="tj-chip"><strong>カミソリ</strong> · 면도기</span>
+    <span class="tj-chip"><strong>傘（かさ）</strong> · 우산</span>
+    <span class="tj-chip"><strong>絆創膏（ばんそうこう）</strong> · 밴드</span>
+    <span class="tj-chip"><strong>充電器（じゅうでんき）</strong> · 충전기</span>
+    <span class="tj-chip"><strong>モバイルバッテリー</strong> · 보조배터리</span>
+    <span class="tj-chip"><strong>コンタクトレンズ</strong> · 콘택트렌즈</span>
+    <span class="tj-chip"><strong>ティッシュ</strong> · 티슈</span>
+    <span class="tj-chip"><strong>マスク</strong> · 마스크</span>
+  </div>
+
+</div>
+
+
+<div class="tj-practice">
+
+  <div class="tj-practice-title">✏️ 바로 바꿔 말해보기</div>
+
+  <ul>
+    <li>우산은 어디에 있나요?</li>
+    <li>보조배터리는 어디에 있나요?</li>
+    <li>밴드는 어디에 있나요?</li>
+  </ul>
+
+  <div class="tj-answer">
+    傘はどこにありますか。<br>
+    モバイルバッテリーはどこにありますか。<br>
+    絆創膏はどこにありますか。
+  </div>
+
+</div>
+
+
+<hr class="tj-divider">
+
+
+<h3 class="tj-subhead">직원이 위치를 알려줄 때</h3>
+
+
+<div class="tj-dialogue">
+
+  <span class="tj-role">직원</span>
+
+  <div class="tj-jp-main">
+    あちらの<ruby>日用品<rt>にちようひん</rt></ruby>コーナーにございます。
+  </div>
+
+  <div class="tj-hira">
+    あちらの にちようひんコーナーに ございます。
+  </div>
+
+  <div class="tj-ko">
+    저쪽 생활용품 코너에 있습니다.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-basic">
+
+  <div class="tj-level-title">🌱 처음 배우는 단계</div>
+
+  <div class="tj-level-text">
+    직원의 말을 전부 이해하지 못해도 괜찮습니다.<br><br>
+
+    <strong>あちら</strong> → 저쪽<br>
+    <strong>コーナー</strong> → 코너<br>
+    <strong>ございます</strong> → 있습니다<br><br>
+
+    정도를 들으면
+    직원이 상품 위치를 알려주고 있다는 것을 이해할 수 있습니다.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-n3">
+
+  <div class="tj-level-title">🌳 조금 더 깊게 이해하기</div>
+
+  <div class="tj-level-text">
+    <strong>ございます</strong>는
+    <strong>あります</strong>보다 정중한 표현입니다.<br><br>
+
+    편의점, 호텔, 백화점처럼 손님을 응대하는 장소에서는
+    직원이 일반적인 <strong>あります</strong>보다
+    <strong>ございます</strong>를 사용하는 경우가 많습니다.<br><br>
+
+    여행자가 직접 말할 때까지
+    반드시 <strong>ございます</strong>를 사용할 필요는 없습니다.<br><br>
+
+    여행자는<br>
+    <strong>ありますか。</strong><br><br>
+
+    라고 말해도 충분히 자연스럽고,
+    직원이 말하는 <strong>ございます</strong>를 알아들을 수 있으면 됩니다.
+  </div>
+
+</div>
+
+
+<div class="tj-vs">
+
+  <div class="tj-vs-title">これ · こっち · こちら는 어떻게 다를까요?</div>
+
+  <div class="tj-vs-body">
+
+    <div class="tj-vs-item">
+      <strong>これ</strong><br>
+      이것<br><br>
+      물건 자체를 직접 가리킬 때 사용합니다.<br>
+      これはいくらですか。<br>
+      이것은 얼마예요?
+    </div>
+
+    <div class="tj-vs-item">
+      <strong>こっち</strong><br>
+      이쪽<br><br>
+      방향이나 여러 물건 중 ‘이쪽 것’을 가리킬 때 자주 사용하는
+      회화적인 표현입니다.<br>
+      こっちだけ温めてください。<br>
+      이쪽 것만 데워주세요.
+    </div>
+
+    <div class="tj-vs-item">
+      <strong>こちら</strong><br>
+      이쪽<br><br>
+      <strong>こっち</strong>보다 정중한 표현입니다.
+      직원이 손님에게 물건이나 방향을 안내할 때 자주 들을 수 있습니다.<br>
+      こちらです。<br>
+      이쪽입니다. / 이것입니다.
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="tj-deep-dive">
+  🔎 これ・それ・あれ / こっち・そっち・あっち / こちら・そちら・あちら 자세히 보기 →
+</div>
+
+
+<hr class="tj-divider">
+
+
+<h2 class="tj-section-title">2. 원하는 상품이 있는지 물어보기</h2>
+
+<p class="tj-lead">
+  상품이 어느 위치에 있는지 묻는 것이 아니라,
+  애초에 그 편의점에서 해당 상품을 판매하는지 모를 때 사용할 수 있습니다.
+</p>
+
+
+<div class="tj-dialogue">
+
+  <span class="tj-role">여행자</span>
+
+  <div class="tj-jp-main">
+    すみません、<span class="tj-slot">モバイルバッテリー</span>はありますか。
+  </div>
+
+  <div class="tj-hira">
+    すみません、モバイルバッテリーは ありますか。
+  </div>
+
+  <div class="tj-ko">
+    저기요, 보조배터리 있나요?
+  </div>
+
+</div>
+
+
+<div class="tj-teacher">
+
+  <div class="tj-teacher-title">💬 위치를 묻는 문장과 뭐가 다를까요?</div>
+
+  <strong>モバイルバッテリーはありますか。</strong><br>
+  → 보조배터리가 있나요?<br><br>
+
+  <strong>モバイルバッテリーはどこにありますか。</strong><br>
+  → 보조배터리는 어디에 있나요?<br><br>
+
+  첫 번째 문장은
+  <strong>그 상품을 판매하는지 자체를 모를 때</strong> 사용하기 좋습니다.<br><br>
+
+  두 번째 문장은
+  <strong>상품이 있다는 것은 알고 있고 위치를 찾고 싶을 때</strong> 사용하기 좋습니다.<br><br>
+
+  실제 여행에서는 두 표현을 엄격하게 구분하지 않아도 의사소통에는 문제가 없지만,
+  의미의 차이를 알아두면 상황에 맞게 더 자연스럽게 사용할 수 있습니다.
+</div>
+
+
+<div class="tj-swap">
+
+  <div class="tj-swap-title">🔄 상품 이름만 바꾸면 됩니다</div>
+
+  <div class="tj-swap-text">
+    <strong><span class="tj-slot">モバイルバッテリー</span>はありますか。</strong>
+  </div>
+
+  <div class="tj-chip-row">
+    <span class="tj-chip"><strong>カミソリ</strong> · 면도기</span>
+    <span class="tj-chip"><strong>傘</strong> · 우산</span>
+    <span class="tj-chip"><strong>絆創膏</strong> · 밴드</span>
+    <span class="tj-chip"><strong>充電器</strong> · 충전기</span>
+    <span class="tj-chip"><strong>モバイルバッテリー</strong> · 보조배터리</span>
+  </div>
+
+</div>
+
+
+<hr class="tj-divider">
+
+
+<h2 class="tj-section-title">3. 원하는 상품이 품절되었을 때</h2>
+
+
+<div class="tj-dialogue">
+
+  <span class="tj-role">직원</span>
+
+  <div class="tj-jp-main">
+    <ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ありません。こちらは<ruby>売<rt>う</rt></ruby>り<ruby>切<rt>き</rt></ruby>れです。
+  </div>
+
+  <div class="tj-hira">
+    もうしわけありません。こちらは うりきれです。
+  </div>
+
+  <div class="tj-ko">
+    죄송합니다. 이 상품은 품절입니다.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-basic">
+
+  <div class="tj-level-title">🌱 처음 배우는 단계</div>
+
+  <div class="tj-level-text">
+    이 문장은 두 덩어리만 알아두어도 충분합니다.<br><br>
+
+    <strong>申し訳ありません</strong><br>
+    → 죄송합니다.<br><br>
+
+    <strong>売り切れです</strong><br>
+    → 품절입니다.<br><br>
+
+    직원이
+    <strong>売り切れ</strong>라고 말하면
+    찾는 상품의 재고가 없다는 의미입니다.
+  </div>
+
+</div>
+
+
+<div class="tj-vocab">
+
+  <div class="tj-vocab-title">📚 단어를 조금 더 깊게 보기</div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">売る</div>
+    <div class="tj-vocab-reading">うる</div>
+    <div class="tj-vocab-ko">팔다</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">切れる</div>
+    <div class="tj-vocab-reading">きれる</div>
+    <div class="tj-vocab-ko">끊어지다 / 다하다</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">売り切れる</div>
+    <div class="tj-vocab-reading">うりきれる</div>
+    <div class="tj-vocab-ko">다 팔리다</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">売り切れ</div>
+    <div class="tj-vocab-reading">うりきれ</div>
+    <div class="tj-vocab-ko">품절</div>
+  </div>
+
+</div>
+
+
+<div class="tj-teacher">
+
+  <div class="tj-teacher-title">💬 売り切れ는 왜 이런 모양일까요?</div>
+
+  <strong>売り切れ</strong>는 단순히 하나의 단어로 외워도 됩니다.<br><br>
+
+  하지만 조금 더 깊게 보면<br><br>
+
+  <strong>売る</strong> → 팔다<br>
+  <strong>切れる</strong> → 끊어지다, 다하다<br><br>
+
+  라는 두 동사가 연결되어 있습니다.<br><br>
+
+  즉 물건이
+  <strong>“팔려서 완전히 다 없어졌다”</strong>는 이미지에서
+  ‘품절’이라는 의미가 만들어졌다고 이해하면 기억하기 쉽습니다.<br><br>
+
+  여행 중에는 문법적으로 분석하기 전에
+  계산대나 상품 문의에서
+  <strong>売り切れ</strong>라는 말을 들었을 때
+  바로 ‘품절’이라고 알아듣는 것이 더 중요합니다.
+</div>
+
+
+<div class="tj-teacher">
+
+  <div class="tj-teacher-title">💬 申し訳ありません</div>
+
+  <strong>申し訳ありません</strong>은
+  접객 상황에서 매우 자주 들을 수 있는 정중한 사과 표현입니다.<br><br>
+
+  여행자는 직원에게 사과할 때
+  항상 이 표현을 사용할 필요는 없습니다.<br><br>
+
+  여행자가 가볍게 실수했을 때는
+  <strong>すみません</strong>만으로도 충분한 경우가 많습니다.<br><br>
+
+  반면 직원은 상품이 없거나,
+  손님의 요청을 받아줄 수 없거나,
+  문제가 발생했을 때
+  <strong>申し訳ありません</strong>을 사용하는 경우가 많습니다.<br><br>
+
+  따라서 이 표현은
+  <strong>직접 말하기보다 먼저 알아듣는 표현</strong>으로 익혀두어도 좋습니다.
+</div>
+
+
+<hr class="tj-divider">
+
+
+<h3 class="tj-subhead">품절이라면 비슷한 상품을 물어봅시다</h3>
+
+
+<div class="tj-dialogue">
+
+  <span class="tj-role">여행자</span>
+
+  <div class="tj-jp-main">
+    <span class="tj-slot"><ruby>似<rt>に</rt></ruby>たようなもの</span>はありますか。
+  </div>
+
+  <div class="tj-hira">
+    にたような ものは ありますか。
+  </div>
+
+  <div class="tj-ko">
+    비슷한 것은 있나요?
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-basic">
+
+  <div class="tj-level-title">🌱 처음 배우는 단계</div>
+
+  <div class="tj-level-text">
+    처음에는
+    <strong>似たようなもの</strong>를
+    통째로 <strong>“비슷한 것”</strong>이라고 익혀도 됩니다.<br><br>
+
+    따라서<br><br>
+
+    <strong>似たようなものはありますか。</strong><br>
+    → 비슷한 것은 있나요?<br><br>
+
+    라고 하나의 문장으로 기억해 주세요.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-n4">
+
+  <div class="tj-level-title">🌿 조금 더 분해해보기</div>
+
+  <div class="tj-level-text">
+    <strong>似る（にる）</strong>는
+    ‘닮다, 비슷하다’라는 뜻입니다.<br><br>
+
+    <strong>もの</strong>는
+    여기서 ‘것, 물건’이라는 뜻입니다.<br><br>
+
+    따라서
+    <strong>似たようなもの</strong>는
+    ‘비슷한 것, 비슷한 종류의 물건’이라고 이해할 수 있습니다.
+  </div>
+
+</div>
+
+
+<div class="tj-level tj-level-n3">
+
+  <div class="tj-level-title">🌳 JLPT N3 정도라면</div>
+
+  <div class="tj-level-text">
+    문장을 조금 더 자세히 볼 수 있습니다.<br><br>
+
+    <strong>似る → 似た</strong><br><br>
+
+    <strong>似た</strong>가 뒤의 명사를 꾸며주고 있습니다.<br><br>
+
+    여기서 주의할 점은
+    일본어의 <strong>た형</strong>이 사용되었다고 해서
+    한국어에서도 반드시 과거형으로 번역하는 것은 아니라는 점입니다.<br><br>
+
+    <strong>似たもの</strong><br>
+    → 닮았던 것 ❌<br>
+    → 비슷한 것 ⭕<br><br>
+
+    그리고 <strong>ような</strong>가 붙어<br><br>
+
+    <strong>似たようなもの</strong><br>
+    → 비슷한 것 / 그와 비슷한 종류의 것<br><br>
+
+    이라는 자연스러운 표현이 됩니다.
+  </div>
+
+</div>
+
+
+<div class="tj-grammar">
+
+  <div class="tj-grammar-title">📘 似る의 기본 사용법</div>
+
+  <div class="tj-grammar-formula">
+    A は B に 似ています
+  </div>
+
+  <div class="tj-grammar-example">
+    このバッグは私のバッグに似ています。<br>
+    이 가방은 제 가방과 비슷합니다.
+  </div>
+
+  <div class="tj-grammar-example">
+    この商品はさっきの商品に似ています。<br>
+    이 상품은 아까 그 상품과 비슷합니다.
+  </div>
+
+</div>
+
+
+<div class="tj-question-box">
+  <strong>Q. 왜 ‘B와 비슷하다’인데 に를 사용하나요?</strong><br><br>
+
+  한국어 표현을 그대로 옮기면
+  ‘~와’라는 조사 때문에 일본어에서도 と를 사용하고 싶어질 수 있습니다.<br><br>
+
+  하지만 <strong>似る</strong>는 기본적으로
+  <strong>～に似ている</strong>의 형태로 많이 사용합니다.<br><br>
+
+  따라서 단어 하나만 외우기보다
+  <strong>～に似ている = ~와 비슷하다 / ~를 닮았다</strong>
+  라는 형태로 익혀두는 것이 좋습니다.
+</div>
+
+
+<div class="tj-vocab">
+
+  <div class="tj-vocab-title">📚 문장 속 핵심 단어</div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">似る</div>
+    <div class="tj-vocab-reading">にる</div>
+    <div class="tj-vocab-ko">닮다 / 비슷하다</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">似た</div>
+    <div class="tj-vocab-reading">にた</div>
+    <div class="tj-vocab-ko">비슷한 / 닮은</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">ような</div>
+    <div class="tj-vocab-reading">ような</div>
+    <div class="tj-vocab-ko">~와 같은 / ~한 듯한</div>
+  </div>
+
+  <div class="tj-vocab-row">
+    <div class="tj-vocab-jp">もの</div>
+    <div class="tj-vocab-reading">もの</div>
+    <div class="tj-vocab-ko">것 / 물건</div>
+  </div>
+
+</div>
+
+
+<div class="tj-teacher">
+
+  <div class="tj-teacher-title">💬 似たもの와 似たようなもの</div>
+
+  두 표현 모두 상황에 따라
+  ‘비슷한 것’이라고 말할 수 있습니다.<br><br>
+
+  <strong>似たものはありますか。</strong><br>
+  비슷한 것이 있나요?<br><br>
+
+  <strong>似たようなものはありますか。</strong><br>
+  비슷한 종류의 것이 있나요?<br><br>
+
+  여행 회화에서는 둘 다 사용할 수 있습니다.<br><br>
+
+  처음에는 더 자주 사용할 수 있는
+  <strong>似たようなものはありますか。</strong>
+  를 하나의 표현으로 익히고,
+  이후 문법을 공부하면서 구조를 이해해도 좋습니다.
+</div>
+
+
+<div class="tj-deep-dive">
+  🔎 ようだ・ような・ように 자세히 보기 →
+</div>
+
+<div class="tj-deep-dive">
+  🔎 もの와 こと는 어떻게 다를까요? →
+</div>
