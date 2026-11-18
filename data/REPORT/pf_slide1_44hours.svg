@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pfBg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="totalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+    <filter id="pfShadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <rect width="680" height="320" rx="24" fill="url(#pfBg1)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Left Card: Weekday 20h -->
+  <g transform="translate(42, 30)" filter="url(#pfShadow1)">
+    <rect width="268" height="142" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
+    <rect x="20" y="18" width="84" height="24" rx="12" fill="#e0f2fe"/>
+    <text x="62" y="34" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#0369a1" text-anchor="middle">평일 루틴</text>
+
+    <text x="22" y="68" font-family="Pretendard, sans-serif" font-size="14.5" font-weight="700" fill="#334155">평일 하루 1시간 × 20일</text>
+    <text x="22" y="102" font-family="Pretendard, sans-serif" font-size="26" font-weight="900" fill="#0284c7">= 20시간</text>
+
+    <!-- 20 Mini Blocks -->
+    <g transform="translate(22, 116)" fill="#38bdf8">
+      <rect x="0" y="0" width="16" height="9" rx="2.5"/><rect x="22" y="0" width="16" height="9" rx="2.5"/><rect x="44" y="0" width="16" height="9" rx="2.5"/><rect x="66" y="0" width="16" height="9" rx="2.5"/><rect x="88" y="0" width="16" height="9" rx="2.5"/>
+      <rect x="114" y="0" width="16" height="9" rx="2.5" opacity="0.65"/><rect x="136" y="0" width="16" height="9" rx="2.5" opacity="0.65"/><rect x="158" y="0" width="16" height="9" rx="2.5" opacity="0.65"/><rect x="180" y="0" width="16" height="9" rx="2.5" opacity="0.65"/><rect x="202" y="0" width="16" height="9" rx="2.5" opacity="0.65"/>
+    </g>
+  </g>
+
+  <!-- Plus Circle -->
+  <circle cx="340" cy="101" r="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="340" y="107" font-family="Pretendard, sans-serif" font-size="18" font-weight="800" fill="#64748b" text-anchor="middle">+</text>
+
+  <!-- Right Card: Weekend 24h -->
+  <g transform="translate(370, 30)" filter="url(#pfShadow1)">
+    <rect width="268" height="142" rx="18" fill="#ffffff" stroke="#fde68a" stroke-width="1.5"/>
+    <rect x="20" y="18" width="84" height="24" rx="12" fill="#fef3c7"/>
+    <text x="62" y="34" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#b45309" text-anchor="middle">주말 루틴</text>
+
+    <text x="22" y="68" font-family="Pretendard, sans-serif" font-size="14.5" font-weight="700" fill="#334155">주말 하루 3시간 × 8일</text>
+    <text x="22" y="102" font-family="Pretendard, sans-serif" font-size="26" font-weight="900" fill="#d97706">= 24시간</text>
+
+    <!-- 8 Blocks -->
+    <g transform="translate(22, 116)" fill="#f59e0b">
+      <rect x="0" y="0" width="22" height="9" rx="2.5"/><rect x="28" y="0" width="22" height="9" rx="2.5"/><rect x="56" y="0" width="22" height="9" rx="2.5"/><rect x="84" y="0" width="22" height="9" rx="2.5"/>
+      <rect x="116" y="0" width="22" height="9" rx="2.5" opacity="0.7"/><rect x="144" y="0" width="22" height="9" rx="2.5" opacity="0.7"/><rect x="172" y="0" width="22" height="9" rx="2.5" opacity="0.7"/><rect x="200" y="0" width="22" height="9" rx="2.5" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Bottom Total Accumulated Bar -->
+  <g transform="translate(42, 192)" filter="url(#pfShadow1)">
+    <rect width="596" height="96" rx="20" fill="url(#totalGrad)" stroke="#10b981" stroke-width="2"/>
+    <text x="32" y="38" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="700" fill="#065f46">무리하지 않고 매일 조금씩 쌓아 올린 한 달 누적 시간</text>
+    <text x="32" y="72" font-family="Pretendard, sans-serif" font-size="28" font-weight="900" fill="#047857">총 44시간 (Hours)</text>
+
+    <rect x="444" y="27" width="124" height="42" rx="14" fill="#065f46"/>
+    <text x="506" y="53" font-family="Pretendard, sans-serif" font-size="14" font-weight="800" fill="#ecfdf5" text-anchor="middle">충분한 시간 확보</text>
+  </g>
+</svg>

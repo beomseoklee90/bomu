@@ -1,0 +1,431 @@
+한 달 44시간이면 충분한데, 왜 우리는 시작하지 못할까? - 완벽주의와 번아웃의 원리
+<style>
+  @keyframes pfFadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pf-slide-deck {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #2c3545;
+    line-height: 1.75;
+    word-break: keep-all;
+    width: 100%;
+    max-height: 86vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.18);
+  }
+
+  .pf-slide-deck * {
+    box-sizing: border-box;
+  }
+
+  .pf-slide-deck::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .pf-slide-deck::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+
+  .pf-slide-deck::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+  }
+
+  .pf-slide-deck .pf-slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 54px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.45);
+  }
+
+  .pf-slide-deck .pf-slide-inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    animation: pfFadeSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .pf-slide-deck .pf-tone-1 {
+    background: linear-gradient(145deg, #fbfaf8 0%, #f3f6f9 100%);
+  }
+
+  .pf-slide-deck .pf-tone-2 {
+    background: linear-gradient(145deg, #fdfbf7 0%, #f4f7fb 100%);
+  }
+
+  .pf-slide-deck .pf-tone-3 {
+    background: linear-gradient(145deg, #f6f9fc 0%, #f8fafc 100%);
+  }
+
+  .pf-slide-deck .pf-tone-4 {
+    background: linear-gradient(145deg, #f8fafc 0%, #f3f8f6 100%);
+  }
+
+  .pf-slide-deck .pf-tone-5 {
+    background: linear-gradient(145deg, #f4f9f8 0%, #f7f9fc 100%);
+  }
+
+  .pf-slide-deck .pf-tone-6 {
+    background: linear-gradient(145deg, #f6fbf8 0%, #f8fafc 100%);
+  }
+
+  .pf-slide-deck .pf-header-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .pf-slide-deck .pf-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .pf-slide-deck .pf-page-indicator {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+  }
+
+  .pf-slide-deck .pf-slide-title {
+    margin: 0 0 22px;
+    font-size: clamp(1.35rem, 2.3vw, 1.82rem);
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+
+  .pf-slide-deck .pf-visual-frame {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid rgba(203, 213, 225, 0.7);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .pf-slide-deck .pf-visual-frame img {
+    display: block;
+    width: 100%;
+    max-height: 295px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .pf-slide-deck .pf-key-box {
+    background: #ffffff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 16px 16px 0;
+    padding: 18px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+  }
+
+  .pf-slide-deck .pf-key-box.amber {
+    border-left-color: #f59e0b;
+  }
+
+  .pf-slide-deck .pf-key-box.coral {
+    border-left-color: #ea580c;
+  }
+
+  .pf-slide-deck .pf-key-box.emerald {
+    border-left-color: #10b981;
+  }
+
+  .pf-slide-deck .pf-key-text {
+    margin: 0;
+    font-size: clamp(1.06rem, 1.75vw, 1.24rem);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.55;
+  }
+
+  .pf-slide-deck .pf-sub-text {
+    margin: 0;
+    font-size: 1.01rem;
+    color: #475569;
+    line-height: 1.8;
+    padding: 0 4px;
+  }
+
+  .pf-slide-deck .pf-ref-box {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .pf-slide-deck .pf-ref-title {
+    margin: 0 0 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #334155;
+    letter-spacing: 0.02em;
+  }
+
+  .pf-slide-deck .pf-ref-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .pf-slide-deck .pf-ref-list li {
+    margin-bottom: 4px;
+  }
+
+  .pf-slide-deck .pf-ref-list a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+  }
+
+  .pf-slide-deck .pf-ref-list a:hover {
+    color: #0369a1;
+  }
+
+  .pf-slide-deck .pf-scroll-hint {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .pf-slide-deck {
+      max-height: none;
+      scroll-snap-type: y proximity;
+    }
+
+    .pf-slide-deck .pf-slide {
+      min-height: 92vh;
+      padding: 36px 20px;
+    }
+
+    .pf-slide-deck .pf-visual-frame {
+      padding: 12px;
+    }
+  }
+</style>
+
+<div class="pf-slide-deck">
+  <!-- 슬라이드 1 -->
+  <section class="pf-slide pf-tone-1">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 01 · 도입</span>
+        <span class="pf-page-indicator">01 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">한 달 44시간이라는 충분한 시간</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide1_44hours.svg" alt="평일 1시간 20일과 주말 3시간 8일이 더해져 총 44시간이 쌓이는 계산 다이어그램" />
+      </div>
+
+      <div class="pf-key-box">
+        <p class="pf-key-text">
+          평일 하루 한 시간씩만 해도 한 달이면 스무 시간, 주말에 세 시간씩만 더해도 총 마흔네 시간이라는 적지 않은 시간이 쌓입니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        이처럼 하루에 한두 시간씩만 꾸준히 해도 충분하다는 걸 머리로는 알면서도, 막상 시작선 앞에서 멈춰 서게 되는 이유는 단순히 의지가 약해서만은 아닙니다.
+      </p>
+
+      <div class="pf-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 2 -->
+  <section class="pf-slide pf-tone-2">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 02 · 완벽주의의 함정</span>
+        <span class="pf-page-indicator">02 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">'전부 아니면 전무(All-or-Nothing)' 사고</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide2_allornothing.svg" alt="100% 완벽한 실행 아니면 0% 포기 두 가지 버튼만 존재하는 스위치 일러스트" />
+      </div>
+
+      <div class="pf-key-box amber">
+        <p class="pf-key-text">
+          실행을 가로막는 주요 요인 중 하나는 기준을 지나치게 높게 잡는 완벽주의적 성향입니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        "오늘 제대로 각 잡고 서너 시간 못 할 거면 차라리 안 하는 게 낫다"는 이분법적 기준이 세워지면, 하루 한 시간의 가벼운 시도는 의미 없는 것으로 취급되어 시작 자체를 미루게 됩니다.
+      </p>
+
+      <div class="pf-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 3 -->
+  <section class="pf-slide pf-tone-3">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 03 · 에너지 소진</span>
+        <span class="pf-page-indicator">03 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">보이지 않는 에너지 고갈: 시작 전 찾아오는 소진</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide3_energy.svg" alt="행동을 시작하기도 전에 머릿속 시뮬레이션과 압박감으로 에너지 게이지가 소모되는 개념도" />
+      </div>
+
+      <div class="pf-key-box coral">
+        <p class="pf-key-text">
+          완벽하게 해내야 한다는 압박감과 과도한 계획은 실제 행동을 시작하기도 전에 인지적·정서적 에너지를 빠르게 소모시킵니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        이렇게 시작 전부터 에너지를 미리 다 써버린 소진(번아웃) 상태에서는, 원래라면 가볍게 해낼 수 있는 한 시간짜리 과제조차 무거운 짐처럼 느껴집니다.
+      </p>
+
+      <div class="pf-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 4 -->
+  <section class="pf-slide pf-tone-4">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 04 · 자기보호 반응</span>
+        <span class="pf-page-indicator">04 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">뇌의 자기보호 반응: 게으름이 아닌 '과부하 회피'</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide4_defense.svg" alt="과도한 부하 신호 앞에서 뇌가 일시 정지 브레이크를 걸어 시스템을 보호하는 다이어그램" />
+      </div>
+
+      <div class="pf-key-box">
+        <p class="pf-key-text">
+          심리학에서는 미루기와 무기력을 단순한 게으름이 아니라, 과도한 부담감으로부터 자신을 보호하려는 뇌의 방어적 회피 반응으로 설명하는 경우가 많습니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        즉, 책상 앞에서 아무것도 하지 못하고 멈춰 있는 상태는 뇌가 과부하를 막기 위해 일시적으로 브레이크를 밟은 결과에 가깝습니다.
+      </p>
+
+      <div class="pf-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 5 -->
+  <section class="pf-slide pf-tone-5">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 05 · 진입 장벽 낮추기</span>
+        <span class="pf-page-indicator">05 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">악순환 끊어내기: '완수'가 아닌 '진입'으로 기준 낮추기</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide5_hurdle.svg" alt="높은 허들이 낮은 문턱으로 낮아지며 쉽게 넘어가는 일러스트" />
+      </div>
+
+      <div class="pf-key-box emerald">
+        <p class="pf-key-text">
+          이 흐름을 바꾸려면 목표의 크기를 줄이는 것을 넘어, 성취의 기준 자체를 '결과'에서 '진입'으로 옮기는 것이 도움이 됩니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        "오늘 분량을 완벽히 끝내기"가 아니라 "일단 자리에 앉아 십오 분만 펼쳐보기"처럼 실패하기 어려울 만큼 진입 장벽을 낮추면 뇌의 부담 신호가 크게 줄어듭니다.
+      </p>
+
+      <div class="pf-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 6 -->
+  <section class="pf-slide pf-tone-6">
+    <div class="pf-slide-inner">
+      <div class="pf-header-meta">
+        <span class="pf-badge">SLIDE 06 · 지속 가능한 리듬</span>
+        <span class="pf-page-indicator">06 / 06</span>
+      </div>
+      <h2 class="pf-slide-title">결론: 한 달 44시간을 만드는 지속 가능한 리듬</h2>
+
+      <div class="pf-visual-frame">
+        <img src="/data/REPORT/pf_slide6_rhythm.svg" alt="무리한 스파이크 그래프 대신 완만하고 일정한 파형으로 44시간이 채워지는 리듬 그래프" />
+      </div>
+
+      <div class="pf-key-box emerald">
+        <p class="pf-key-text">
+          번아웃 없이 멀리 가기 위해 필요한 것은 한 번의 무리한 몰입이 아니라, 에너지를 남기며 매일 한두 시간씩 이어가는 지속 가능한 리듬입니다.
+        </p>
+      </div>
+
+      <p class="pf-sub-text">
+        오늘 당장 백 퍼센트를 채우지 못했더라도 계획한 한 시간을 지킨 자신을 인정해 줄 때, 내일 다시 시작할 수 있는 여유가 생깁니다.
+      </p>
+
+      <div class="pf-ref-box">
+        <p class="pf-ref-title">📚 참고 자료 및 심리·행동과학 칼럼</p>
+        <ul class="pf-ref-list">
+          <li>
+            <strong>연세대학교 상담·코칭지원센터 연구실 (심리학 칼럼)</strong> — 완벽주의 성향과 지연행동(미루기)의 심리적 기제 및 정서 조절:
+            <a href="https://yonseicounselinglab.com/25" target="_blank" rel="noopener noreferrer">
+              https://yonseicounselinglab.com/25
+            </a>
+          </li>
+          <li>
+            <strong>American Psychological Association (미국심리학회 APA)</strong> — 「The psychology of procrastination: Why people put off important tasks」:
+            <a href="https://www.apa.org/gradpsych/2010/01/procrastination" target="_blank" rel="noopener noreferrer">
+              https://www.apa.org/gradpsych/2010/01/procrastination
+            </a>
+          </li>
+          <li>
+            <strong>Harvard Gazette (하버드 대학교 건강·심리 해설)</strong> — 「The perils of perfectionism」 (이분법적 사고와 번아웃 예방):
+            <a href="https://news.harvard.edu/gazette/story/2025/12/the-perils-of-perfectionism/" target="_blank" rel="noopener noreferrer">
+              https://news.harvard.edu/gazette/story/2025/12/the-perils-of-perfectionism/
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
