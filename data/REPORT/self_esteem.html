@@ -1,0 +1,463 @@
+자존심과 자존감의 차이 - 흔들리지 않는 내면의 기준 만들기
+<style>
+  @keyframes seFadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .se-slide-deck {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #2c3545;
+    line-height: 1.75;
+    word-break: keep-all;
+    width: 100%;
+    max-height: 86vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.18);
+  }
+
+  .se-slide-deck * {
+    box-sizing: border-box;
+  }
+
+  .se-slide-deck::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .se-slide-deck::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+
+  .se-slide-deck::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+  }
+
+  .se-slide-deck .se-slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 56px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.45);
+  }
+
+  .se-slide-deck .se-slide-inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    animation: seFadeSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .se-slide-deck .se-tone-1 {
+    background: linear-gradient(145deg, #fbfaf8 0%, #f3f6f9 100%);
+  }
+
+  .se-slide-deck .se-tone-2 {
+    background: linear-gradient(145deg, #f7f9fc 0%, #f2f7f5 100%);
+  }
+
+  .se-slide-deck .se-tone-3 {
+    background: linear-gradient(145deg, #f5f9f7 0%, #f8fafc 100%);
+  }
+
+  .se-slide-deck .se-tone-4 {
+    background: linear-gradient(145deg, #f8fafc 0%, #f3f6fb 100%);
+  }
+
+  .se-slide-deck .se-tone-5 {
+    background: linear-gradient(145deg, #f6f9fc 0%, #f4f9f7 100%);
+  }
+
+  .se-slide-deck .se-tone-6 {
+    background: linear-gradient(145deg, #fcfbf7 0%, #f6f8fb 100%);
+  }
+
+  .se-slide-deck .se-header-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .se-slide-deck .se-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .se-slide-deck .se-page-indicator {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+  }
+
+  .se-slide-deck .se-slide-title {
+    margin: 0 0 24px;
+    font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+
+  .se-slide-deck .se-visual-frame {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid rgba(203, 213, 225, 0.7);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    margin-bottom: 26px;
+    overflow: hidden;
+  }
+
+  .se-slide-deck .se-visual-frame img {
+    display: block;
+    width: 100%;
+    max-height: 310px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .se-slide-deck .se-key-box {
+    background: #ffffff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 16px 16px 0;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+  }
+
+  .se-slide-deck .se-key-box.emerald {
+    border-left-color: #10b981;
+  }
+
+  .se-slide-deck .se-key-box.amber {
+    border-left-color: #f59e0b;
+  }
+
+  .se-slide-deck .se-key-text {
+    margin: 0;
+    font-size: clamp(1.08rem, 1.8vw, 1.26rem);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.55;
+  }
+
+  .se-slide-deck .se-sub-text {
+    margin: 0;
+    font-size: 1.02rem;
+    color: #475569;
+    line-height: 1.8;
+    padding: 0 4px;
+  }
+
+  /* Slide 2 Contrast Cards */
+  .se-slide-deck .se-contrast-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 8px;
+  }
+
+  .se-slide-deck .se-contrast-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px 26px;
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .se-slide-deck .se-contrast-card.outward {
+    border-top: 5px solid #fb923c;
+    background: linear-gradient(180deg, #fffaf5 0%, #ffffff 45%);
+  }
+
+  .se-slide-deck .se-contrast-card.inward {
+    border-top: 5px solid #10b981;
+    background: linear-gradient(180deg, #f4fbf7 0%, #ffffff 45%);
+  }
+
+  .se-slide-deck .se-card-tag {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .se-slide-deck .se-contrast-card.outward .se-card-tag {
+    background: #ffedd5;
+    color: #c2410c;
+  }
+
+  .se-slide-deck .se-contrast-card.inward .se-card-tag {
+    background: #dcfce7;
+    color: #15803d;
+  }
+
+  .se-slide-deck .se-card-heading {
+    margin: 0;
+    font-size: 1.24rem;
+    font-weight: 800;
+    color: #1e293b;
+  }
+
+  .se-slide-deck .se-card-quote {
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: #334155;
+  }
+
+  .se-slide-deck .se-card-desc {
+    margin: 0;
+    font-size: 0.98rem;
+    color: #475569;
+    line-height: 1.75;
+  }
+
+  .se-slide-deck .se-citation {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px dashed #cbd5e1;
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .se-slide-deck .se-scroll-hint {
+    margin-top: 26px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .se-slide-deck {
+      max-height: none;
+      scroll-snap-type: y proximity;
+    }
+
+    .se-slide-deck .se-slide {
+      min-height: 92vh;
+      padding: 36px 20px;
+    }
+
+    .se-slide-deck .se-contrast-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .se-slide-deck .se-visual-frame {
+      padding: 12px;
+    }
+  }
+</style>
+
+<div class="se-slide-deck">
+  <!-- 슬라이드 1 -->
+  <section class="se-slide se-tone-1">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 01 · 도입</span>
+        <span class="se-page-indicator">01 / 06</span>
+      </div>
+      <h2 class="se-slide-title">비슷한 듯 다른 두 가지 마음</h2>
+
+      <div class="se-visual-frame">
+        <img src="/data/REPORT/slide1_direction.svg" alt="바깥쪽(타인)을 향하는 화살표와 안쪽(나)을 향하는 화살표 개념도" />
+      </div>
+
+      <div class="se-key-box">
+        <p class="se-key-text">
+          칭찬 한마디에 기분이 좋다가도, 사소한 말 한마디에 하루 종일 마음이 쓰인 적이 있나요?
+        </p>
+      </div>
+
+      <p class="se-sub-text">
+        비슷한 말처럼 쓰이는 '자존심'과 '자존감'은 사실 우리의 시선이 어디를 향하고 있는지에 따라 서로 다른 방향을 가리킵니다.
+      </p>
+
+      <div class="se-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 2 -->
+  <section class="se-slide se-tone-2">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 02 · 시선의 방향</span>
+        <span class="se-page-indicator">02 / 06</span>
+      </div>
+      <h2 class="se-slide-title">외부로 향하는가, 내부로 향하는가</h2>
+
+      <div class="se-contrast-grid">
+        <div class="se-contrast-card outward">
+          <span class="se-card-tag">판단 대상: 타인</span>
+          <h3 class="se-card-heading">자존심 (외부로 향하는 시선)</h3>
+          <p class="se-card-quote">
+            "나는 지금 타인에게 충분히 존중받고 있는가?"
+          </p>
+          <p class="se-card-desc">
+            판단의 대상이 '타인'에 가깝습니다. "나는 지금 타인에게 충분히 존중받고 있는가?"를 중요하게 살피는 마음입니다.
+          </p>
+        </div>
+
+        <div class="se-contrast-card inward">
+          <span class="se-card-tag">판단 대상: 나 자신</span>
+          <h3 class="se-card-heading">자존감 (내부로 향하는 시선)</h3>
+          <p class="se-card-quote">
+            "나는 지금 내 자신을 충분히 존중하고 있는가?"
+          </p>
+          <p class="se-card-desc">
+            판단의 대상이 '나 자신'입니다. "나는 지금 내 자신을 충분히 존중하고 있는가?"를 스스로에게 묻는 마음입니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="se-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 3 -->
+  <section class="se-slide se-tone-3">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 03 · 내면의 기준</span>
+        <span class="se-page-indicator">03 / 06</span>
+      </div>
+      <h2 class="se-slide-title">내면의 기준과 자연스러운 방어 반응</h2>
+
+      <div class="se-visual-frame">
+        <img src="/data/REPORT/slide3_tree.svg" alt="잔잔한 중심축을 가진 나무와 외부 바람을 막아주는 보호막 그래픽" />
+      </div>
+
+      <div class="se-key-box emerald">
+        <p class="se-key-text">
+          가치 판단의 기준을 내 안에 두면, 외부의 시선이나 일시적인 평가에 비교적 덜 흔들릴 수 있습니다.
+        </p>
+      </div>
+
+      <p class="se-sub-text">
+        물론 누군가 나를 직접적으로 공격하거나 무례하게 대할 때 방어적인 마음이 드는 것은 지극히 자연스러운 반응입니다. 나를 보호하려는 건강한 본능과, 타인의 모든 시선에 일일이 반응하는 것은 구분해서 바라볼 수 있습니다.
+      </p>
+
+      <div class="se-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 4 -->
+  <section class="se-slide se-tone-4">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 04 · 심리학 연구</span>
+        <span class="se-page-indicator">04 / 06</span>
+      </div>
+      <h2 class="se-slide-title">심리학 연구가 말하는 핵심: 높낮이보다 '안정성'</h2>
+
+      <div class="se-visual-frame">
+        <img src="/data/REPORT/slide4_stability.svg" alt="출렁이는 파동선과 완만하고 고르게 이어지는 안정적인 선 비교 그래프" />
+      </div>
+
+      <div class="se-key-box emerald">
+        <p class="se-key-text">
+          단순히 자존감이 '높다, 낮다'보다 중요한 것은 '얼마나 고르게 유지되는가'입니다.
+        </p>
+      </div>
+
+      <p class="se-sub-text">
+        국내 심리학 연구에서는 전반적인 자존감 점수 자체보다, 외부 피드백에 따라 자기 가치가 크게 출렁이지 않는 '자존감 안정성'과 내가 어떤 사람인지 분명히 이해하는 '자기개념 명료성'이 일상 속 스트레스와 불안을 줄이는 데 더 큰 역할을 한다고 설명합니다.
+      </p>
+
+      <div class="se-citation">
+        출처: 고현석, 민경환, 김민희 (2012), 「자존감, 자존감 안정성, 자기개념 명료성과 심리적 적응과의 관계 탐색」, 한국심리학회지: 일반, 31(3), 825-846.
+      </div>
+
+      <div class="se-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 5 -->
+  <section class="se-slide se-tone-5">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 05 · 시선의 균형</span>
+        <span class="se-page-indicator">05 / 06</span>
+      </div>
+      <h2 class="se-slide-title">시선의 균형: 타인의 시선과 나의 기준 사이 거리두기</h2>
+
+      <div class="se-visual-frame">
+        <img src="/data/REPORT/slide5_separation.svg" alt="외부에서 보는 나와 내가 바라보는 나가 점선으로 느슨하게 연결되어 있고 내가 바라보는 나가 더 크고 선명하게 중심을 잡는 벤 다이어그램" />
+      </div>
+
+      <div class="se-key-box">
+        <p class="se-key-text">
+          '외부에서 보는 나'와 '내가 바라보는 나'를 100% 분리할 수는 없지만, 마음속 비중은 조절할 수 있습니다.
+        </p>
+      </div>
+
+      <p class="se-sub-text">
+        우리는 사회적 존재이기에 타인의 시선을 완전히 지울 수는 없습니다. 다만 타인의 평가를 내 전체 가치가 아닌 '참고 의견' 정도로 한 걸음 떨어뜨려 두면, 굳이 자존심을 앞세워 나를 증명하려 애쓰지 않아도 마음이 한결 편안해집니다.
+      </p>
+
+      <div class="se-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 6 -->
+  <section class="se-slide se-tone-6">
+    <div class="se-slide-inner">
+      <div class="se-header-meta">
+        <span class="se-badge">SLIDE 06 · 결론</span>
+        <span class="se-page-indicator">06 / 06</span>
+      </div>
+      <h2 class="se-slide-title">나만의 속도로 자존감 가꾸기</h2>
+
+      <div class="se-visual-frame">
+        <img src="/data/REPORT/slide6_journey.svg" alt="과거와 현재의 발자국이 이어지며 따뜻한 빛이 켜지는 일러스트" />
+      </div>
+
+      <div class="se-key-box amber">
+        <p class="se-key-text">
+          안정적인 자존감은 과거와 현재의 나를 있는 그대로 받아들이는 데서 시작됩니다.
+        </p>
+      </div>
+
+      <p class="se-sub-text">
+        완벽하지 않았던 과거의 나도, 지금 과정을 겪고 있는 현재의 나도 포용하고 용서할 수 있을 때 스스로를 존중하는 힘이 자라납니다. 거창한 기준이 아니어도 괜찮으니, 일상 속에서 나 자신을 존중할 수 있는 나만의 작은 방법을 하나씩 찾아가 보세요.
+      </p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="deskBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <filter id="cardShadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <rect width="680" height="320" rx="24" fill="url(#deskBg)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Left: Task / Study Document -->
+  <g transform="translate(55, 52)" filter="url(#cardShadow1)">
+    <rect width="190" height="216" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="24" y="24" width="76" height="22" rx="11" fill="#e2e8f0"/>
+    <text x="62" y="39" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">현재 할 일</text>
+    <line x1="24" y1="68" x2="160" y2="68" stroke="#cbd5e1" stroke-width="6" stroke-linecap="round"/>
+    <line x1="24" y1="90" x2="140" y2="90" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="24" y1="112" x2="152" y2="112" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="24" y1="134" x2="110" y2="134" stroke="#e2e8f0" stroke-width="6" stroke-linecap="round"/>
+    <text x="95" y="188" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">책상 위 과제</text>
+  </g>
+
+  <!-- Center: Attention Node & Diverging Arrows -->
+  <g transform="translate(340, 160)">
+    <circle cx="0" cy="0" r="36" fill="#ffffff" stroke="#64748b" stroke-width="2"/>
+    <text x="0" y="-4" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#334155" text-anchor="middle">주의력</text>
+    <text x="0" y="13" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="600" fill="#64748b" text-anchor="middle">(시선)</text>
+
+    <!-- Weak Arrow to Left Task -->
+    <path d="M -44 0 L -82 0" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4 4"/>
+    <polygon points="-86,0 -78,-5 -78,5" fill="#94a3b8"/>
+
+    <!-- Strong Pulled Arrows to Right Smartphone -->
+    <path d="M 42 -14 C 65 -26, 82 -26, 102 -18" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <polygon points="107,-16 97,-22 99,-12" fill="#f59e0b"/>
+
+    <path d="M 44 0 L 100 0" stroke="#ea580c" stroke-width="3"/>
+    <polygon points="106,0 96,-6 96,6" fill="#ea580c"/>
+
+    <path d="M 42 14 C 65 26, 82 26, 102 18" fill="none" stroke="#f59e0b" stroke-width="2.5"/>
+    <polygon points="107,16 99,12 97,22" fill="#f59e0b"/>
+  </g>
+
+  <!-- Right: Smartphone & Environmental Triggers -->
+  <g transform="translate(460, 44)" filter="url(#cardShadow1)">
+    <rect x="20" y="8" width="128" height="216" rx="22" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <rect x="28" y="24" width="112" height="184" rx="14" fill="#ffffff"/>
+    <rect x="64" y="14" width="40" height="4" rx="2" fill="#475569"/>
+
+    <!-- Feed Cards inside Phone -->
+    <rect x="40" y="40" width="88" height="36" rx="8" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+    <circle cx="54" cy="58" r="6" fill="#fb923c"/>
+    <line x1="66" y1="54" x2="114" y2="54" stroke="#fdba74" stroke-width="4" stroke-linecap="round"/>
+    <line x1="66" y1="64" x2="98" y2="64" stroke="#fed7aa" stroke-width="4" stroke-linecap="round"/>
+
+    <rect x="40" y="86" width="88" height="36" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+    <circle cx="54" cy="104" r="6" fill="#38bdf8"/>
+    <line x1="66" y1="100" x2="114" y2="100" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round"/>
+    <line x1="66" y1="110" x2="98" y2="110" stroke="#bae6fd" stroke-width="4" stroke-linecap="round"/>
+
+    <rect x="40" y="132" width="88" height="36" rx="8" fill="#fdf4ff" stroke="#f5d0fe" stroke-width="1.5"/>
+    <circle cx="54" cy="150" r="6" fill="#e879f9"/>
+    <line x1="66" y1="146" x2="114" y2="146" stroke="#f0abfc" stroke-width="4" stroke-linecap="round"/>
+
+    <text x="84" y="194" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#c2410c" text-anchor="middle">보상·습관·환경 자극</text>
+  </g>
+</svg>

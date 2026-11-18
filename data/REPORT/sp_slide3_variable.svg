@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <text x="340" y="38" font-family="Pretendard, sans-serif" font-size="13" font-weight="800" fill="#334155" text-anchor="middle">화면을 내릴 때마다 예측할 수 없이 등장하는 '간헐적 보상(Variable Reward)' 구조</text>
+
+  <!-- Timeline / Scroll Track -->
+  <line x1="65" y1="155" x2="615" y2="155" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Item 1: Mundane -->
+  <g transform="translate(105, 155)">
+    <rect x="-38" y="-52" width="76" height="104" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="0" y="-10" font-family="Pretendard, sans-serif" font-size="18" text-anchor="middle">📄</text>
+    <text x="0" y="18" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">평범한 글</text>
+    <text x="0" y="36" font-family="Pretendard, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">(보상 낮음)</text>
+  </g>
+
+  <!-- Item 2: New Notification (Reward!) -->
+  <g transform="translate(215, 145)">
+    <rect x="-44" y="-64" width="88" height="120" rx="16" fill="#fff7ed" stroke="#fb923c" stroke-width="2.5"/>
+    <text x="0" y="-18" font-family="Pretendard, sans-serif" font-size="22" text-anchor="middle">🔔</text>
+    <text x="0" y="12" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#c2410c" text-anchor="middle">새 알림 등장!</text>
+    <text x="0" y="32" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="700" fill="#ea580c" text-anchor="middle">기대 회로 자극</text>
+  </g>
+
+  <!-- Item 3: Mundane -->
+  <g transform="translate(325, 155)">
+    <rect x="-38" y="-52" width="76" height="104" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="0" y="-10" font-family="Pretendard, sans-serif" font-size="18" text-anchor="middle">📰</text>
+    <text x="0" y="18" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">익숙한 정보</text>
+    <text x="0" y="36" font-family="Pretendard, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">(스쳐 지나감)</text>
+  </g>
+
+  <!-- Item 4: Mundane -->
+  <g transform="translate(425, 155)">
+    <rect x="-38" y="-52" width="76" height="104" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="0" y="-10" font-family="Pretendard, sans-serif" font-size="18" text-anchor="middle">💬</text>
+    <text x="0" y="18" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">일반 피드</text>
+    <text x="0" y="36" font-family="Pretendard, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">(다음 탐색)</text>
+  </g>
+
+  <!-- Item 5: Exciting New Video (Reward!) -->
+  <g transform="translate(545, 145)">
+    <rect x="-48" y="-64" width="96" height="120" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5"/>
+    <text x="0" y="-18" font-family="Pretendard, sans-serif" font-size="22" text-anchor="middle">🎬</text>
+    <text x="0" y="12" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#1d4ed8" text-anchor="middle">흥미로운 새 영상!</text>
+    <text x="0" y="32" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="700" fill="#2563eb" text-anchor="middle">예상 밖 보상</text>
+  </g>
+
+  <!-- Loop Feedback Arrow at Bottom -->
+  <path d="M 545 225 C 545 275, 155 275, 105 225" fill="none" stroke="#64748b" stroke-width="2" stroke-dasharray="6 4"/>
+  <polygon points="103,220 101,231 111,227" fill="#64748b"/>
+  <rect x="215" y="250" width="250" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="340" y="268" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#334155" text-anchor="middle">🔄 불규칙한 등장 ➔ 다음 자극을 계속 탐색</text>
+</svg>
