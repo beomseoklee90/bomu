@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" width="100%" height="100%">
+  <rect width="680" height="330" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- 1. Ti (Top-Left): Internal Logic & Definition -->
+  <g transform="translate(32, 24)">
+    <rect width="296" height="132" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="18" y="16" width="108" height="24" rx="12" fill="#f1f5f9"/>
+    <text x="72" y="32" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="800" fill="#334155" text-anchor="middle">내향 사고 (Ti)</text>
+
+    <!-- Visual: Interlocking Logic Nodes -->
+    <g transform="translate(24, 58)">
+      <rect x="0" y="8" width="28" height="28" rx="6" fill="#e2e8f0" stroke="#475569" stroke-width="1.8"/>
+      <line x1="28" y1="22" x2="42" y2="22" stroke="#475569" stroke-width="2"/>
+      <rect x="42" y="8" width="28" height="28" rx="6" fill="#334155"/>
+      <text x="56" y="27" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">?</text>
+    </g>
+
+    <text x="118" y="68" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b">논리적 일관성과 모순 점검</text>
+    <text x="118" y="90" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">전제와 인과관계, 개념 정의의</text>
+    <text x="118" y="108" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">정합성을 짚어내는 질문 선호</text>
+  </g>
+
+  <!-- 2. Te (Top-Right): Top-Down Conclusion & Efficiency -->
+  <g transform="translate(352, 24)">
+    <rect width="296" height="132" rx="18" fill="#ffffff" stroke="#bae6fd" stroke-width="1.5"/>
+    <rect x="18" y="16" width="108" height="24" rx="12" fill="#e0f2fe"/>
+    <text x="72" y="32" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="800" fill="#0369a1" text-anchor="middle">외향 사고 (Te)</text>
+
+    <!-- Visual: Conclusion First Bar Chart -->
+    <g transform="translate(26, 56)">
+      <rect x="0" y="0" width="64" height="16" rx="4" fill="#0284c7"/>
+      <text x="32" y="12" font-family="Pretendard, sans-serif" font-size="9.5" font-weight="800" fill="#ffffff" text-anchor="middle">결론 우선</text>
+      <rect x="0" y="22" width="46" height="10" rx="3" fill="#bae6fd"/>
+      <rect x="0" y="36" width="54" height="10" rx="3" fill="#bae6fd"/>
+    </g>
+
+    <text x="118" y="68" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b">결론 중심의 두괄식 정리</text>
+    <text x="118" y="90" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">목표 달성 효율과 결과를 중시,</text>
+    <text x="118" y="108" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">수식어를 줄이고 결론부터 제시</text>
+  </g>
+
+  <!-- 3. Fi (Bottom-Left): Inner Value & Authenticity -->
+  <g transform="translate(32, 174)">
+    <rect width="296" height="132" rx="18" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.5"/>
+    <rect x="18" y="16" width="108" height="24" rx="12" fill="#fce7f3"/>
+    <text x="72" y="32" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="800" fill="#be185d" text-anchor="middle">내향 감정 (Fi)</text>
+
+    <!-- Visual: Inner Compass / Core Value -->
+    <g transform="translate(26, 56)">
+      <circle cx="32" cy="24" r="22" fill="#fdf2f8" stroke="#f472b6" stroke-width="2"/>
+      <polygon points="32,10 38,24 32,38 26,24" fill="#db2777"/>
+    </g>
+
+    <text x="118" y="68" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b">내면의 진정성과 분명한 주관</text>
+    <text x="118" y="90" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">개인의 가치관을 기준으로 삼아</text>
+    <text x="118" y="108" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">말수는 적어도 호불호·주관 명확</text>
+  </g>
+
+  <!-- 4. Fe (Bottom-Right): Relational Harmony & Cushioning -->
+  <g transform="translate(352, 174)">
+    <rect width="296" height="132" rx="18" fill="#ffffff" stroke="#fed7aa" stroke-width="1.5"/>
+    <rect x="18" y="16" width="108" height="24" rx="12" fill="#ffedd5"/>
+    <text x="72" y="32" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="800" fill="#c2410c" text-anchor="middle">외향 감정 (Fe)</text>
+
+    <!-- Visual: Connected Warm Circles -->
+    <g transform="translate(22, 56)">
+      <circle cx="24" cy="24" r="16" fill="#ffedd5" stroke="#fb923c" stroke-width="2"/>
+      <circle cx="46" cy="24" r="16" fill="#fed7aa" stroke="#ea580c" stroke-width="2" opacity="0.85"/>
+    </g>
+
+    <text x="118" y="68" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b">공감 호응과 배려형 완충 화법</text>
+    <text x="118" y="90" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">타인의 감정과 분위기를 고려해</text>
+    <text x="118" y="108" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#475569">부드러운 완충 표현과 호응 활용</text>
+  </g>
+</svg>

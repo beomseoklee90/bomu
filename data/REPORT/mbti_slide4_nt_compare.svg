@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Common Header: NT Analyst Trait -->
+  <rect x="165" y="18" width="350" height="30" rx="15" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="340" y="37" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#334155" text-anchor="middle">공통점: 직관(N) + 사고(T) 분석가형 · 효율과 시스템을 중시</text>
+
+  <!-- Left Card: ENTJ (Te Dominant -> Ni Auxiliary) -->
+  <g transform="translate(36, 62)">
+    <rect width="284" height="232" rx="20" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+    <rect x="20" y="18" width="128" height="26" rx="13" fill="#0284c7"/>
+    <text x="84" y="35" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">ENTJ (Te 주기능)</text>
+
+    <text x="20" y="72" font-family="Pretendard, sans-serif" font-size="16" font-weight="900" fill="#0c4a6e">목표 달성 '실행 효율' 우선</text>
+    <text x="20" y="96" font-family="Pretendard, sans-serif" font-size="12" font-weight="600" fill="#475569">외향 사고(Te) 1순위 ➔ 내향 직관(Ni) 2순위</text>
+
+    <!-- Visual Step Bars -->
+    <g transform="translate(20, 114)">
+      <rect x="0" y="0" width="244" height="44" rx="10" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="1.5"/>
+      <text x="122" y="20" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">🎯 "어떻게 가장 빠르게 결과를 낼까?"</text>
+      <text x="122" y="36" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#0284c7" text-anchor="middle">실행 속도 · 자원 배치 · 명확한 결론</text>
+    </g>
+
+    <text x="20" y="186" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#334155">대표 화법 경향:</text>
+    <text x="20" y="206" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#64748b">"그래서 핵심 결론과 실행 일정은 어떻게 되나요?"</text>
+  </g>
+
+  <!-- Center VS Circle -->
+  <circle cx="340" cy="178" r="18" fill="#1e293b"/>
+  <text x="340" y="183" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="800" fill="#ffffff" text-anchor="middle">VS</text>
+
+  <!-- Right Card: INTJ (Ni Dominant -> Te Auxiliary) -->
+  <g transform="translate(360, 62)">
+    <rect width="284" height="232" rx="20" fill="#ffffff" stroke="#c7d2fe" stroke-width="2"/>
+    <rect x="20" y="18" width="128" height="26" rx="13" fill="#4f46e5"/>
+    <text x="84" y="35" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">INTJ (Ni 주기능)</text>
+
+    <text x="20" y="72" font-family="Pretendard, sans-serif" font-size="16" font-weight="900" fill="#312e81">판이 돌아가는 '설계 구조' 우선</text>
+    <text x="20" y="96" font-family="Pretendard, sans-serif" font-size="12" font-weight="600" fill="#475569">내향 직관(Ni) 1순위 ➔ 외향 사고(Te) 2순위</text>
+
+    <!-- Visual Blueprint Box -->
+    <g transform="translate(20, 114)">
+      <rect x="0" y="0" width="244" height="44" rx="10" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1.5"/>
+      <text x="122" y="20" font-family="Pretendard, sans-serif" font-size="12" font-weight="800" fill="#4338ca" text-anchor="middle">🧭 "이 시스템의 근본 구조가 타당한가?"</text>
+      <text x="122" y="36" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#4f46e5" text-anchor="middle">전체 맥락 · 장기적 패턴 · 구조적 설계</text>
+    </g>
+
+    <text x="20" y="186" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#334155">대표 화법 경향:</text>
+    <text x="20" y="206" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="500" fill="#64748b">"이 방향이 장기적 구조와 본질에 부합하나요?"</text>
+  </g>
+</svg>
