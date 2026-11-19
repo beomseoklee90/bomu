@@ -1,0 +1,1003 @@
+최소 입력으로 업계 최상위 문서를 완성하는 3단계 연쇄 프롬프트 가이드
+<style>
+  .pe-lesson {
+    --pe-primary: #29489e;
+    --pe-primary-dark: #1e3575;
+    --pe-text: #1d2939;
+    --pe-muted: #5b6b82;
+    --pe-line: #dde4ee;
+    --pe-soft: #f1f5ff;
+    --pe-panel: #f8fafc;
+    --pe-success: #166f50;
+    --pe-success-soft: #eef8f3;
+
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+    color: var(--pe-text);
+    background: #fff;
+    font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+  }
+
+  .pe-lesson *,
+  .pe-lesson *::before,
+  .pe-lesson *::after {
+    box-sizing: border-box;
+  }
+
+  .pe-lesson h1,
+  .pe-lesson h2,
+  .pe-lesson h3,
+  .pe-lesson h4,
+  .pe-lesson p,
+  .pe-lesson pre {
+    margin: 0;
+  }
+
+  .pe-lesson h1 {
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.35;
+    letter-spacing: -0.8px;
+  }
+
+  .pe-lesson h2 {
+    font-size: 22px;
+    line-height: 1.45;
+    letter-spacing: -0.4px;
+  }
+
+  .pe-lesson h3 {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .pe-lesson .pe-hero {
+    padding: 24px 0 34px;
+    border-bottom: 1px solid var(--pe-line);
+  }
+
+  .pe-lesson .pe-eyebrow {
+    color: var(--pe-primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .pe-lesson .pe-subtitle {
+    margin-top: 16px;
+    color: var(--pe-muted);
+    font-size: 16px;
+  }
+
+  .pe-lesson .pe-section {
+    margin-top: 46px;
+  }
+
+  .pe-lesson .pe-description {
+    margin-top: 9px;
+    color: var(--pe-muted);
+  }
+
+  .pe-lesson .pe-chain {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .pe-lesson .pe-chain-card {
+    padding: 20px 18px;
+    background: var(--pe-soft);
+    border: 1px solid #d6e1fa;
+    border-radius: 13px;
+  }
+
+  .pe-lesson .pe-chain-card small {
+    display: inline-block;
+    color: var(--pe-primary);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+  }
+
+  .pe-lesson .pe-chain-card strong {
+    display: block;
+    margin: 6px 0 8px;
+    font-size: 16px;
+    color: var(--pe-text);
+  }
+
+  .pe-lesson .pe-chain-item {
+    font-size: 13.5px;
+    color: var(--pe-muted);
+    line-height: 1.6;
+  }
+
+  .pe-lesson .pe-chain-item + .pe-chain-item {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #c8d6f5;
+  }
+
+  .pe-lesson .pe-chain-item b {
+    color: var(--pe-primary-dark);
+  }
+
+  .pe-lesson .pe-box {
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background: var(--pe-panel);
+    border-left: 3px solid var(--pe-primary);
+  }
+
+  .pe-lesson .pe-box strong {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--pe-primary);
+  }
+
+  .pe-lesson .pe-step {
+    margin-top: 40px;
+    padding-top: 34px;
+    border-top: 1px solid var(--pe-line);
+  }
+
+  .pe-lesson .pe-step-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .pe-lesson .pe-step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 36px;
+    height: 36px;
+    background: var(--pe-primary);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 10px;
+  }
+
+  .pe-lesson .pe-step-desc {
+    color: var(--pe-muted);
+  }
+
+  .pe-lesson .pe-block {
+    margin-top: 24px;
+  }
+
+  .pe-lesson .pe-block-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .pe-lesson .pe-tag {
+    background: var(--pe-soft);
+    color: var(--pe-primary);
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .pe-lesson .pe-tag-ai {
+    background: var(--pe-success-soft);
+    color: var(--pe-success);
+  }
+
+  .pe-lesson .pe-prompt {
+    padding: 20px;
+    white-space: pre-wrap;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.85;
+    background: #f4f7ff;
+    border: 1px solid #d8e2f6;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .pe-lesson .pe-answer {
+    padding: 22px;
+    border: 1px solid var(--pe-line);
+    border-radius: 12px;
+    background: #fff;
+  }
+
+  .pe-lesson .pe-answer > p + ol,
+  .pe-lesson .pe-answer > p + ul {
+    margin-top: 14px;
+  }
+
+  .pe-lesson ol,
+  .pe-lesson ul {
+    padding-left: 22px;
+    margin: 0;
+  }
+
+  .pe-lesson li + li {
+    margin-top: 9px;
+  }
+
+  .pe-lesson .pe-bridge {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: var(--pe-success-soft);
+    border-left: 3px solid var(--pe-success);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--pe-text);
+  }
+
+  .pe-lesson .pe-bridge strong {
+    color: var(--pe-success);
+    margin-right: 6px;
+  }
+
+  .pe-lesson .pe-table-wrap {
+    margin-top: 14px;
+    border: 1px solid var(--pe-line);
+    border-radius: 12px;
+    overflow-x: auto;
+  }
+
+  .pe-lesson table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 560px;
+    font-size: 14px;
+  }
+
+  .pe-lesson th,
+  .pe-lesson td {
+    text-align: left;
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--pe-line);
+    vertical-align: top;
+  }
+
+  .pe-lesson th {
+    background: var(--pe-panel);
+    font-weight: 700;
+  }
+
+  .pe-lesson tr:last-child td {
+    border-bottom: none;
+  }
+
+  .pe-lesson .pe-result {
+    border: 1px solid var(--pe-line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .pe-lesson .pe-result-header {
+    padding: 18px 22px;
+    background: var(--pe-panel);
+    border-bottom: 1px solid var(--pe-line);
+  }
+
+  .pe-lesson .pe-result-meta {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--pe-muted);
+  }
+
+  .pe-lesson .pe-result-body {
+    padding: 22px;
+  }
+
+  .pe-lesson .pe-result-body h3 {
+    margin: 0 0 10px;
+    color: var(--pe-primary-dark);
+  }
+
+  .pe-lesson .pe-result-body h3:not(:first-child) {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid #eef2f7;
+  }
+
+  .pe-lesson .pe-result-body p + ul,
+  .pe-lesson .pe-result-body p + .pe-table-wrap {
+    margin-top: 12px;
+  }
+
+  .pe-lesson .pe-subbox {
+    margin-top: 22px;
+    padding: 18px 20px;
+    border: 1px solid var(--pe-line);
+    border-radius: 12px;
+    background: var(--pe-panel);
+  }
+
+  .pe-lesson .pe-subbox h3 {
+    font-size: 15px;
+    color: var(--pe-primary);
+    margin-bottom: 8px;
+  }
+
+  .pe-lesson .pe-subbox p {
+    font-size: 14px;
+    color: var(--pe-muted);
+    margin-bottom: 12px;
+  }
+
+  .pe-lesson .pe-template-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .pe-lesson .pe-template-card {
+    border: 1px solid var(--pe-line);
+    border-radius: 12px;
+    padding: 18px;
+    background: #fff;
+  }
+
+  .pe-lesson .pe-template-card h3 {
+    font-size: 15px;
+    color: var(--pe-primary);
+    margin-bottom: 10px;
+  }
+
+  .pe-lesson .pe-template-card .pe-prompt {
+    padding: 15px;
+    font-size: 13.5px;
+  }
+
+  .pe-lesson .pe-summary {
+    margin-top: 46px;
+    padding: 26px;
+    background: var(--pe-soft);
+    border-radius: 15px;
+  }
+
+  .pe-lesson .pe-summary h2 {
+    margin-bottom: 14px;
+  }
+
+  .pe-lesson .pe-note {
+    margin-top: 18px;
+    color: var(--pe-muted);
+    font-size: 12px;
+  }
+
+  @media (max-width: 820px) {
+    .pe-lesson .pe-chain,
+    .pe-lesson .pe-template-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .pe-lesson {
+      padding: 20px 15px 48px;
+    }
+
+    .pe-lesson h2 {
+      font-size: 20px;
+    }
+
+    .pe-lesson .pe-prompt,
+    .pe-lesson .pe-answer,
+    .pe-lesson .pe-result-body {
+      padding: 16px;
+    }
+  }
+
+  @media print {
+    .pe-lesson {
+      max-width: none;
+      padding: 0;
+    }
+
+    .pe-lesson .pe-block,
+    .pe-lesson .pe-box,
+    .pe-lesson .pe-chain-card {
+      break-inside: avoid;
+    }
+  }
+</style>
+
+<article class="pe-lesson" aria-labelledby="pe-title">
+  <div class="pe-hero">
+    <div class="pe-eyebrow">PROMPT CHAINING · EXECUTIVE WORKFLOW</div>
+
+    <h1 id="pe-title">
+      최소 입력으로 최상위 문서를 완성하는 3단계 연쇄 프롬프트
+    </h1>
+
+    <p class="pe-subtitle">
+      전문가용 프롬프트 공식이나 업계 용어를 미리 외울 필요가 없습니다. 앞
+      단계의 AI 답변이 다음 단계의 질문 재료로 자연스럽게 이어지는 3번의
+      대화만으로, 조직의 현실과 전문 프레임워크가 결합된 실무 문서를 완성합니다.
+    </p>
+  </div>
+
+  <!-- 1. 연쇄 구조 핵심 원리 -->
+  <section class="pe-section">
+    <h2>01. 답변이 다음 질문으로 이어지는 3단계 연쇄 구조</h2>
+
+    <p class="pe-description">
+      불필요한 중간 대화를 줄이기 위해, 각 단계의 AI 응답을 곧바로 다음 질문의
+      디딤돌로 활용합니다.
+    </p>
+
+    <div class="pe-chain">
+      <div class="pe-chain-card">
+        <small>TURN 01</small>
+        <strong>기초 과제 제시 → 전문가 역질문</strong>
+        <div class="pe-chain-item">
+          <b>질문 1:</b> 할 일·독자·형태 3가지만 간단히 적고 핵심 확인 질문을
+          요청합니다.
+        </div>
+        <div class="pe-chain-item">
+          <b>답변 1:</b> AI가 도메인 전문가 관점에서 진단에 필요한 핵심 질문을
+          제시합니다.
+        </div>
+      </div>
+
+      <div class="pe-chain-card">
+        <small>TURN 02</small>
+        <strong>현황 답변 입력 → 표준 프롬프트 완성</strong>
+        <div class="pe-chain-item">
+          <b>질문 2:</b> 답변 1의 질문에 답하면서 최종 실행용 프롬프트 설계를
+          함께 지시합니다.
+        </div>
+        <div class="pe-chain-item">
+          <b>답변 2:</b> 역할·단계별 사고(CoT)·제약 원칙이 완비된 최상위
+          프롬프트가 도출됩니다.
+        </div>
+      </div>
+
+      <div class="pe-chain-card">
+        <small>TURN 03</small>
+        <strong>생성된 프롬프트 실행 → 최종 산출물</strong>
+        <div class="pe-chain-item">
+          <b>질문 3:</b> 답변 2에서 받은 프롬프트를 그대로 복사해 실행
+          에이전트에 입력합니다.
+        </div>
+        <div class="pe-chain-item">
+          <b>답변 3:</b> 사실 통제와 업계 표준 논리가 결합된 수준 높은 실무
+          문서가 완성됩니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="pe-box">
+      <strong
+        >핵심 설계 의도: 사용자의 고민은 최소화하고, 문서의 전문성은
+        극대화합니다</strong
+      >
+      <p>
+        사용자는 1단계에서 간단한 업무 목적만 적고, 2단계에서는 우리 부서의 사실
+        정보만 답하면 됩니다. 어려운 전문가 역할 부여, 업계 표준 분석 틀 선택,
+        논리적인 목차 설계는 2단계에서 AI가 스스로 조립하도록 위임하고, 사용자는
+        3단계에서 완성된 프롬프트를 실행하기만 하면 됩니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. 단계별 실전 시뮬레이션 -->
+  <section class="pe-section">
+    <h2>02. 비즈니스 실무 적용 시뮬레이션</h2>
+
+    <p class="pe-description">
+      고객 문의 응대 지연 문제를 해결하기 위해 고객지원실 담당 임원에게 제출할
+      운영 개선 추진 보고서를 3번의 질문으로 완성하는 실제 흐름입니다.
+    </p>
+
+    <!-- TURN 1 -->
+    <div class="pe-step">
+      <div class="pe-step-heading">
+        <span class="pe-step-number">1</span>
+        <h2>1단계: 최소 정보 입력으로 전문가의 진단 질문 끌어내기</h2>
+      </div>
+
+      <p class="pe-step-desc">
+        역할이나 세부 목차를 직접 고민하지 않고 가장 기본적인 3가지 항목만
+        적습니다. 대신 AI가 해당 분야의 시니어 전문가 시각에서 필수 정보를
+        역질문하도록 유도합니다.
+      </p>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag">질문 1 · USER</span>
+          머리를 덜 쓰는 초간단 시작 프롬프트
+        </div>
+
+        <pre class="pe-prompt"><code>[해야 하는 일]
+고객 문의 응대 시간 단축을 위한 운영 개선 보고서 작성
+
+[대상 독자 및 목적]
+고객지원실 담당 임원 (개선 과제 추진 검토 및 승인 목적)
+
+[원하는 형태]
+현황 진단, 단축 방안, 단계별 실행 계획(표 포함)을 갖춘 개조식 비즈니스 보고서
+
+위 업무를 진행하려고 합니다. 아직 세부 수치나 내부 제약 조건을 전달하지 않았으니 내용을 임의로 추측해서 초안을 바로 작성하지 마세요.
+대신 이 분야의 시니어 전문가 관점에서, 설득력 있고 실행 가능한 최상위 수준의 보고서를 설계하기 위해 반드시 확인해야 할 핵심 정보들을 먼저 질문해 주세요.</code></pre>
+      </div>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag pe-tag-ai">답변 1 · AI</span>
+          전문가 관점에서 구조화된 핵심 확인 질문
+        </div>
+
+        <div class="pe-answer">
+          <p>
+            임원의 의사결정 기준과 현장 실행 가능성을 모두 충족하는 보고서를
+            설계하기 위해, 고객지원(CS) 운영 관리 관점에서 다음 다섯 가지 정보를
+            먼저 확인하겠습니다. 파악된 범위 내에서 답변해 주시면 됩니다.
+          </p>
+
+          <ol>
+            <li>
+              <strong>운영 규모 및 현행 서비스 지표:</strong>
+              현재 월평균 문의 유입량과 운영 채널 범위는 어떠하며, 최초 응답
+              시간(FRT) 또는 처리 완료까지 평균 얼마나 소요되고 있습니까?
+            </li>
+            <li>
+              <strong>단축 목표 및 추진 기한:</strong>
+              얼마의 기간 내에 응답 시간을 어느 수준까지 단축하는 것을 목표로
+              설정하고 있습니까?
+            </li>
+            <li>
+              <strong>가용 자원 및 투자 제약 조건:</strong>
+              현재 전담 인력 규모와 사용 중인 상담 도구는 무엇이며, 인력
+              충원이나 신규 유료 시스템(챗봇 등) 도입 예산 편성이 가능합니까?
+            </li>
+            <li>
+              <strong>병목 구간 및 원인 데이터 유무:</strong>
+              문의 유형별 인입 비중이나 접수·배정·처리 구간별 지연 원인을 확인할
+              수 있는 기존 통계 데이터가 확보되어 있습니까?
+            </li>
+            <li>
+              <strong>핵심 의사결정 요청 안건:</strong>
+              이번 보고를 통해 담당 임원에게 최종 승인받거나 지원받고자 하는
+              구체적인 결정 사항은 무엇입니까?
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="pe-bridge">
+        <strong>연쇄 포인트 (답변 1 → 질문 2)</strong>
+        AI가 실무 핵심 맥락을 짚어 질문했기 때문에, 사용자는 백지에서 고민할
+        필요 없이 위 5개 질문에 대한 우리 조직의 사실관계만 적어서 곧바로 2단계
+        질문을 만듭니다.
+      </div>
+    </div>
+
+    <!-- TURN 2 -->
+    <div class="pe-step">
+      <div class="pe-step-heading">
+        <span class="pe-step-number">2</span>
+        <h2>2단계: 질문에 답하면서 최상위 실행 프롬프트 생성하기</h2>
+      </div>
+
+      <p class="pe-step-desc">
+        1단계 질문에 대한 답변을 적고, 그 바로 아래에 '최적의 전문가 역할과 업계
+        표준 프레임워크를 갖춘 실행용 프롬프트를 설계해 달라'는 지시문을 함께
+        붙여 한 번에 요청합니다.
+      </p>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag">질문 2 · USER</span>
+          답변 1에 대한 응답 + 표준 프롬프트 역설계 요청 통합
+        </div>
+
+        <pre
+          class="pe-prompt"
+        ><code>확인 요청하신 5가지 항목에 대한 내부 현황은 다음과 같습니다.
+1. 월평균 문의는 약 5,000건(게시판·채팅·이메일 통합)이며, 최초 응답까지 평균 18시간이 걸립니다.
+2. 향후 3개월 이내에 평균 최초 응답 시간을 6시간 이내로 줄이는 것이 목표입니다.
+3. 현재 운영·상담 인력은 총 8명이고 기본 헬프데스크 티켓 도구를 쓰고 있습니다. 상반기 중 추가 채용이나 유료 솔루션 도입 예산은 배정할 수 없어 내부 업무 절차만 개선해야 합니다.
+4. 문의 유형별 비중이나 구간별 지연 원인에 대한 세부 통계는 아직 별도로 집계되어 있지 않습니다.
+5. 임원께 요청할 사항은 '3개월 운영 개선 과제 착수 승인'과 '1개월 차 원인 데이터 진단을 위한 기존 인력의 분석 시간 배정 승인' 두 가지입니다.
+
+위 확정 정보를 바탕으로, 실제 보고서를 작성할 AI에게 그대로 입력할 '최종 실행용 프롬프트'를 설계해 주세요.
+다음 세 가지 기준이 프롬프트 구조에 명확히 반영되어야 합니다.
+- 이 과제를 가장 깊이 있게 분석하고 대안을 제시할 최적의 시니어 전문가 역할(Persona)과 도메인 방법론을 설정할 것
+- 담당 임원과 해당 업계에서 설득력이 검증된 단계별 사고 절차(Chain-of-Thought)와 보고서 목차를 자율적으로 구성할 것
+- 제공되지 않은 수치나 정량적 기대 효과를 임의로 창작하지 못하게 통제하고, '확정된 사실'과 '진단을 통해 검증할 조건부 가설'을 엄격히 구분하도록 강제할 것</code></pre>
+      </div>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag pe-tag-ai">답변 2 · AI</span>
+          도메인 전문성과 사실 통제 원칙이 결합된 최종 실행용 프롬프트
+        </div>
+
+        <pre class="pe-prompt"><code># 역할 (Persona)
+당신은 15년 경력의 시니어 CS 오퍼레이션 및 업무 프로세스 재설계(BPR) 컨설턴트입니다.
+고객센터 서비스 수준 관리(SLA), 티켓 트리아지(사전 분류), 무예산(Zero-Budget) 운영 효율화 방법론에 정통하며, 경영진이 추진 타당성과 운영 리스크를 명확히 판단할 수 있는 의사결정 보고서를 작성합니다.
+
+# 컨텍스트 (Context)
+고객지원실 담당 임원에게 보고할 '고객 문의 최초 응답 시간(FRT) 단축을 위한 3개월 운영 개선 추진 보고서'를 작성합니다.
+본 문서는 (1) 현행 자원 기반의 3개월 개선 과제 착수 승인과 (2) 미확보된 병목 원인 데이터를 수집·분석하기 위한 1개월 차 실무 인력 시간 배정 승인의 근거 자료로 활용됩니다.
+
+# 확정 입력 정보 (Verified Inputs)
+- 운영 현황: 월평균 문의 약 5,000건(게시판·채팅·이메일 통합), 평균 최초 응답 시간(FRT) 18시간 소요
+- 추진 목표: 3개월 이내 평균 최초 응답 시간 6시간 이내 달성 (현재 대비 평균 12시간, 약 67% 단축 필요)
+- 가용 자원: 전담 운영·상담 인력 8명, 현행 기본 헬프데스크 티켓 도구
+- 절대 제약: 추가 인력 채용 불가, 신규 유료 솔루션(외부 AI 챗봇 등) 도입 예산 없음
+- 데이터 현황: 문의 유형별 인입 비중 및 단계별(접수 대기·내부 확인·답변 작성) 지연 원인 통계는 현재 미집계 상태임
+
+# 작성 원칙 및 제약 조건 (Guardrails)
+1. 수치 창작 금지: 위 확정 정보 외의 세부 비율, 구간별 지연 시간, 정량적 단축 예상치(예: "매크로 적용 시 N시간 감소")를 임의로 생성하지 마세요.
+2. 사실과 가설의 엄격한 분리: 원인 통계가 없으므로 현시점의 지연 원인을 단정하지 마세요. '기초 데이터 계측 체계 구축'만 확정 선결 과제로 제시하고, 세부 단축 방안은 1개월 차 진단 결과에 따라 실행할 '조건부 개선 가설(If-Then)'로 구조화하세요.
+3. 무예산 절차 개선 집중: 인력 충원이나 유료 시스템 도입 대안은 배제하고, 현행 헬프데스크 내 태그 분류, 시간대별 트리아지(초기 분류), 표준 응답 템플릿(매크로), 1차 확인 응답(Ack) 분리 등 내부 운영 절차 개편에 집중하세요.
+4. 비즈니스 보고 문체: 과장되거나 단정적인 수식어를 피하고, 임원이 핵심 논리를 신속히 검토할 수 있도록 중립적이고 간결한 두괄식·개조식 문체로 작성하세요.
+
+# 단계별 사고 및 작성 절차 (Chain-of-Thought)
+다음 5단계 논리 흐름에 따라 순차적으로 사고를 전개하여 보고서를 완성하세요. 각 단계는 앞 단계의 조건과 논리에 부합해야 합니다.
+1단계 [의사결정 안건 명시]: 임원이 승인해야 할 2가지 핵심 안건과 추진 배경을 최상단에 두괄식으로 요약
+2단계 [목표 격차 및 선결 과제 진단]: As-Is(18시간)와 To-Be(6시간)의 격차를 정의하고, 즉각적인 절차 변경에 앞서 '1개월 차 데이터 가시성 확보'가 선행되어야 하는 운영상 이유 규명
+3단계 [선결 조치 및 조건부 개선 가설 도출]: 현행 도구를 활용한 데이터 계측 방안(확정 조치)과 주요 병목 시나리오별 무예산 단축 레버 3가지(조건부 가설 A·B·C)를 분리 설계
+4단계 [3개월 단계별 로드맵 및 점검 게이트 수립]: 진단(1개월) → 선별 파일럿(2개월) → 검증 및 정착(3개월)의 월차별 수행 과제, 주요 산출물, 단계별 의사결정 점검 기준(Gate)을 표로 구성
+5단계 [성과 지표(KPI) 및 리스크 통제 설계]: 핵심 속도 지표(FRT)와 함께 성급한 응답에 따른 품질 저하 방어 지표(재문의율 등)를 설정하고, 1개월 차 진단 병행 시 기존 응대 지연을 막기 위한 업무 부하 관리 기준 제시
+
+# 출력 형식 (Output Format)
+위 5단계 구성을 그대로 반영하여 [1. 의사결정 요청사항 및 핵심 요약] → [2. 운영 현황 진단 및 선결 과제] → [3. 무예산 기반 응대 시간 단축 전략 (확정 조치 및 개선 가설)] → [4. 3개월 단계별 실행 로드맵] → [5. 성과 관리 지표(KPI) 및 운영 리스크 통제 방안] 목차 순의 개조식 보고서로 출력하세요.</code></pre>
+      </div>
+
+      <div class="pe-bridge">
+        <strong>연쇄 포인트 (답변 2 → 질문 3)</strong>
+        답변 2를 통해 전문가 페르소나, 도메인 용어(FRT, 트리아지, SLA), 단계별
+        사고 절차(CoT), 할루시네이션 방지 원칙이 모두 결합된 맞춤형 프롬프트가
+        완성되었습니다. 이제 이 텍스트 자체가 3단계 질문이 됩니다.
+      </div>
+    </div>
+
+    <!-- TURN 3 -->
+    <div class="pe-step">
+      <div class="pe-step-heading">
+        <span class="pe-step-number">3</span>
+        <h2>3단계: 생성된 프롬프트를 그대로 입력해 최상위 문서 완성하기</h2>
+      </div>
+
+      <p class="pe-step-desc">
+        새 대화창(또는 구글 드라이브 AI, Claude, ChatGPT 등 문서 작성용
+        에이전트)을 열고 2단계 답변에서 받은 프롬프트 전문을 수정 없이 그대로
+        복사해 입력합니다.
+      </p>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag">질문 3 · USER</span>
+          답변 2의 생성 프롬프트 전문 그대로 실행
+        </div>
+
+        <pre class="pe-prompt"><code># 역할 (Persona)
+당신은 15년 경력의 시니어 CS 오퍼레이션 및 업무 프로세스 재설계(BPR) 컨설턴트입니다.
+... (답변 2에서 생성된 최종 실행용 프롬프트 전문을 그대로 붙여넣어 실행) ...
+# 출력 형식 (Output Format)
+위 5단계 구성을 그대로 반영하여 [1. 의사결정 요청사항 및 핵심 요약] → ... 목차 순의 개조식 보고서로 출력하세요.</code></pre>
+      </div>
+
+      <div class="pe-block">
+        <div class="pe-block-title">
+          <span class="pe-tag pe-tag-ai">답변 3 · AI</span>
+          최종 완성된 임원 보고용 CS 운영 개선 추진 보고서
+        </div>
+
+        <div class="pe-result">
+          <div class="pe-result-header">
+            <strong
+              >고객 문의 최초 응답 시간(FRT) 단축을 위한 3개월 운영 개선 추진
+              보고서</strong
+            >
+            <div class="pe-result-meta">
+              보고 대상: 고객지원실 담당 임원 ｜ 작성 목적: 3개월 개선 과제 착수
+              및 1개월 차 진단 리소스 배정 승인<br />
+              운영 전제: 현행 인력(8명) 및 기존 헬프데스크 도구 유지 (추가
+              채용·신규 예산 투입 없음)
+            </div>
+          </div>
+
+          <div class="pe-result-body">
+            <h3>1. 의사결정 요청사항 및 핵심 요약</h3>
+            <p>
+              현재 통합 채널(게시판·채팅·이메일) 기준 월평균 약 5,000건의 고객
+              문의에 대해 최초 응답까지 평균 18시간이 소요되고 있습니다. 인력
+              충원 및 유료 솔루션 도입이 제한된 여건에서 3개월 내 평균 6시간
+              이내(12시간 단축)로 개선하기 위해 다음 두 가지 사항의 승인을
+              요청합니다.
+            </p>
+            <ul>
+              <li>
+                <strong>승인 요청 1 (단계별 개선 과제 착수):</strong>
+                현행 인력 8명과 기본 헬프데스크 도구를 활용한 3개월(진단 →
+                파일럿 → 정착) 내부 프로세스 개선 추진 승인
+              </li>
+              <li>
+                <strong>승인 요청 2 (1개월 차 진단 시간 배정):</strong>
+                현재 미집계 상태인 문의 유형 및 지연 구간 데이터를 분류·분석하기
+                위한 실무 인력의 비피크 시간대 진단 업무 배정 승인
+              </li>
+            </ul>
+
+            <h3>2. 운영 현황 진단 및 선결 과제</h3>
+            <ul>
+              <li>
+                <strong>현황 및 목표 격차:</strong>
+                월평균 약 5,000건 유입 체제에서 평균 최초 응답 시간(FRT)을 현행
+                18시간에서 6시간 이내로 약 67%(평균 12시간) 단축해야 합니다.
+              </li>
+              <li>
+                <strong>핵심 제약 여건:</strong>
+                상반기 중 상담 인력 증원 및 외부 유료 자동화 도구 도입이
+                불가하므로, 접수 분류 방식과 응답 절차의 내부 효율화가 유일한
+                실행 수단입니다.
+              </li>
+              <li>
+                <strong>선결 과제 (데이터 가시성 확보):</strong>
+                현재 문의 유형별 비중 및 '접수 대기 · 타 부서 확인 · 답변 작성'
+                구간별 소요 시간 통계가 부재합니다. 기초 계측 없이 일괄적으로
+                절차를 변경할 경우 실제 병목과 무관한 업무 부담만 가중될 우려가
+                있어, 1개월 차 데이터 진단이 반드시 선행되어야 합니다.
+              </li>
+            </ul>
+
+            <h3>
+              3. 무예산 기반 응대 시간 단축 전략 (확정 조치 및 조건부 가설)
+            </h3>
+            <p>
+              데이터 유무에 따라 즉시 시행할 확정 조치와 1개월 차 진단 결과에
+              따라 선별 적용할 조건부 개선 가설을 분리하여 추진합니다.
+            </p>
+            <ul>
+              <li>
+                <strong
+                  >[확정 선결 조치] 현행 헬프데스크 태그 기반 계측 체계
+                  구축:</strong
+                >
+                추가 비용 없이 기존 티켓 도구의 분류 태그 기능을 활용하여 '문의
+                유형'과 '단계별 처리 시각' 기록 규칙을 표준화하고 지연 발생
+                구간을 특정합니다.
+              </li>
+              <li>
+                <strong
+                  >[조건부 가설 A · 반복성 정형 문의 비중이 높을 경우] 표준 응답
+                  매크로 고도화:</strong
+                >
+                빈출 단순 문의 상위 유형을 중심으로 즉시 발송 가능한 표준 답변
+                템플릿을 재정비하여 건당 답변 작성 시간을 줄입니다.
+              </li>
+              <li>
+                <strong
+                  >[조건부 가설 B · 접수 후 초기 배정 대기가 길 경우] 시간대별
+                  티켓 트리아지(사전 분류) 도입:</strong
+                >
+                단순 접수순(FIFO) 일괄 처리 대신, 집중 인입 시간대에 초기 분류
+                순번제를 운영하여 단시간 응답 가능 건(Fast-Track)과 확인 필요
+                건의 처리 경로를 분리합니다.
+              </li>
+              <li>
+                <strong
+                  >[조건부 가설 C · 유관 부서 확인 대기로 응답이 지연될 경우]
+                  1차 확인 응답(Ack)과 최종 해결의 분리:</strong
+                >
+                즉시 답변이 어려운 확인성 문의는 접수 확인 및 안내 예정 시점을
+                먼저 회신하는 내부 기준(SLA)을 적용하여 최초 응답 지연을
+                완화합니다.
+              </li>
+            </ul>
+
+            <h3>4. 3개월 단계별 실행 로드맵</h3>
+            <div class="pe-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>단계 (기간)</th>
+                    <th>주요 수행 과제</th>
+                    <th>핵심 산출물</th>
+                    <th>단계별 점검 기준 (Gate)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1단계: 진단</strong><br />(1개월 차)</td>
+                    <td>
+                      헬프데스크 유형 태그 적용, 구간별 체류 시간 데이터 수집 및
+                      주요 병목 특정
+                    </td>
+                    <td>문의 유형·병목 진단표, 적용 가설 우선순위안</td>
+                    <td>
+                      실측 데이터 기반 적용 가설 확정 및 목표 타당성 중간 점검
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>2단계: 파일럿</strong><br />(2개월 차)</td>
+                    <td>
+                      선정된 개선 가설(매크로·트리아지·1차 선응답 등) 시범 적용
+                      및 주간 추이 모니터링
+                    </td>
+                    <td>표준 응대 매뉴얼, 파일럿 전후 비교표</td>
+                    <td>
+                      FRT 단축 추이 확인 및 오응답·재문의 등 품질 부작용 검증
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>3단계: 정착</strong><br />(3개월 차)</td>
+                    <td>
+                      검증된 절차의 팀 전체 표준화, 미흡 구간 보완 및 상시 운영
+                      기준 이관
+                    </td>
+                    <td>최종 성과 보고서, CS 운영 표준안(SOP)</td>
+                    <td>
+                      최종 목표(평균 6시간 이내) 달성도 평가 및 차기 운영 기준
+                      확정
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>5. 성과 관리 지표(KPI) 및 운영 리스크 통제 방안</h3>
+            <ul>
+              <li>
+                <strong>핵심 속도 지표 (Primary KPI):</strong>
+                주간·월간 평균 최초 응답 시간(FRT), 목표 기준(6시간 이내) 내
+                응답 준수율(SLA 달성률)
+              </li>
+              <li>
+                <strong>품질 방어 보조 지표 (Guardrail KPI):</strong>
+                최초 응답 속도만 추구할 때 발생할 수 있는 부실 응대를 방지하기
+                위해 <strong>티켓 재문의율(Re-open Rate)</strong>, 일별 미결
+                잔여 건수(Backlog), 최종 해결 소요 시간을 함께 점검합니다.
+              </li>
+              <li>
+                <strong>진단 병행에 따른 업무 부하 통제:</strong>
+                1개월 차 데이터 분류·집계 작업으로 인해 기존 상담 응답이 추가
+                지연되지 않도록, 일일 필수 상담 전담 시간을 우선 고정 확보하고
+                비피크(Off-Peak) 시간대에 한해 진단 업무를 배정합니다. 1개월 차
+                실측 결과 구조적 한계가 확인될 경우 임원 보고를 통해 목표 수준
+                또는 단계별 일정을 현실화합니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="pe-subbox">
+        <h3>
+          선택 활용: 완성된 문서를 발표자료(PPT) 구성안으로 확장하고 싶다면?
+        </h3>
+        <p>
+          3단계 결과물이 확정된 뒤 대면 보고용 장표가 필요할 때는, 같은
+          대화창에서 아래 한 줄만 추가로 입력하면 보고서의 사실관계와 논리를
+          그대로 유지한 슬라이드 기획안을 바로 얻을 수 있습니다.
+        </p>
+        <pre
+          class="pe-prompt"
+        ><code>위 최종 보고서의 사실관계와 제약 조건을 그대로 유지하여, 임원 대면 보고용 '5장 분량의 발표자료(PPT) 장표별 구성안(슬라이드 제목, 핵심 메시지 1줄, 좌·우 레이아웃 및 도식화 요소)'으로 변환해 주세요.</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 복사용 만능 템플릿 및 응용 -->
+  <section class="pe-section">
+    <h2>03. 어떤 업무에나 바로 쓰는 복사용 2개 템플릿</h2>
+
+    <p class="pe-description">
+      실제 업무에서는 아래 두 개의 고정 문구만 복사해 두고, 1단계의 대괄호
+      내용과 2단계의 현황 답변만 바꾸어 모든 기획·보고·발표자료 작성에 동일하게
+      활용할 수 있습니다.
+    </p>
+
+    <div class="pe-template-grid">
+      <div class="pe-template-card">
+        <h3>1단계 입력용 (시작 템플릿)</h3>
+        <pre class="pe-prompt"><code>[해야 하는 일]
+(작성할 문서나 해결할 과제 한 줄)
+
+[대상 독자 및 목적]
+(보고 대상 및 승인·공유·설득 목적)
+
+[원하는 형태]
+(개조식 보고서 / PPT 장표 구성안 / 기획서 등)
+
+위 업무를 진행하려고 합니다. 아직 세부 수치나 내부 제약 조건을 전달하지 않았으니 내용을 임의로 추측해서 초안을 바로 작성하지 마세요.
+대신 이 분야의 시니어 전문가 관점에서, 설득력 있고 실행 가능한 최상위 수준의 문서를 설계하기 위해 반드시 확인해야 할 핵심 정보들을 먼저 질문해 주세요.</code></pre>
+      </div>
+
+      <div class="pe-template-card">
+        <h3>2단계 하단 부착용 (프롬프트 생성 지시문)</h3>
+        <pre
+          class="pe-prompt"
+        ><code>(여기에 1단계 AI 질문에 대한 답변을 편하게 작성)
+
+위 확정 정보를 바탕으로, 실제 문서를 작성할 AI에게 그대로 입력할 '최종 실행용 프롬프트'를 설계해 주세요.
+다음 기준이 프롬프트 구조에 명확히 반영되어야 합니다.
+- 이 과제를 가장 깊이 있게 해결할 최적의 시니어 전문가 역할과 도메인 방법론을 설정할 것
+- 대상 독자와 업계에서 설득력이 검증된 단계별 사고 절차(CoT)와 출력 목차를 자율 구성할 것
+- 제공되지 않은 수치 창작을 금지하고, '확정된 사실'과 '검증이 필요한 가설'을 엄격히 분리하도록 강제할 것</code></pre>
+      </div>
+    </div>
+
+    <div class="pe-table-wrap" style="margin-top: 20px">
+      <table>
+        <thead>
+          <tr>
+            <th>업무 분야</th>
+            <th>1단계 최소 입력 (할 일 · 독자)</th>
+            <th>2단계에서 자동 결합되는 전문 프레임워크 예시</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>신규 서비스 기획안</strong></td>
+            <td>사내 신규 앱 기획서 작성 · 사업부문장 승인용</td>
+            <td>
+              문제 정의, 핵심 가치 제안(UVP), 최소 기능 가설(MVP), 핵심
+              지표(NSM)
+            </td>
+          </tr>
+          <tr>
+            <td><strong>경쟁사 대응 PPT</strong></td>
+            <td>경쟁사 요금 개편 대응 발표자료 · 전략회의 보고용</td>
+            <td>
+              포지셔닝 비교 매트릭스, 이탈 위험군 시나리오, 단기·중기 대응 옵션
+            </td>
+          </tr>
+          <tr>
+            <td><strong>마케팅 성과 보고서</strong></td>
+            <td>분기 광고 운영 결과 및 차기 예산안 · 마케팅 팀장 보고용</td>
+            <td>
+              퍼널별 전환 병목 분석, 채널 효율 비교, 차기 예산 재배분 가설
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 요약 -->
+  <div class="pe-summary">
+    <h2>핵심 정리: 3단계 연쇄 프롬프트 워크플로우</h2>
+
+    <ol>
+      <li>
+        <strong>1단계 (질문 유도):</strong>
+        할 일·독자·형태 3가지만 적고 AI에게 시니어 전문가 관점의 확인 질문을
+        먼저 요청합니다.
+      </li>
+      <li>
+        <strong>2단계 (답변 및 프롬프트 설계):</strong>
+        AI의 질문에 우리 조직의 사실대로 답하면서, 역할·단계별 사고(CoT)·사실
+        통제 원칙이 담긴 최종 실행용 프롬프트를 생성하게 합니다.
+      </li>
+      <li>
+        <strong>3단계 (프롬프트 실행):</strong>
+        2단계에서 완성된 표준 프롬프트를 그대로 실행 에이전트에 입력하여 업계
+        최상위 수준의 실무 문서를 도출합니다.
+      </li>
+    </ol>
+  </div>
+
+  <p class="pe-note">
+    본 교안의 수치와 조직 상황은 학습을 위해 설정된 가상 비즈니스 사례이며,
+    제시된 AI 질문·프롬프트·보고서는 해당 조건에 기반한 교육용 시뮬레이션입니다.
+  </p>
+</article>
