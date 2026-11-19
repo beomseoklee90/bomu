@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Ground Line -->
+  <line x1="45" y1="252" x2="635" y2="252" stroke="#cbd5e1" stroke-width="3"/>
+
+  <!-- Left: High Hurdle (Completion Focus) -->
+  <g transform="translate(65, 46)">
+    <rect x="0" y="0" width="220" height="206" rx="16" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+    <rect x="52" y="22" width="116" height="26" rx="13" fill="#e2e8f0"/>
+    <text x="110" y="39" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#475569" text-anchor="middle">기존 기준: '결과 완수'</text>
+    <text x="110" y="92" font-family="Pretendard, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle">"오늘 분량 3시간</text>
+    <text x="110" y="116" font-family="Pretendard, sans-serif" font-size="16" font-weight="800" fill="#334155" text-anchor="middle">완벽히 끝내기"</text>
+    <text x="110" y="156" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#ef4444" text-anchor="middle">▲ 높은 진입 장벽 (부담 신호)</text>
+  </g>
+
+  <!-- Arrow Shifting Downward -->
+  <g transform="translate(310, 142)">
+    <path d="M 0 0 L 56 36" stroke="#10b981" stroke-width="3.5" stroke-linecap="round"/>
+    <polygon points="62,40 50,39 56,29" fill="#10b981"/>
+    <text x="30" y="-12" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="800" fill="#059669" text-anchor="middle">문턱 낮추기</text>
+  </g>
+
+  <!-- Right: Low Step (Entry Focus) -->
+  <g transform="translate(390, 162)">
+    <rect x="0" y="0" width="225" height="90" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5"/>
+    <text x="112" y="34" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="800" fill="#047857" text-anchor="middle">새로운 기준: '가벼운 진입'</text>
+    <text x="112" y="64" font-family="Pretendard, sans-serif" font-size="16.5" font-weight="900" fill="#064e3b" text-anchor="middle">"일단 15분만 펼쳐보기"</text>
+  </g>
+
+  <!-- Success Badge above Right Step -->
+  <g transform="translate(422, 104)">
+    <rect width="160" height="36" rx="18" fill="#065f46"/>
+    <text x="80" y="23" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#ecfdf5" text-anchor="middle">✓ 뇌의 부담 신호 대폭 감소</text>
+  </g>
+
+  <text x="340" y="290" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">성취의 기준을 '완벽한 결과'에서 '가벼운 진입'으로 옮기면 시작이 쉬워집니다</text>
+</svg>

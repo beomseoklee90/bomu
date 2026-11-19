@@ -5,84 +5,99 @@ import "./App.css";
   - files 배열에 public/data/폴더/ 안에 있는 파일명만 적으면 됨
 */
 const categoryConfig = {
-  // ai: {
-  //   path: "AI",
-  //   label: "AI",
-  //   mobileLabel: "AI",
-  //   files: [
-  //     //      "car.txt",
-  //     //  "semiconductor4.txt",
-  //     "semiconductor3.txt",
-  //     "semiconductor2.txt",
-  //     "semiconductor.txt",
-
-  //     "ai_004.txt",
-  //     "ai_003.txt",
-  //     "ai_001.txt",
-  //     "ai_002.txt",
-
-  //     //"ai_001_digest.txt",
-  //   ],
-  // },
   // Japanese: {
   //   path: "Japanese",
-  //   label: "Japanese",
-  //   mobileLabel: "Japanese",
-  //   files: [
-  //     "intro.txt",
-  //     "basic.txt",
-  //     "basic2.txt",
-  //     "basic3.txt",
-  //     "intermediate2.txt",
-  //     "japanese002.txt",
-  //     "tango.txt",
-  //     "intermediate.txt",
-  //   ],
+  //   label: "전략 보고서 샘플",
+  //   mobileLabel: "전략 보고서",
+  //   files: ["report.txt"],
   // },
-  ENGLISH: {
-    path: "ENGLISH",
-    label: "ENGLISH",
-    mobileLabel: "ENGLISH",
-    files: ["intro.txt", "lecture1.txt", "intermediate_lecture1.txt"],
+  AI: {
+    path: "REPORT",
+    label: "심리학",
+    mobileLabel: "심리학",
+    files: [
+      "self_esteem.html",
+      "smartphone_habit.html",
+      "perfectionism_burnout.html",
+    ],
   },
 };
+
+const categoryEntries = Object.entries(categoryConfig).map(([id, config]) => ({
+  id,
+  ...config,
+}));
 
 /* 🎵 설정 2: 배경음악 및 유튜브 홍보 
   - playlist: public/data/songs/ 폴더 안에 있는 mp3 파일명
 */
 const musicConfig = {
-  playlist: ["track2.mp3", "track1.mp3", "track3.mp3", "track4.mp3"],
+  playlist: [
+    "This Rhythm.mp3",
+    "Dance.mp3",
+    "最後かな.mp3",
+    "잊을 수 없어.mp3",
+    "이 그루브라면.mp3",
+  ],
   youtubeLink: "https://www.youtube.com/@DJ_ICE_BREAKING",
 };
 
 function App() {
-  // 상태 관리
-  const [currentCategory, setCurrentCategory] = useState("ENGLISH");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const secretFile = params.get("secret");
+
+    if (secretFile) {
+      const targetUrl = `${import.meta.env.BASE_URL}data/Japanese/${secretFile}.html`;
+      window.location.href = targetUrl;
+    }
+  }, []);
+
+  const [currentCategory, setCurrentCategory] = useState(
+    categoryEntries[0]?.id || "",
+  );
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
 
-  // 음악 플레이어 상태
+  const activeCategory =
+    categoryEntries.find((category) => category.id === currentCategory) ||
+    categoryEntries[0];
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
+  const [isPlaylistOpen, setIsPlaylistOpen] = useState(false);
+  const [isPdfFullscreen, setIsPdfFullscreen] = useState(false);
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const audioRef = useRef(null);
 
-  // 1. 데이터 불러오기 (카테고리 변경 시 실행)
   useEffect(() => {
     const loadFiles = async () => {
-      const config = categoryConfig[currentCategory];
+      const config = activeCategory;
 
-      // 파일 목록 없으면 초기화
-      if (!config.files || config.files.length === 0) {
+      if (!config || !config.files || config.files.length === 0) {
         setPosts([]);
         setSelectedPost(null);
         return;
       }
 
-      // 파일 내용 비동기로 싹 긁어오기
+      setPosts([]);
+      setSelectedPost(null);
+
       const loadedPosts = await Promise.all(
         config.files.map(async (filename) => {
+          const lowerName = filename.toLowerCase();
+
+          if (lowerName.endsWith(".pdf")) {
+            return {
+              id: filename,
+              title: filename,
+              content: "",
+              type: "pdf",
+              fileName: filename,
+            };
+          }
+
           try {
-            // ★ 중요: 배포 환경을 위해 BASE_URL 사용
             const response = await fetch(
               `${import.meta.env.BASE_URL}data/${config.path}/${filename}`,
             );
@@ -90,8 +105,6 @@ function App() {
             if (!response.ok) throw new Error("File not found");
 
             const text = await response.text();
-
-            // 첫 줄(제목)과 나머지(HTML) 분리
             const splitIndex = text.indexOf("\n");
             const dateTitle =
               splitIndex !== -1
@@ -100,32 +113,75 @@ function App() {
             const contentHtml =
               splitIndex !== -1 ? text.substring(splitIndex + 1) : text;
 
-            return { id: filename, title: dateTitle, content: contentHtml };
-          } catch (error) {
-            return { id: filename, title: "Error", content: "File not found" };
+            return {
+              id: filename,
+              title: dateTitle,
+              content: contentHtml,
+              type: "text",
+              fileName: filename,
+            };
+          } catch {
+            return {
+              id: filename,
+              title: "Error",
+              content: "File not found",
+              type: "text",
+              fileName: filename,
+            };
           }
         }),
       );
 
       setPosts(loadedPosts);
-      // 데이터가 있으면 첫 번째 글 자동 선택
-      if (loadedPosts.length > 0) {
-        setSelectedPost(loadedPosts[0]);
-      } else {
-        setSelectedPost(null);
-      }
+      setSelectedPost(loadedPosts.length > 0 ? loadedPosts[0] : null);
     };
 
     loadFiles();
-  }, [currentCategory]);
+  }, [activeCategory]);
 
-  // 2. 음악 재생 로직 (곡이 끝나면 다음 곡으로)
   const handleSongEnd = () => {
     const nextIndex = (currentSongIndex + 1) % musicConfig.playlist.length;
     setCurrentSongIndex(nextIndex);
   };
 
-  // 3. Play/Pause 상태 동기화
+  const handlePdfFullscreen = async () => {
+    const pdfElement = document.querySelector(".pdf-viewer-shell");
+    if (!pdfElement) return;
+
+    try {
+      if (!document.fullscreenElement) {
+        if (pdfElement.requestFullscreen) {
+          await pdfElement.requestFullscreen();
+        }
+        setIsPdfFullscreen(true);
+        return;
+      }
+
+      if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      }
+      setIsPdfFullscreen(false);
+    } catch (error) {
+      console.log("전체화면 실행 실패:", error);
+    }
+  };
+
+  const pdfViewerSrc =
+    selectedPost?.type === "pdf"
+      ? `${import.meta.env.BASE_URL}data/${activeCategory.path}/${selectedPost.fileName}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`
+      : "";
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsPdfFullscreen(Boolean(document.fullscreenElement));
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+    };
+  }, []);
+
   useEffect(() => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -139,62 +195,113 @@ function App() {
     }
   }, [isPlaying, currentSongIndex]);
 
-  // 로딩 화면
-  if (!selectedPost && posts.length > 0 && posts[0].title !== "Error")
+  if (!selectedPost && posts.length > 0 && posts[0].title !== "Error") {
     return <div className="loading">Loading...</div>;
+  }
 
   return (
     <div className="container">
-      {/* 사이드바 (모바일: 상단 네비게이션) */}
-      <nav className="sidebar">
-        {/* 카테고리 3등분 탭 */}
-        <div className="category-selector">
-          {Object.keys(categoryConfig).map((key) => (
-            <div
-              key={key}
-              className={`logo-item ${currentCategory === key ? "active" : ""}`}
-              onClick={() => setCurrentCategory(key)}
-            >
-              <span className="desktop-text">{categoryConfig[key].label}</span>
-              <span className="mobile-text">
-                {categoryConfig[key].mobileLabel}
-              </span>
-            </div>
-          ))}
+      <nav
+        className={`sidebar ${isMobileMenuOpen ? "" : "mobile-menu-closed"}`}
+      >
+        <div className="brand-box">
+          <div className="brand-icon">B</div>
+          <div>
+            <p className="brand-kicker">DIGITAL ARCHIVE</p>
+            <h2>BOMU.PRO</h2>
+          </div>
         </div>
 
-        {/* 파일 목록 (모바일: 가로 스크롤) */}
-        <ul className="menu-list">
-          {posts.map((post) => (
-            <li
-              key={post.id}
-              className={
-                selectedPost && selectedPost.id === post.id ? "active" : ""
-              }
-              onClick={() => setSelectedPost(post)}
-            >
-              {post.title}
-            </li>
-          ))}
-        </ul>
+        <div className="section-block">
+          <div className="section-label">CATEGORY · 대분류</div>
+          <div className="category-selector">
+            {categoryEntries.map((category) => (
+              <div
+                key={category.id}
+                className={`logo-item ${currentCategory === category.id ? "active" : ""}`}
+                onClick={() => setCurrentCategory(category.id)}
+              >
+                <span className="desktop-text">{category.label}</span>
+                <span className="mobile-text">{category.mobileLabel}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        {/* 뮤직 플레이어 (사이드바 하단 고정) */}
-        <div className="music-player-box">
-          <p className="music-title">
-            🎧 BGM (Ballad)
-            <br />
-            <span style={{ fontSize: "0.8rem", color: "#ffeb3b" }}>
-              {musicConfig.playlist[currentSongIndex]}
-            </span>
-          </p>
+        <div className="sub-category-panel">
+          <div className="sub-category-label">DOCUMENTS · 문서 목록</div>
+          <ul className="menu-list">
+            {posts.map((post) => (
+              <li
+                key={post.id}
+                className={
+                  selectedPost && selectedPost.id === post.id ? "active" : ""
+                }
+                onClick={() => setSelectedPost(post)}
+              >
+                {post.title}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          className="mobile-menu-toggle"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          aria-label={isMobileMenuOpen ? "탭 영역 접기" : "탭 영역 열기"}
+        >
+          {isMobileMenuOpen ? "⌃ 목록 접기" : "⌄ 목록 펼치기"}
+        </button>
+
+        <div
+          className={`music-player-box ${isPlaylistOpen ? "playlist-open" : ""}`}
+        >
+          <div className="music-header">
+            <p className="music-title">♫ BGM LOUNGE</p>
+            <button
+              type="button"
+              className="playlist-toggle"
+              onClick={() => setIsPlaylistOpen((prev) => !prev)}
+              aria-label={isPlaylistOpen ? "재생 목록 닫기" : "재생 목록 열기"}
+            >
+              {isPlaylistOpen ? "⏷" : "⏶"}
+            </button>
+          </div>
+
+          <div className="current-track-box">
+            <span className="track-pill">NOW</span>
+            <span>{musicConfig.playlist[currentSongIndex]}</span>
+          </div>
 
           <audio
             ref={audioRef}
-            src={`${import.meta.env.BASE_URL}data/songs/${
-              musicConfig.playlist[currentSongIndex]
-            }`}
+            src={`${import.meta.env.BASE_URL}data/songs/${musicConfig.playlist[currentSongIndex]}`}
             onEnded={handleSongEnd}
           />
+
+          {isPlaylistOpen && (
+            <div className="playlist-panel">
+              <ul className="playlist-list">
+                {musicConfig.playlist.map((song, index) => (
+                  <li
+                    key={song}
+                    className={index === currentSongIndex ? "active" : ""}
+                    onClick={() => {
+                      setCurrentSongIndex(index);
+                      setIsPlaying(true);
+                      setIsPlaylistOpen(false);
+                    }}
+                  >
+                    <span className="playlist-index">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="playlist-name">{song}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="music-controls">
             <button onClick={() => setIsPlaying(!isPlaying)}>
@@ -202,35 +309,58 @@ function App() {
             </button>
             <button onClick={handleSongEnd}>⏭ Next</button>
           </div>
-
-          <a
-            href={musicConfig.youtubeLink}
-            target="_blank"
-            className="youtube-link"
-            rel="noreferrer"
-          >
-            📺 유튜브에서 더 듣기
-          </a>
         </div>
       </nav>
 
-      {/* 메인 뷰어 (A4 용지) */}
       <main className="main-viewer">
+        {selectedPost?.type === "pdf" && (
+          <div className="presentation-controls">
+            <a
+              className="floating-action download-action"
+              href={`${import.meta.env.BASE_URL}data/${activeCategory.path}/${selectedPost.fileName}`}
+              download={selectedPost.fileName}
+              aria-label="파일 다운로드"
+              title="PDF 다운로드"
+            >
+              ⬇
+            </a>
+
+            <button
+              type="button"
+              className="floating-action fullscreen-action"
+              onClick={handlePdfFullscreen}
+            >
+              {isPdfFullscreen ? "⤢ 원래 크기" : "⤢ 전체 화면"}
+            </button>
+          </div>
+        )}
+
         <div className="paper">
           {selectedPost ? (
             <>
               <h1 className="paper-title">{selectedPost.title}</h1>
-              <div
-                className="paper-content"
-                dangerouslySetInnerHTML={{ __html: selectedPost.content }}
-              />
+              {selectedPost.type === "pdf" ? (
+                <div
+                  className={`pdf-viewer-shell ${isPdfFullscreen ? "fullscreen" : ""}`}
+                >
+                  <iframe
+                    title={selectedPost.title}
+                    src={pdfViewerSrc}
+                    className="pdf-viewer"
+                    allow="fullscreen"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="paper-content"
+                  dangerouslySetInnerHTML={{ __html: selectedPost.content }}
+                />
+              )}
             </>
           ) : (
-            <div
-              style={{ textAlign: "center", marginTop: "100px", color: "#888" }}
-            >
-              <p>등록된 모임 일정이 없습니다.</p>
-              <p>No meeting schedule yet.</p>
+            <div className="empty-state">
+              <p>등록된 문서가 없습니다.</p>
+              <p>No documents available yet.</p>
             </div>
           )}
         </div>

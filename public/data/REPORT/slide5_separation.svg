@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBalance" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <radialGradient id="coreSelfGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d1fae5" stop-opacity="0.95"/>
+      <stop offset="70%" stop-color="#ecfdf5" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4"/>
+    </radialGradient>
+    <filter id="cardDrop" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <rect width="680" height="320" rx="24" fill="url(#bgBalance)" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Caption Badge -->
+  <rect x="210" y="20" width="260" height="28" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="340" y="38" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">사회적 연결은 유지하되, 중심축은 나에게 두기</text>
+
+  <!-- Loose Dotted Connection Line & Gentle Overlap Zone -->
+  <path d="M 232 162 C 285 138, 325 138, 378 162" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M 232 162 C 285 186, 325 186, 378 162" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 5"/>
+
+  <!-- Distance Indicator Label -->
+  <rect x="257" y="149" width="96" height="24" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="305" y="165" font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">건강한 거리두기</text>
+
+  <!-- Left Circle: How Others See Me (Smaller, Lighter, Dashed) -->
+  <g transform="translate(175, 162)">
+    <circle cx="0" cy="0" r="64" fill="#ffffff" fill-opacity="0.75" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+    <circle cx="0" cy="0" r="52" fill="#f1f5f9" fill-opacity="0.6"/>
+    <rect x="-42" y="-34" width="84" height="20" rx="10" fill="#e2e8f0"/>
+    <text x="0" y="-20" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="700" fill="#475569" text-anchor="middle">참고 의견</text>
+    <text x="0" y="4" font-family="Pretendard, sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">외부에서</text>
+    <text x="0" y="23" font-family="Pretendard, sans-serif" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">보는 나</text>
+  </g>
+
+  <!-- Right Circle: How I See Myself (Larger, Clearer, Solid Center) -->
+  <g transform="translate(465, 162)" filter="url(#cardDrop)">
+    <circle cx="0" cy="0" r="98" fill="#ffffff" stroke="#a7f3d0" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="86" fill="url(#coreSelfGlow)" stroke="#10b981" stroke-width="3"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#34d399" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <rect x="-54" y="-44" width="108" height="24" rx="12" fill="#065f46"/>
+    <text x="0" y="-28" font-family="Pretendard, sans-serif" font-size="11" font-weight="700" fill="#ecfdf5" text-anchor="middle">마음의 중심 비중</text>
+
+    <text x="0" y="4" font-family="Pretendard, sans-serif" font-size="18" font-weight="800" fill="#064e3b" text-anchor="middle">내가 바라보는 나</text>
+    <text x="0" y="28" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="600" fill="#047857" text-anchor="middle">(내면의 고유한 가치 기준)</text>
+  </g>
+
+  <!-- Bottom Summary Caption -->
+  <text x="340" y="294" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="600" fill="#475569" text-anchor="middle">타인의 평가는 가벼운 '참고 의견'으로 두고, 내가 보는 나의 비중을 더 크고 선명하게 유지합니다</text>
+</svg>

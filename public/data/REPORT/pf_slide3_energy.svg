@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Section: Pre-Action Mental Simulation -->
+  <g transform="translate(42, 26)">
+    <rect width="596" height="126" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+    <text x="298" y="34" font-family="Pretendard, sans-serif" font-size="14" font-weight="800" fill="#9a3412" text-anchor="middle">행동 시작 전: 머릿속 과도한 계획과 완벽주의 압박</text>
+
+    <g transform="translate(24, 52)">
+      <rect x="0" y="0" width="172" height="52" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+      <text x="86" y="31" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#c2410c" text-anchor="middle">과도한 머릿속 시뮬레이션</text>
+
+      <rect x="188" y="0" width="172" height="52" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+      <text x="274" y="31" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#c2410c" text-anchor="middle">실패·부족함에 대한 염려</text>
+
+      <rect x="376" y="0" width="172" height="52" rx="12" fill="#ffffff" stroke="#fdba74" stroke-width="1.5"/>
+      <text x="462" y="31" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#c2410c" text-anchor="middle">완벽히 해내야 한다는 압박</text>
+    </g>
+  </g>
+
+  <!-- Drain Arrow -->
+  <text x="340" y="182" font-family="Pretendard, sans-serif" font-size="13" font-weight="800" fill="#ea580c" text-anchor="middle">↓ 실제 행동을 시작하기도 전에 인지적·정서적 에너지를 빠르게 소모</text>
+
+  <!-- Bottom Section: Depleted Battery Gauge at Starting Line -->
+  <g transform="translate(42, 200)">
+    <rect width="596" height="92" rx="18" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="30" y="34" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#334155">막상 시작선 앞에 섰을 때 남아 있는 인지·정서 에너지</text>
+
+    <!-- Battery Outline -->
+    <rect x="30" y="48" width="410" height="26" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+    <rect x="440" y="55" width="6" height="12" rx="2" fill="#94a3b8"/>
+    <!-- Low Red Fill -->
+    <rect x="34" y="52" width="64" height="18" rx="5" fill="#ef4444"/>
+
+    <rect x="468" y="42" width="102" height="36" rx="12" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="519" y="65" font-family="Pretendard, sans-serif" font-size="13" font-weight="800" fill="#b91c1c" text-anchor="middle">소진 상태 (15%)</text>
+  </g>
+</svg>

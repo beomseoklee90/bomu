@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="checkBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="680" height="300" rx="24" fill="url(#checkBg)" stroke="#bbf7d0" stroke-width="1.5"/>
+
+  <!-- Card 1 -->
+  <g transform="translate(45, 58)">
+    <rect width="180" height="184" rx="18" fill="#ffffff" stroke="#bbf7d0" stroke-width="2"/>
+    <circle cx="90" cy="62" r="26" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <path d="M 79 62 L 87 70 L 103 54" fill="none" stroke="#15803d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="118" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" text-anchor="middle">작은 약속 지키기</text>
+    <text x="90" y="142" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="600" fill="#64748b" text-anchor="middle">"지금 20분만 집중하기"</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(250, 58)">
+    <rect width="180" height="184" rx="18" fill="#ffffff" stroke="#bbf7d0" stroke-width="2"/>
+    <circle cx="90" cy="62" r="26" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <path d="M 79 62 L 87 70 L 103 54" fill="none" stroke="#15803d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="118" font-family="Pretendard, sans-serif" font-size="13.5" font-weight="800" fill="#1e293b" text-anchor="middle">통제 성공 경험 누적</text>
+    <text x="90" y="142" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="600" fill="#64748b" text-anchor="middle">자기효능감 형성</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(455, 58)">
+    <rect width="180" height="184" rx="18" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5"/>
+    <circle cx="90" cy="62" r="28" fill="#10b981"/>
+    <path d="M 78 62 L 86 70 L 104 52" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="90" y="118" font-family="Pretendard, sans-serif" font-size="14" font-weight="800" fill="#064e3b" text-anchor="middle">사용 주도권 회복</text>
+    <text x="90" y="142" font-family="Pretendard, sans-serif" font-size="11.5" font-weight="700" fill="#047857" text-anchor="middle">원하는 순간 화면 끄기</text>
+  </g>
+</svg>

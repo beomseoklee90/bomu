@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Top Track: Dense Checking Pattern -->
+  <g transform="translate(50, 50)">
+    <text x="0" y="0" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#64748b">기존 습관 패턴: 촘촘하고 무의식적인 확인 간격</text>
+    <rect x="0" y="14" width="580" height="54" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+    <line x1="25" y1="41" x2="555" y2="41" stroke="#cbd5e1" stroke-width="2"/>
+
+    <!-- Dense Ticks -->
+    <g fill="#f97316">
+      <circle cx="40" cy="41" r="5"/><circle cx="70" cy="41" r="5"/><circle cx="95" cy="41" r="5"/>
+      <circle cx="125" cy="41" r="5"/><circle cx="150" cy="41" r="5"/><circle cx="180" cy="41" r="5"/>
+      <circle cx="210" cy="41" r="5"/><circle cx="235" cy="41" r="5"/><circle cx="265" cy="41" r="5"/>
+      <circle cx="295" cy="41" r="5"/><circle cx="325" cy="41" r="5"/><circle cx="350" cy="41" r="5"/>
+      <circle cx="380" cy="41" r="5"/><circle cx="410" cy="41" r="5"/><circle cx="440" cy="41" r="5"/>
+      <circle cx="470" cy="41" r="5"/><circle cx="500" cy="41" r="5"/><circle cx="530" cy="41" r="5"/>
+    </g>
+  </g>
+
+  <!-- Transition Arrow -->
+  <g transform="translate(340, 145)">
+    <text x="0" y="4" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#0284c7" text-anchor="middle">↓ 극단적 차단 대신 확인 주기를 서서히 넓히기</text>
+  </g>
+
+  <!-- Bottom Track: Gradually Widening Intervals -->
+  <g transform="translate(50, 178)">
+    <text x="0" y="0" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="800" fill="#0f766e">적응형 조절 패턴: 10분 ➔ 20분 ➔ 30분 단위로 간격 확장</text>
+    <rect x="0" y="14" width="580" height="78" rx="16" fill="#ffffff" stroke="#99f6e4" stroke-width="2"/>
+    <line x1="35" y1="52" x2="545" y2="52" stroke="#0d9488" stroke-width="3"/>
+
+    <!-- Widening Check Nodes -->
+    <circle cx="45" cy="52" r="8" fill="#0d9488"/>
+    <circle cx="135" cy="52" r="8" fill="#0d9488"/>
+    <circle cx="295" cy="52" r="8" fill="#0d9488"/>
+    <circle cx="535" cy="52" r="8" fill="#0d9488"/>
+
+    <!-- Interval Labels -->
+    <rect x="65" y="26" width="50" height="20" rx="10" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="90" y="40" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="700" fill="#0f766e" text-anchor="middle">10분</text>
+
+    <rect x="185" y="26" width="60" height="20" rx="10" fill="#f0fdfa" stroke="#99f6e4"/>
+    <text x="215" y="40" font-family="Pretendard, sans-serif" font-size="10.5" font-weight="700" fill="#0f766e" text-anchor="middle">20분 집중</text>
+
+    <rect x="375" y="26" width="80" height="20" rx="10" fill="#ccfbf1" stroke="#5eead4"/>
+    <text x="415" y="40" font-family="Pretendard, sans-serif" font-size="11" font-weight="800" fill="#065f46" text-anchor="middle">30분+ 몰입</text>
+  </g>
+</svg>

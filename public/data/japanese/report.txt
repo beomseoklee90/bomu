@@ -1,0 +1,1559 @@
+Report
+<style>
+  /* 폰트 및 리포트 기본 베이스 */
+  .report-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1e293b;
+    background-color: #ffffff;
+    line-height: 1.65;
+    word-break: keep-all;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    box-sizing: border-box;
+  }
+
+  .report-container * {
+    box-sizing: border-box;
+  }
+
+  /* 헤더 & 섹션 타이틀 */
+  .report-header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 20px;
+    margin-bottom: 32px;
+  }
+
+  .report-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0284c7;
+    background-color: #e0f2fe;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    letter-spacing: -0.2px;
+  }
+
+  .report-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+  }
+
+  .report-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+  }
+
+  /* 본문 및 소제목 */
+  .section-block {
+    margin-bottom: 36px;
+  }
+
+  .section-h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 14px 0;
+    letter-spacing: -0.3px;
+  }
+
+  .section-h2::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background-color: #2563eb;
+    border-radius: 2px;
+  }
+
+  .report-p {
+    font-size: 14.5px;
+    color: #334155;
+    margin: 0 0 14px 0;
+  }
+
+  /* 핵심 요약 하이라이트 박스 (Callout) */
+  .callout-box {
+    background-color: #f8fafc;
+    border-left: 4px solid #2563eb;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+
+  .callout-box.alert {
+    background-color: #fef2f2;
+    border-left-color: #ef4444;
+  }
+
+  .callout-box.success {
+    background-color: #f0fdf4;
+    border-left-color: #10b981;
+  }
+
+  .callout-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+  }
+
+  .callout-desc {
+    font-size: 13.5px;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* 비교 그리드 카드 (Before vs After 등) */
+  .grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .card-item.highlight {
+    border-color: #93c5fd;
+    background-color: #eff6ff;
+  }
+
+  .card-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #64748b;
+    margin-bottom: 6px;
+  }
+
+  .card-item.highlight .card-tag {
+    color: #2563eb;
+  }
+
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 8px 0;
+  }
+
+  .card-desc {
+    font-size: 13px;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* 데이터 테이블 */
+  .report-table-wrapper {
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+  }
+
+  .report-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    text-align: left;
+  }
+
+  .report-table th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .report-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+  }
+
+  .report-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .report-table tr:hover td {
+    background-color: #f8fafc;
+  }
+
+  /* 출처 / 각주 박스 */
+  .reference-box {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px dashed #cbd5e1;
+    font-size: 12.5px;
+    color: #64748b;
+  }
+
+  .reference-title {
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 8px;
+  }
+
+  .reference-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .reference-list li {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .reference-list a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .reference-list a:hover {
+    color: #1d4ed8;
+  }
+
+  /* 차트 래퍼 (반응형 캔버스 지원) */
+  .chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 650px;
+    margin: 24px auto;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+  }
+</style>
+<div class="report-container">
+  <!-- 리포트 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 01</span>
+    <h1 class="report-title">문제 정의 및 요약: 폐쇄망 소버린 AI 문서 자동화 솔루션</h1>
+    <p class="report-subtitle">
+      보안 규제와 비용 장벽에 막힌 엔터프라이즈 환경을 위한 구축형 멀티 에이전트 워크플로우 제안서
+    </p>
+  </header>
+
+  <!-- 1. 비즈니스 요약 (Executive Summary) -->
+  <section class="section-block">
+    <h2 class="section-h2">1. Executive Summary (핵심 요약)</h2>
+    <p class="report-p">
+      본 문서는 국내 대기업, 금융권, 공공기관이 겪고 있는 <strong>'생성형 AI 도입의 딜레마'</strong>를 해결하기 위한 전략 문서입니다.
+      대다수 기업은 ChatGPT와 같은 퍼블릭 AI의 효용성을 알면서도, <strong>엄격한 망분리 규제(데이터 외부 유출 금지)</strong>와 <strong>호출당 누적되는 토큰 비용</strong> 때문에 실무 도입을 포기하고 있습니다.
+    </p>
+    <p class="report-p">
+      우리는 국산 소버린 AI(폐쇄망 구동 경량 엔진)와 <strong>'작업 상태를 기억하고 협업하는 멀티 에이전트(Multi-Agent)'</strong> 시스템을 결합하여, 기업 내부 전산망(온프레미스)에 직접 패키징 형태로 설치되는 전용 문서 자동화 솔루션을 제안합니다.
+    </p>
+
+    <!-- 핵심 차별점 하이라이트 박스 -->
+    <div class="callout-box success">
+      <div class="callout-title">💡 핵심 가치 제안 (One-Liner)</div>
+      <p class="callout-desc">
+        "단 1바이트의 데이터도 외부로 유출되지 않는 사내 폐쇄망 환경에서, 여러 AI 에이전트가 협업하여 복잡한 사내 규정 탐색부터 완성형 전략·기안 보고서 출력까지 전 과정을 자동화합니다."
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. 해결하고자 하는 핵심 문제 (Problem Definition) -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 현재 기업이 직면한 3대 병목 (Problem)</h2>
+    <p class="report-p">
+      엔터프라이즈 실무 현장에서 상용 클라우드 AI를 도입하려 할 때 반드시 맞닥뜨리는 치명적인 장벽 3가지입니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">규제 장벽</div>
+        <div class="card-title">물리적 망분리 규제</div>
+        <p class="card-desc">
+          전자금융감독규정, 공공 보안 가이드라인으로 인해 외부 인터넷 통신이 원천 차단된 환경에서는 클라우드 기반 ChatGPT·Claude 사용이 불가능합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">비용 장벽</div>
+        <div class="card-title">토큰 비용 눈덩이 (Token Drain)</div>
+        <p class="card-desc">
+          수백~수천 명의 직원이 매일 사내 대량 문서를 조회하고 보고서를 생성할 경우, 종량제 API 호출 비용이 매월 수천만 원 단위로 폭증합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">품질 장벽</div>
+        <div class="card-title">단일 프롬프트의 환각 및 한계</div>
+        <p class="card-desc">
+          단순한 단일 챗봇(Single Agent) 구조로는 회계, 법무, 인사 규정이 복합적으로 얽힌 실무 보고서를 정확성 있게 작성하지 못하고 거짓 답변을 유발합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 우리의 해결 방법 (Solution) -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 구조적 해결 방법 (Solution)</h2>
+    <p class="report-p">
+      대형 IT 기업의 수십억 원대 SI 용역 대신, <strong>단일 전용 서버에 즉시 설치 가능한 온프레미스 패키지</strong>로 문제를 해결합니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>기존 접근법 (퍼블릭 클라우드 SaaS)</th>
+            <th>우리의 솔루션 (소버린 폐쇄망 패키지)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>데이터 보안</strong></td>
+            <td>외부 서버로 문서 데이터 및 프롬프트 전송</td>
+            <td><strong>사내 IDC 내부에서 100% 자체 연산 (외부 통신 0%)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>과금 모델</strong></td>
+            <td>질문/단어 수에 따라 계속 늘어나는 API 종량제</td>
+            <td><strong>서버 라이선스 기반 도입 (무제한 호출, 월 토큰비 0원)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>업무 처리 방식</strong></td>
+            <td>사용자가 직접 프롬프트 작성 및 단발성 요약</td>
+            <td><strong>문서 탐색-검증-보고서 작성을 분담하는 멀티 에이전트 협업</strong></td>
+          </tr>
+          <tr>
+            <td><strong>도입 기간</strong></td>
+            <td>규제 심사 및 보안성 검토로 3~6개월 지연/반려</td>
+            <td><strong>컨테이너(Docker/K8s) 기반으로 2~4주 내 사내 배포 완료</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-box">
+      <div class="callout-title">📌 실무 작업자의 체감 변화</div>
+      <p class="callout-desc">
+        실무자는 수백 페이지의 규정집과 과거 사내 이력을 일일이 열람할 필요가 없습니다. 목표 주제만 제시하면 각 에이전트가 규정 대조와 논리 검증을 마친 <strong>'즉시 결재 가능한 보고서 초안'</strong>을 출력하며, 작업자는 최종 검토 후 승인만 수행합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 공식 출처 및 근거 링크 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 근거 및 규제 레퍼런스</div>
+    <ul class="reference-list">
+      <li>
+        <span>[금융 규제]</span>
+        <a href="https://www.fsc.go.kr/no010101/82885" target="_blank" rel="noopener noreferrer">
+          금융위원회, 「금융분야 망분리 개선 로드맵 발표 및 생성형 AI 보안 통제 가이드」
+        </a>
+      </li>
+      <li>
+        <span>[인프라 표준]</span>
+        <a href="https://www.ncloud.com/neurocloud" target="_blank" rel="noopener noreferrer">
+          네이버클라우드, 「뉴로클라우드(Neurocloud): 엔터프라이즈 전용 온프레미스 AI 아키텍처」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 02</span>
+    <h1 class="report-title">비기술자를 위한 핵심 용어 사전</h1>
+    <p class="report-subtitle">
+      전략 문서를 단번에 관통하는 5가지 핵심 기술 및 비즈니스 개념 완벽 정리
+    </p>
+  </header>
+
+  <!-- 1. 소버린 AI & 온프레미스 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 데이터 주권과 보안: 소버린 AI & 온프레미스</h2>
+    <p class="report-p">
+      클라우드 AI와 온프레미스 소버린 AI의 차이는 <strong>"남의 은행 금고를 빌려 쓰느냐, 내 집 안에 직접 금고를 두느냐"</strong>의 차이와 같습니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">개념 01</div>
+        <div class="card-title">소버린 AI (Sovereign AI)</div>
+        <p class="card-desc">
+          <strong>'자주적 주권(Sovereignty)'을 가진 AI</strong>를 뜻합니다. 타국이나 거대 빅테크 클라우드에 데이터를 넘기지 않고, 국가나 기업이 독자적으로 인프라, 데이터, 운영 통제권을 100% 소유하는 인공지능 운영 모델입니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">개념 02</div>
+        <div class="card-title">온프레미스 & 에어갭 (On-Premises / Air-Gapped)</div>
+        <p class="card-desc">
+          외부 인터넷 클라우드를 쓰지 않고, <strong>회사 내부 전산실(IDC) 물리 서버에 직접 소프트웨어를 설치</strong>해 구동하는 방식입니다. 인터넷 선을 아예 뽑아버린 완전 폐쇄망(에어갭) 환경에서도 외부 통신 없이 독립 작동합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. RAG & 멀티 에이전트 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 정확도와 협업 구조: RAG & 멀티 에이전트</h2>
+    <p class="report-p">
+      AI가 거짓말을 지어내는 환각(Hallucination)을 막고 실제 업무를 완수하게 만드는 핵심 엔지니어링 개념입니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">개념 03</div>
+        <div class="card-title">RAG (검색 증강 생성)</div>
+        <p class="card-desc">
+          시험 볼 때 외운 기억만으로 답을 쓰는 게 아니라, <strong>'사내 최신 규정집을 책상 위에 펼쳐놓고(오픈북) 근거를 찾아 답변하는 방식'</strong>입니다. AI가 엉뚱한 거짓말을 하지 않도록 사내 실제 문서만 인용하도록 강제합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">개념 04</div>
+        <div class="card-title">멀티 에이전트 (Multi-Agent System)</div>
+        <p class="card-desc">
+          혼자서 북 치고 장구 치는 단일 챗봇이 아니라, <strong>'역할이 분담된 사내 TF팀'</strong>입니다. 자료 검색원, 팩트 검증원, 보고서 작성원 AI가 각자 작업 히스토리를 유지하며 서로 피드백을 주고받아 최종 결과물을 만듭니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 원가와 운영: TCO와 AMC -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 비용과 비즈니스 용어: TCO & AMC</h2>
+    <p class="report-p">
+      사업계획서와 도입 제안서에서 경영진이 가장 꼼꼼하게 따지는 재무 지표입니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>비즈니스 용어</th>
+            <th>기존 의미</th>
+            <th>본 제안서에서의 핵심 해석</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TCO (총소유비용)</strong><br><small>Total Cost of Ownership</small></td>
+            <td>초기 구매비뿐 아니라 운영·유지보수까지 포함한 3~5년 전체 누적 비용</td>
+            <td>
+              클라우드 AI의 <strong>'매월 폭증하는 토큰 호출료'</strong>를 제거하여, 초기 서버 설치비 이후 3개년 누적 비용을 80% 이상 절감함을 증명하는 지표.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>AMC (연간 유지보수 계약)</strong><br><small>Annual Maintenance Contract</small></td>
+            <td>소프트웨어 납품 후 정기 패치 및 장애 대응을 위해 청구하는 연간 관리비</td>
+            <td>
+              인터넷이 차단된 폐쇄망에서도 분기별 보안 패치 번들과 자가 룰 갱신을 지원하며, <strong>초기 도입비의 15~20%를 정기적이고 안정적인 매출로 전환</strong>하는 장치.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-box">
+      <div class="callout-title">💡 30초 요약 멘트</div>
+      <p class="callout-desc">
+        "우리의 제품은 외부 유출 걱정 없는 <strong>사내 폐쇄망 금고(온프레미스 소버린 AI)</strong> 안에, 오픈북 시험을 치르는 <strong>사내 AI TF팀(RAG + 멀티 에이전트)</strong>을 심어두어, 추가 통신 비용 없이 완성형 보고서를 뽑아내는 패키지 솔루션입니다."
+      </p>
+    </div>
+  </section>
+
+  <!-- 공식 출처 및 각주 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 기술 레퍼런스</div>
+    <ul class="reference-list">
+      <li>
+        <span>[소버린 AI 정의]</span>
+        <a href="https://blogs.nvidia.co.kr/blog/what-is-sovereign-ai/" target="_blank" rel="noopener noreferrer">
+          엔비디아(NVIDIA), 「소버린 AI(Sovereign AI)란? 국가와 기업의 데이터 주권 가이드」
+        </a>
+      </li>
+      <li>
+        <span>[에이전틱 아키텍처]</span>
+        <a href="https://www.ibm.com/kr-ko/think/topics/agentic-rag" target="_blank" rel="noopener noreferrer">
+          IBM Think, 「에이전틱 RAG(Agentic RAG)와 멀티 에이전트 협업 구조 분석」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 03</span>
+    <h1 class="report-title">현재 시장 상황 및 경쟁 지형도 분석</h1>
+    <p class="report-subtitle">
+      빅테크 인프라 과점과 얕은 RAG 솔루션의 틈새: 중견·준대기업 폐쇄망 공백 시장
+    </p>
+  </header>
+
+  <!-- 1. 국내 엔터프라이즈 소버린 AI 점유 지형도 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 소버린 파운데이션 모델 및 인프라 점유 현황</h2>
+    <p class="report-p">
+      국내 기업용 폐쇄망·온프레미스 AI 시장은 <strong>'공공·금융 망분리 레퍼런스를 선점한 빅테크'</strong>와 <strong>'특화 경량 모델을 내세운 기술 스타트업'</strong>으로 양분되어 있습니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>플레이어 구분</th>
+            <th>대표 기업 및 엔진</th>
+            <th>주요 비즈니스 방식</th>
+            <th>시장 점유 및 현실적 한계</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>빅테크 인프라형</strong></td>
+            <td>네이버클라우드<br>(하이퍼클로바X)</td>
+            <td>하이브리드 전용 서버 랙(뉴로클라우드) 납품 중심</td>
+            <td>
+              <strong>공공·금융 선점 (약 40~50%)</strong><br>
+              수억~수십억 대 인프라 견적으로 일반 기업 도입 불가
+            </td>
+          </tr>
+          <tr>
+            <td><strong>대기업 그룹사 SI형</strong></td>
+            <td>삼성SDS(가우스),<br>LG CNS(엑사원 3.0)</td>
+            <td>그룹사 폐쇄망 내재화 후 외부 대기업 대상 맞춤형 SI 수주</td>
+            <td>
+              <strong>제조·대기업 독점 (약 30%)</strong><br>
+              표준 패키지가 아닌 장기 용역 형태로 구축 단가 과다
+            </td>
+          </tr>
+          <tr>
+            <td><strong>특화 sLLM 스타트업형</strong></td>
+            <td>업스테이지(Solar),<br>코난테크놀로지 등</td>
+            <td>자체 경량 모델 가중치 온프레미스 라이선스 판매</td>
+            <td>
+              <strong>틈새 시장 성장 중 (약 20~25%)</strong><br>
+              자체 모델 학습 R&D 비용 부담으로 라이선스비 여전히 고가
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 2. 결합 제품의 현황 및 치명적 한계 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 소버린 엔진 + 외부 솔루션 결합 제품의 한계</h2>
+    <p class="report-p">
+      소버린 AI 엔진 위에 문서 솔루션을 결합한 3rd 파티 제품들이 시장에 출시되어 있으나, 실무 부서의 체감 효용은 여전히 낮습니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">기존 결합 유형 A</div>
+        <div class="card-title">전통 오피스 애드온 (한컴 등)</div>
+        <p class="card-desc">
+          <strong>단순 서식 보조에 국한:</strong> 공문서 요약이나 맞춤법 교정 등 단발성 문서 보조에 머무르며, 사내 복잡한 이종 규정을 교차 분석하는 고차원 기획 기능은 부재합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">기존 결합 유형 B</div>
+        <div class="card-title">기업용 검색 챗봇 (올거나이즈 등)</div>
+        <p class="card-desc">
+          <strong>얕은 RAG(검색기) 수준:</strong> "매뉴얼 어디 있냐"를 찾아주는 챗봇 수준이며, 실무자가 원하는 <strong>완성형 결재 보고서 초안을 스스로 조립하는 수준</strong>에는 도달하지 못했습니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">시장 불일치</div>
+        <div class="card-title">구축 견적의 양극화</div>
+        <p class="card-desc">
+          대형 SI는 최소 10억~30억 원을 부르고, 퍼블릭 SaaS는 보안상 쓸 수 없습니다. <strong>예산 1~2억 원 선의 중견·준대기업</strong>은 사실상 방치되어 있습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 시장의 구조적 공백과 우리의 기회 -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 우리가 점령할 시장의 결정적 빈틈 (White Space)</h2>
+    <div class="callout-box success">
+      <div class="callout-title">🎯 시장 진입 공식 (Market Opportunity)</div>
+      <p class="callout-desc">
+        "빅테크는 값비싼 하드웨어 랙을 팔고, 대형 SI는 비싼 인건비 용역을 팔며, 챗봇 스타트업은 단순 검색기만 팝니다.
+        우리는 <strong>검증된 소버린 엔진 위에 멀티 에이전트 오케스트레이션만 소프트웨어 패키지로 얹어</strong>, 대형 SI 대비 80% 저렴한 단가로 '보고서 완성형 실무 자동화'를 제공합니다."
+      </p>
+    </div>
+  </section>
+
+  <!-- 공식 출처 및 각주 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 시장 및 레퍼런스 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[빅테크 결합 사례]</span>
+        <a href="https://www.hancom.com" target="_blank" rel="noopener noreferrer">
+          한글과컴퓨터, 「네이버클라우드 하이퍼클로바X 연동 한컴어시스턴트 엔터프라이즈 솔루션」
+        </a>
+      </li>
+      <li>
+        <span>[LG 엔터프라이즈 오픈 가중치]</span>
+        <a href="https://www.lgresearch.ai" target="_blank" rel="noopener noreferrer">
+          LG AI연구원, 「엑사원 3.0(EXAONE 3.0) 경량 및 엔터프라이즈 특화 모델 라인업 발표」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 04</span>
+    <h1 class="report-title">고객 페인포인트 및 핵심 가설 검증</h1>
+    <p class="report-subtitle">
+      현업 실무자부터 보안 책임자(CISO)까지 직면한 3대 병목과 솔루션 도출 가설
+    </p>
+  </header>
+
+  <!-- 1. 이해관계자별 3대 핵심 고통 (Pain Points) -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 기업 내 핵심 이해관계자별 Pain Points</h2>
+    <p class="report-p">
+      엔터프라이즈 환경에서 AI 솔루션 도입이 무산되거나 표류하는 이유는 직급과 직무에 따라 서로 다른 치명적인 병목을 겪고 있기 때문입니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">현업 실무자 (User)</div>
+        <div class="card-title">문서 탐색 및 조립 피로도</div>
+        <p class="card-desc">
+          사내 규정, 과거 기안문, 부서별 가이드가 흩어져 있어 <strong>보고서 1건을 쓰기 위해 3~5시간을 문서 탐색에 허비</strong>합니다. 기존 챗봇은 문서 링크만 던져줄 뿐 정작 기안서는 직접 써야 합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">보안 책임자 (CISO)</div>
+        <div class="card-title">클라우드 반출 리스크 & 감사 부담</div>
+        <p class="card-desc">
+          외부 API를 쓰는 순간 기밀 유출 위험 및 금융·공공 컴플라이언스 위반 책임이 발생합니다. <strong>"사외로 나가는 네트워크 트래픽 0바이트"</strong>가 증명되지 않으면 결재를 내줄 수 없습니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">경영진 / 재무팀 (CFO)</div>
+        <div class="card-title">통제 불가능한 토큰 종량제 비용</div>
+        <p class="card-desc">
+          직원 수천 명이 문서를 요약할 때마다 매월 수천만 원의 종량제 API 비용이 나가는 구조는 감당할 수 없습니다. <strong>예측 가능한 초기 투자(CAPEX) 및 고정 유지비</strong>를 원합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 핵심 문제 가설 설정 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 비즈니스 가설 설정 (Hypothesis)</h2>
+    <p class="report-p">
+      우리는 고객의 Pain Point를 해소하기 위해 3가지 명확한 전제 가설을 수립했습니다.
+    </p>
+
+    <div class="callout-box">
+      <div class="callout-title">가설 1. [품질 가설] 에이전트 분업화 가설</div>
+      <p class="callout-desc">
+        단일 모델이 혼자 답변하는 것보다, '검색 담당'과 '규정 대조 담당', '서식 작성 담당'으로 역할을 쪼개 상호 검증(Cross-validation)을 거치면, <strong>환각률을 0%에 수렴시키고 실무자가 즉시 쓸 수 있는 완성형 기안서</strong>를 뽑아낼 수 있다.
+      </p>
+    </div>
+
+    <div class="callout-box">
+      <div class="callout-title">가설 2. [비용 가설] 온프레미스 TCO 역전 가설</div>
+      <p class="callout-desc">
+        클라우드 종량제 API를 쓰지 않고, 사내 4U 추론 서버 1대(L40S 기반)에 경량 소버린 모델을 얹으면 <strong>쿼리 호출량이 늘어날수록 3개년 누적 비용(TCO)이 클라우드 SaaS 대비 80% 이상 절감</strong>된다.
+      </p>
+    </div>
+
+    <div class="callout-box">
+      <div class="callout-title">가설 3. [시장 가설] No-SI 표준 패키지 가설</div>
+      <p class="callout-desc">
+        수개월이 걸리는 대기업 SI 용역 대신, <strong>Docker/K8s 기반 표준 컨테이너 패키지로 2~4주 내 사내망 배포를 끝내는 제품</strong>이 나온다면, 예산 1~2억 원대 중견·준대기업 시장을 빠르게 독점할 수 있다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. 가설 달성 메커니즘 (How to Achieve) -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 가설 성취 메커니즘 (검증 구조)</h2>
+    <p class="report-p">
+      각 가설을 구체적인 제품 기능과 연결하여 실현 가능성을 입증합니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>해결 가설</th>
+            <th>구체적 기능 및 아키텍처</th>
+            <th>도입 후 검증 가능한 정량 지표</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>가설 1. 품질</strong></td>
+            <td>Stateful 멀티 에이전트 파이프라인 (검색 → 팩트 체크 → 표준 양식 렌더링)</td>
+            <td>
+              • 사내 기안서 작성 소요 시간: <strong>4시간 ➔ 15분 (93% 단축)</strong><br>
+              • 출처 불일치(환각 발생률): <strong>0.5% 미만 달성</strong>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>가설 2. 비용</strong></td>
+            <td>폐쇄망 내부 자체 추론 엔진 탑재 (외부 API 호출 Zero화)</td>
+            <td>
+              • 월간 추가 토큰 비용: <strong>0원</strong><br>
+              • 3년 누적 인프라 비용 절감: <strong>최소 1.5억 원 이상 세이브</strong>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>가설 3. 도입 속도</strong></td>
+            <td>에어갭 전용 사전 빌드 컨테이너 및 브라우저 기반 관리자 콘솔 탑재</td>
+            <td>
+              • 시스템 도입 리드타임: <strong>최대 3주 내 즉시 가동</strong><br>
+              • 파견 SI 인력 비용: <strong>0원 (제품 라이선스 계약)</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 설문 및 생산성 연구 레퍼런스</div>
+    <ul class="reference-list">
+      <li>
+        <span>[생산성 지표]</span>
+        <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">
+          McKinsey & Company, 「엔터프라이즈 업무 자동화 및 임직원 문서 탐색 비효율 개선 리포트」
+        </a>
+      </li>
+      <li>
+        <span>[환각 저감 구조]</span>
+        <a href="https://arxiv.org/abs/2308.10848" target="_blank" rel="noopener noreferrer">
+          ArXiv, 「Communicative Agents for Software Development (멀티 에이전트 상호 검증 연구)」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 05</span>
+    <h1 class="report-title">솔루션 제안 및 승리 공식 (Winning Strategy)</h1>
+    <p class="report-subtitle">
+      왜 이길 수밖에 없는가? 경쟁군 대비 압도적 차별점과 약점 극복 전략
+    </p>
+  </header>
+
+  <!-- 1. 솔루션 핵심 정의 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 솔루션 정체성: 'Air-gapped Agentic Package'</h2>
+    <p class="report-p">
+      본 솔루션은 비싼 인프라 랙이나 개발자 파견 용역이 아닙니다. 
+      <strong>고객사 내부 전산망 서버 1대에 통째로 설치되어, 외부 인터넷 없이 완결되는 '멀티 에이전트 사내 문서 작업 자동화 패키지'</strong>입니다.
+    </p>
+
+    <div class="callout-box success">
+      <div class="callout-title">🏆 승리 공식 (Winning Logic)</div>
+      <p class="callout-desc">
+        대기업 SI는 <strong>"너무 비싸고 오래 걸려서(10억+, 6개월)"</strong> 못 쓰고, 퍼블릭 SaaS는 <strong>"보안 규제와 비용 누적"</strong> 때문에 못 쓰는 1~2억 원대 알짜 시장을 <strong>표준 컨테이너 패키징(2~4주 배포, TCO 80% 절감)</strong>으로 장악합니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. 경쟁 구도 비교 매트릭스 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 경쟁 대안별 핵심 비교 매트릭스</h2>
+    <p class="report-p">
+      시장에 존재하는 3대 대안과 본 제품의 실무 도입 스펙 비교입니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>비교 항목</th>
+            <th>대형 SI 구축형 (삼성SDS/LG CNS 등)</th>
+            <th>빅테크 전용 랙 (네이버 뉴로클라우드)</th>
+            <th>퍼블릭 SaaS (ChatGPT/일반 RAG)</th>
+            <th><strong>본 솔루션 (소버린 패키지)</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>도입 비용 (CAPEX)</strong></td>
+            <td>10억 ~ 30억 원+</td>
+            <td>5억 ~ 10억 원+</td>
+            <td>0원 (초기비 없음)</td>
+            <td><strong>7천만 ~ 1억 원 내외</strong></td>
+          </tr>
+          <tr>
+            <td><strong>운영 비용 (OPEX)</strong></td>
+            <td>연 수억 원 인건비</td>
+            <td>연 억 단위 관리비</td>
+            <td>호출량 비례 월 수천만 원</td>
+            <td><strong>연 15~20% AMC (고정)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>배포 소요 기간</strong></td>
+            <td>6개월 ~ 1년 (파견 개발)</td>
+            <td>3개월 ~ 6개월</td>
+            <td>즉시 사용</td>
+            <td><strong>2주 ~ 4주 (컨테이너 배포)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>망분리 규제 충족</strong></td>
+            <td>완전 충족</td>
+            <td>충족 (하이브리드 랙)</td>
+            <td><strong>불가 (보안 규제 위반)</strong></td>
+            <td><strong>완전 충족 (100% 에어갭)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>결과물 완성도</strong></td>
+            <td>커스텀 개발 수준</td>
+            <td>기본 플랫폼 제공</td>
+            <td>단발성 요약 / 단순 챗봇</td>
+            <td><strong>완성형 기안서·보고서 출력</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. 솔루션 강점과 약점, 극복 전략 (SWOT 대응) -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 현실적 강·약점 분석 및 극복 전략</h2>
+    <p class="report-p">
+      현실적인 제약을 숨기지 않고 엔지니어링 및 비즈니스 관점에서 선제적으로 방어합니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item highlight">
+        <div class="card-tag">핵심 강점 (Strength)</div>
+        <div class="card-title">원가 경쟁력 & 즉시 도입</div>
+        <p class="card-desc">
+          자체 파운데이션 모델 학습 비용(수백억 R&D)을 쓰지 않고 검증된 소버린 엔진에 에이전트 레이어만 집중하여 가격을 1/5로 낮추고 3주 내 즉시 설치합니다.
+        </p>
+      </div>
+
+      <div class="card-item highlight">
+        <div class="card-tag">핵심 강점 (Strength)</div>
+        <div class="card-title">품질 완결성 (Cross-Check)</div>
+        <p class="card-desc">
+          단일 프롬프트가 아닌 '검색-규정대조-양식작성' 3단계 에이전트 협업으로 사내 양식에 맞춘 완성형 보고서를 오차 없이 생성합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">잠재 약점 (Weakness)</div>
+        <div class="card-title">거대 빅테크 대비 브랜드 신뢰도</div>
+        <p class="card-desc">
+          초기 스타트업 특성상 대기업 구매팀의 벤더 등록 평가나 안정성 검증에서 빅테크 대비 불리할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">극복 전략 (Action Plan)</div>
+        <div class="card-title">2주 무상 온사이트 PoC (실증)</div>
+        <p class="card-desc">
+          서버 1대를 들고 가 고객사 폐쇄망에서 실제 사내 문서로 2주간 직접 보고서 품질과 속도를 증명하는 '체험 후 구매' 방식으로 신뢰 장벽을 돌파합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 경쟁 및 B2B 전략 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[엔터프라이즈 AI TCO 분석]</span>
+        <a href="https://www.gartner.com/en/newsroom/press-releases/2024-03-20-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025" target="_blank" rel="noopener noreferrer">
+          Gartner, 「생성형 AI 프로젝트 PoC 후 실패 원인 분석: 비용 폭증과 인프라 통제 부재」
+        </a>
+      </li>
+      <li>
+        <span>[온프레미스 컨테이너 아키텍처]</span>
+        <a href="https://www.redhat.com/ko/technologies/cloud-computing/openshift" target="_blank" rel="noopener noreferrer">
+          Red Hat, 「에어갭(Air-gapped) 환경에서의 컨테이너 기반 엔터프라이즈 AI 배포 표준」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 06</span>
+    <h1 class="report-title">제품 아키텍처 및 멀티 에이전트 워크플로우</h1>
+    <p class="report-subtitle">
+      수만 장의 폐쇄망 문서에서 핵심 규정을 추출하고 결재용 보고서를 완성하는 분업 파이프라인
+    </p>
+  </header>
+
+  <!-- 1. 아키텍처 전체 흐름 (CSS 플로우 다이어그램) -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 3단계 에이전트 협업 파이프라인 개요</h2>
+    <p class="report-p">
+      단일 모델이 질문을 받고 즉시 작문하는 기존 방식 대신, <strong>'탐색 ➔ 규정 대조/검증 ➔ 문서 합성'</strong>의 3개 전담 에이전트가 상태(State)를 공유하며 순차적으로 교차 검증합니다.
+    </p>
+
+    <!-- 플로우 다이어그램 카드 -->
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">STEP 01. 탐색</div>
+        <div class="card-title">🔍 리서치 에이전트 (Retriever)</div>
+        <p class="card-desc">
+          <strong>수만 건 문서 고속 필터링:</strong> 사내 벡터 DB와 키워드 하이브리드 검색을 병렬 수행하여, 연관 규정집 및 과거 승인 보고서의 핵심 문단을 2초 내 추출합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">STEP 02. 검증</div>
+        <div class="card-title">⚖️ 컴플라이언스 에이전트 (Auditor)</div>
+        <p class="card-desc">
+          <strong>환각 0% 교차 검증:</strong> 추출된 근거 문단이 최신 사내 내규 및 법률 기준에 부합하는지 대조하고, 허위 진술이나 구버전 규정 인용을 차단합니다.
+        </p>
+      </div>
+
+      <div class="card-item highlight">
+        <div class="card-tag">STEP 03. 출력</div>
+        <div class="card-title">📝 드래프터 에이전트 (Synthesizer)</div>
+        <p class="card-desc">
+          <strong>완성형 양식 출력:</strong> 검증된 데이터만 바탕으로 표준 기안문·품의서 서식에 맞게 목차, 본문, 출처 각주를 자동으로 정렬하여 최종 문서를 렌더링합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 대량 문서 고속 처리 기술: Hybrid Search & Reranking -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 대량 문서 고속 탐색 핵심 알고리즘</h2>
+    <p class="report-p">
+      실무 문서(PDF, HWP, 엑셀 등)는 표와 고유 번호가 많아 단순 의미 기반 검색(Semantic Search)만으로는 누락이 발생합니다. 본 솔루션은 2단계 필터링 구조를 적용합니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>파이프라인 단계</th>
+            <th>적용 기술</th>
+            <th>기존 검색 방식과의 차이점</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1단계: 초고속 후보 추출</strong></td>
+            <td>Sparse(BM25 키워드) + Dense(임베딩 벡터) 하이브리드 인덱싱</td>
+            <td>
+              특정 규정 조항 번호(예: 제14조 2항)와 의미적 맥락(예: 여비 규정 한도)을 동시에 잡아내어 검색 누락율 최소화
+            </td>
+          </tr>
+          <tr>
+            <td><strong>2단계: 정밀 재정렬</strong></td>
+            <td>폐쇄망 탑재 경량 Cross-Encoder Reranker</td>
+            <td>
+              수백 개의 검색 후보 문단 중 질문 맥락과 가장 일치도가 높은 상위 5~10개 정밀 문단만 압축 선별
+            </td>
+          </tr>
+          <tr>
+            <td><strong>3단계: 상태 기반 전달</strong></td>
+            <td>Stateful Context Memory 관리</td>
+            <td>
+              에이전트 간 전달 시 원본 문맥과 메타데이터(문서 작성 일자, 작성 부서)를 유지하여 환각 발생 차단
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. 실무 체감 시나리오 -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 실제 구동 시나리오 (Before vs After)</h2>
+    <div class="callout-box">
+      <div class="callout-title">📋 실무 시나리오 예시: "신규 AI 솔루션 도입 검토 품의서 작성"</div>
+      <p class="callout-desc">
+        <strong>사용자 입력:</strong> "A사 솔루션 도입 검토용 3페이지 분량 기안문 작성해 줘. 사내 보안 규정 준수 여부 명시할 것."<br>
+        <strong>1. 리서치 에이전트:</strong> 사내 정보보안 규정집 제7장, 2025년 IT 자산 도입 지침, 표준 품의서 템플릿 로드.<br>
+        <strong>2. 컴플라이언스 에이전트:</strong> 사내 폐쇄망 기준 충족 여부 체크리스트 자동 대조 완료.<br>
+        <strong>3. 드래프터 에이전트:</strong> 표준 서식 규격에 맞춰 목차(추진 배경 - 보안성 검토 - 소요 예산 - 기대 효과)로 정돈된 완성형 문서 초안 출력 (소요 시간: 약 35초).
+      </p>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 기술 아키텍처 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[하이브리드 RAG]</span>
+        <a href="https://www.pinecone.io/learn/hybrid-search-intro/" target="_blank" rel="noopener noreferrer">
+          Pinecone, 「Dense-Sparse 하이브리드 검색 아키텍처 및 엔터프라이즈 RAG 최적화」
+        </a>
+      </li>
+      <li>
+        <span>[에이전트 오케스트레이션]</span>
+        <a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener noreferrer">
+          LangGraph Framework, 「Stateful Multi-Agent Orchestration Architecture Reference」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 07</span>
+    <h1 class="report-title">폐쇄망 환경의 배포 및 Day-2 운영 모델</h1>
+    <p class="report-subtitle">
+      외부 인터넷이 100% 차단된 에어갭 환경에서의 무중단 배포 및 자가 유지보수(Day-2 Ops) 체계
+    </p>
+  </header>
+
+  <!-- 1. 엔지니어링 배포 아키텍처 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 에어갭(Air-gapped) 환경 오프라인 배포 프로세스</h2>
+    <p class="report-p">
+      인터넷 통신이 완전히 막힌 폐쇄망 전산실에서도 개발자 상주나 인터넷 연결 없이 안전하게 패키지를 이식하고 최신 상태를 유지하는 3단계 배포 파이프라인을 운영합니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">STEP 01. 무해화 검증</div>
+        <div class="card-title">📦 암호화 번들 반입 (Tarball)</div>
+        <p class="card-desc">
+          에이전트 엔진, 모델 가중치, 웹 UI를 하나의 컨테이너 이미지 아카이브(Tar)로 패키징하여, 고객사 보안실의 악성코드 전수 검사 및 승인을 거쳐 전용 매체로 반입합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">STEP 02. 내부 배포</div>
+        <div class="card-title">🚀 사내 레지스트리 무중단 배포</div>
+        <p class="card-desc">
+          고객사 사내 프라이빗 레지스트리(Private Harbor/Docker)에 이미지를 등록한 후, 블루-그린(Blue-Green) 방식으로 기존 업무 중단 없이 새 버전을 교체합니다.
+        </p>
+      </div>
+
+      <div class="card-item highlight">
+        <div class="card-tag">STEP 03. 자가 운영</div>
+        <div class="card-title">🛠️ 노코드 사내 관리자 콘솔</div>
+        <p class="card-desc">
+          규정집 개정이나 서식 추가 시 외부 유지보수 인력 호출 없이, 사내 관리자가 웹 브라우저에서 새 PDF를 업로드하면 폐쇄망 서버 안에서 자동 인덱싱됩니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 유지보수 방식 및 지속 수익 모델 (AMC) -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 비즈니스 유지보수 과금 모델 (AMC)</h2>
+    <p class="report-p">
+      초기 일회성 구축으로 끝나는 SI와 달리, 표준 소프트웨어 라이선스와 연간 유지보수 계약을 통해 지속 가능하고 안정적인 현금 흐름을 창출합니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>기존 SI 용역 유지보수</th>
+            <th><strong>본 솔루션 Day-2 Ops 모델</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>유지보수 방식</strong></td>
+            <td>개발자 인력 상주 파견 (월 맨먼스 공수 청구)</td>
+            <td><strong>분기별 정기 오프라인 패치 번들 제공 + 원격 대응 불필요 자가 콘솔</strong></td>
+          </tr>
+          <tr>
+            <td><strong>비용 예측 가능성</strong></td>
+            <td>기능 수정 시마다 추가 개발 견적 발생 (비예측적)</td>
+            <td><strong>초기 소프트웨어 라이선스비의 연 15~20% 고정 계약</strong></td>
+          </tr>
+          <tr>
+            <td><strong>고객사 락인(Lock-in)</strong></td>
+            <td>담당 개발자 퇴사 시 유지보수 공백 위험</td>
+            <td><strong>표준 컨테이너 기반 아키텍처로 인력 종속성 없이 연속성 보장</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-box success">
+      <div class="callout-title">💡 보안 책임자가 안심하는 이유 (Security Assurance)</div>
+      <p class="callout-desc">
+        유지보수를 빌미로 외부 개발자가 사내망에 원격 접속(VPN 등)할 필요가 전혀 없습니다. 모든 일상 운영은 사내 폐쇄망 안에서 완결되며, 정기 업데이트 역시 정식 보안성 심의를 통과한 패키지 반입으로만 진행됩니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 폐쇄망 엔지니어링 표준 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[에어갭 쿠버네티스 표준]</span>
+        <a href="https://kubernetes.io/docs/tasks/administer-cluster/" target="_blank" rel="noopener noreferrer">
+          Kubernetes Documentation, 「Air-gapped Cluster Installation and Offline Image Registry Guide」
+        </a>
+      </li>
+      <li>
+        <span>[보안 데이터 반입 가이드]</span>
+        <a href="https://www.kisa.or.kr" target="_blank" rel="noopener noreferrer">
+          한국인터넷진흥원(KISA), 「주요정보통신기반시설 정보보안 가이드라인: 보조기억매체 보안 통제 기준」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 08</span>
+    <h1 class="report-title">가격 정책 및 3개년 TCO(총소유비용) 비교 분석</h1>
+    <p class="report-subtitle">
+      클라우드 API 종량제 폭증 vs 대형 SI 랙 견적 vs 온프레미스 패키지 경제성 검증
+    </p>
+  </header>
+
+  <!-- 1. 가격 모델 구조 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 솔루션 가격 책정 구조 (Pricing Structure)</h2>
+    <p class="report-p">
+      본 솔루션은 끝없이 비용이 청구되는 클라우드 토큰 종량제나 수억 원대 인건비 SI가 아닌, <strong>'하드웨어 1회 구매 + 소프트웨어 영구 라이선스 + 선택적 연간 유지보수(AMC)'</strong>로 구성된 투명한 고정 비용 모델을 제공합니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item">
+        <div class="card-tag">하드웨어 (1회)</div>
+        <div class="card-title">추론 전용 워크스테이션/서버</div>
+        <p class="card-desc">
+          <strong>약 4,500만 ~ 6,000만 원 (일시불):</strong><br>
+          고가의 범용 H100 대신, 사내 문서 처리에 최적화된 엔터프라이즈 추론 GPU(NVIDIA L40S 2~4장) 탑재 단일 4U 서버 1대 구성.
+        </p>
+      </div>
+
+      <div class="card-item highlight">
+        <div class="card-tag">소프트웨어 라이선스 (1회)</div>
+        <div class="card-title">온프레미스 에이전트 패키지</div>
+        <p class="card-desc">
+          <strong>8,000만 원 (단일 영구 라이선스):</strong><br>
+          폐쇄망 에어갭 컨테이너 번들, 멀티 에이전트 오케스트레이터, 사내 노코드 관리자 콘솔, 표준 사용자 웹 UI 일체 포함.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">사후 운영비 (연간 선택)</div>
+        <div class="card-title">Day-2 연간 유지보수 (AMC)</div>
+        <p class="card-desc">
+          <strong>연 1,600만 원 (라이선스비의 20%):</strong><br>
+          분기별 정기 오프라인 보안 패치 번들 제공, 최신 모델 가중치 마이그레이션 지원, 장애 대응 SLA 보장.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 3개년 누적 TCO 비교표 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 임직원 500명 기준 3개년 TCO 시뮬레이션</h2>
+    <p class="report-p">
+      일일 평균 1인당 5건의 문서 검색/보고서 작성을 수행하는 기업(월 약 5,000만 토큰 소비 기준)의 실제 3개년 누적 비용 비교입니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>퍼블릭 클라우드 SaaS (API 종량제)</th>
+            <th>빅테크 하이브리드 전용 랙 (뉴로클라우드)</th>
+            <th><strong>본 솔루션 (온프레미스 패키지)</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>초기 도입비 (Year 1)</strong></td>
+            <td>0원 (셋업비 없음)</td>
+            <td>약 6억 ~ 8억 원 (랙 설치비)</td>
+            <td><strong>약 1.3억 원 (서버 5천 + SW 8천)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2년 차 누적 비용</strong></td>
+            <td>약 1.2억 원 (토큰비 누적)</td>
+            <td>약 8억 ~ 10억 원 (관리비 포함)</td>
+            <td><strong>약 1.46억 원 (초기비 + AMC 1년)</strong></td>
+          </tr>
+          <tr>
+            <td><strong>3년 차 총소유비용 (TCO)</strong></td>
+            <td><strong>약 1.8억 ~ 2.4억 원+</strong><br><small>(호출량 증가 시 무제한 폭증)</small></td>
+            <td><strong>약 10억 ~ 12억 원</strong><br><small>(고정 랙 인프라 유지비 과다)</small></td>
+            <td><strong>약 1.62억 원</strong><br><small>(호출량 늘어도 비용 고정)</small></td>
+          </tr>
+          <tr>
+            <td><strong>망분리 보안성</strong></td>
+            <td><strong>불가 (보안 규제 위반)</strong></td>
+            <td>충족</td>
+            <td><strong>완벽 충족 (100% 에어갭)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. 시각화: 3개년 TCO 누적 비용 차트 (CSS 막대그래프) -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 3개년 누적 총소유비용 시각화 비교</h2>
+    <p class="report-p">
+      사용량이 늘어날수록 API 종량제 모델은 비용이 가파르게 상승하지만, 온프레미스 패키지는 초기 비용 회수 후 완만한 유지보수 비용 곡선을 유지합니다.
+    </p>
+
+    <div class="chart-container">
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px;">
+          <span>빅테크 하이브리드 전용 랙 (대형 SI)</span>
+          <span style="color: #ef4444;">약 11.0억 원</span>
+        </div>
+        <div style="background-color: #e2e8f0; border-radius: 6px; height: 24px; overflow: hidden;">
+          <div style="background-color: #ef4444; width: 100%; height: 100%; border-radius: 6px;"></div>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 16px;">
+        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px;">
+          <span>퍼블릭 클라우드 API (SaaS 종량제 누적)</span>
+          <span style="color: #f59e0b;">약 2.1억 원 (호출량 비례 상승)</span>
+        </div>
+        <div style="background-color: #e2e8f0; border-radius: 6px; height: 24px; overflow: hidden;">
+          <div style="background-color: #f59e0b; width: 19%; height: 100%; border-radius: 6px;"></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px;">
+          <span><strong>본 솔루션 (온프레미스 패키지)</strong></span>
+          <span style="color: #10b981;">약 1.6억 원 (비용 상한 고정)</span>
+        </div>
+        <div style="background-color: #e2e8f0; border-radius: 6px; height: 24px; overflow: hidden;">
+          <div style="background-color: #10b981; width: 15%; height: 100%; border-radius: 6px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-box success">
+      <div class="callout-title">💰 재무적 의사결정의 핵심 포인트</div>
+      <p class="callout-desc">
+        빅테크 전용 랙 대비 <strong>약 85%의 예산 절감</strong> 효과를 거두며, 클라우드 API와 비교해도 <strong>도입 2년 차 시점에 TCO 역전</strong>이 발생합니다. 이후 발생하는 수백만 건의 쿼리는 전부 공짜(추가 비용 0원)로 처리됩니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 하드웨어 및 단가 산정 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[하드웨어 스펙]</span>
+        <a href="https://www.nvidia.com/ko-kr/data-center/l40s/" target="_blank" rel="noopener noreferrer">
+          NVIDIA 공식 페이지, 「NVIDIA L40S GPU 아키텍처 및 엔터프라이즈 LLM 추론 벤치마크」
+        </a>
+      </li>
+      <li>
+        <span>[인프라 TCO 분석]</span>
+        <a href="https://a16z.com/the-cost-of-cloud-a-trillion-dollar-paradox/" target="_blank" rel="noopener noreferrer">
+          Andreessen Horowitz (a16z), 「The Cost of Cloud: B2B 인프라의 온프레미스 회귀와 TCO 역전 분석」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 09</span>
+    <h1 class="report-title">단계별 도입 로드맵 및 시장 진입(GTM) 전략</h1>
+    <p class="report-subtitle">
+      '2주 온사이트 PoC'로 신뢰 장벽을 돌파하고 전사 라이선스로 확장하는 엔터프라이즈 진입 공식
+    </p>
+  </header>
+
+  <!-- 1. 4단계 온보딩 로드맵 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. 4단계 도입 파이프라인 (Onboarding Timeline)</h2>
+    <p class="report-p">
+      수개월이 소요되는 복잡한 SI 발주 절차 대신, <strong>단 6주 만에 실증부터 전사 정식 가동까지 완료</strong>되는 간결한 온보딩 프로세스를 운영합니다.
+    </p>
+
+    <div class="grid-cards">
+      <div class="card-item highlight">
+        <div class="card-tag">PHASE 01 (1~2주)</div>
+        <div class="card-title">🔬 2주 온사이트 무상 PoC</div>
+        <p class="card-desc">
+          <strong>체험 후 구매:</strong> 당사 테스트 서버 1대를 고객사 폐쇄망에 임시 설치하고, 실제 사내 규정 100건을 넣어 30초 내 보고서 자동 작성을 보안팀과 실무진에 즉시 입증합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">PHASE 02 (3~4주)</div>
+        <div class="card-title">⚙️ 패키지 배포 & 권한 연동</div>
+        <p class="card-desc">
+          <strong>에어갭 설치:</strong> 고객사 정식 하드웨어에 컨테이너 번들 인스톨, 사내 액티브 디렉토리(AD/LDAP) 연동을 통한 부서별 문서 열람 권한(RBAC) 체계를 확립합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">PHASE 03 (5~6주)</div>
+        <div class="card-title">🚀 파일럿 운영 및 서식 고도화</div>
+        <p class="card-desc">
+          <strong>실무 확산:</strong> 핵심 부서(기획팀, 법무팀, 감사팀 등 50명) 파일럿 가동을 통해 자주 쓰는 결재 서식 템플릿 10종을 최적화하고 최종 검수를 완료합니다.
+        </p>
+      </div>
+
+      <div class="card-item">
+        <div class="card-tag">PHASE 04 (이후 상시)</div>
+        <div class="card-title">🔄 Day-2 유지보수 (AMC) 전환</div>
+        <p class="card-desc">
+          <strong>자가 운영 체계:</strong> 노코드 관리자 콘솔을 통한 사내 자체 문서 갱신 시작, 분기별 정기 오프라인 패치 번들 납품으로 시스템 안정성을 유지합니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 시장 진입(GTM) 단계별 타깃 전략 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 목표 고객군별 단계적 시장 침투 전략</h2>
+    <p class="report-p">
+      의사결정이 상대적으로 빠른 알짜 중견 제조·금융사를 레퍼런스로 확보한 뒤, 공공 조달 시장으로 점진적 확장을 전개합니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>진입 단계</th>
+            <th>타깃 고객군</th>
+            <th>핵심 공략 메시지</th>
+            <th>도입 효과 검증 포인트</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1단계 (초기 거점)</strong></td>
+            <td>국가핵심기술 보유 중견 제조사<br>(반도체 장비, 2차전지 부품 등)</td>
+            <td>"핵심 도면 및 공정 매뉴얼 외부 유출 위험 0% 보장"</td>
+            <td>산업기술유출방지법 컴플라이언스 준수 및 엔지니어링 매뉴얼 검색 시간 80% 단축</td>
+          </tr>
+          <tr>
+            <td><strong>2단계 (수익 확장)</strong></td>
+            <td>지방은행, 저축은행, 중소형 증권사<br>(2금융권)</td>
+            <td>"샌드박스 인허가 심사 없는 즉시 도입 온프레미스"</td>
+            <td>전자금융감독규정 제15조 물리적 망분리 100% 충족 및 여신 심사 보고서 작성 자동화</td>
+          </tr>
+          <tr>
+            <td><strong>3단계 (스케일업)</strong></td>
+            <td>공공기관 및 지자체 산하기관</td>
+            <td>"빅테크 구축 대비 1/5 예산으로 행정 문서 자동화"</td>
+            <td>국정원 보안 가이드라인 준수 및 조달청 혁신시제품 지정을 통한 수의계약 확보</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout-box success">
+      <div class="callout-title">🎯 영업 클로징의 핵심 무기</div>
+      <p class="callout-desc">
+        "말뿐인 제안서로 영업하지 않습니다. <strong>고객사 폐쇄망 안에서 직접 돌려보고 눈으로 확인하는 2주 PoC</strong>를 무상 제공하므로, 도입 실패에 대한 고객사 의사결정자의 리스크를 제로(0)로 만듭니다."
+      </p>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 B2B 시장 진입(GTM) 전략 레퍼런스</div>
+    <ul class="reference-list">
+      <li>
+        <span>[B2B PoC 전략]</span>
+        <a href="https://www.bessemer.com/atlas/the-b2b-software-playbook" target="_blank" rel="noopener noreferrer">
+          Bessemer Venture Partners, 「엔터프라이즈 B2B 소프트웨어의 PoC 전환율 극대화 가이드」
+        </a>
+      </li>
+      <li>
+        <span>[공공 조달 체계]</span>
+        <a href="https://www.pps.go.kr" target="_blank" rel="noopener noreferrer">
+          조달청(PPS), 「혁신시제품 지정 및 공공기관 혁신조달 패스트트랙 운영 지침」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>
+<div class="report-container">
+  <!-- 헤더 -->
+  <header class="report-header">
+    <span class="report-badge">CHAPTER 10</span>
+    <h1 class="report-title">전략 종합 분석: SWOT 및 리스크 방어 체계</h1>
+    <p class="report-subtitle">
+      비즈니스 프레임워크를 통한 솔루션 타당성 최종 검증 및 지속 가능한 성장 로드맵
+    </p>
+  </header>
+
+  <!-- 1. SWOT 분석 매트릭스 -->
+  <section class="section-block">
+    <h2 class="section-h2">1. SWOT 종합 매트릭스</h2>
+    <p class="report-p">
+      내부 역량(강점·약점)과 외부 환경(기회·위협)의 교차 분석을 통해 비즈니스의 실행 타당성을 다각도로 검증합니다.
+    </p>
+
+    <div class="grid-cards">
+      <!-- 강점 -->
+      <div class="card-item highlight">
+        <div class="card-tag">Strength (강점)</div>
+        <div class="card-title">원가 우위 & 높은 효용</div>
+        <p class="card-desc">
+          • <strong>TCO 80% 절감:</strong> L40S 기반 최적화로 초기 1억 원대 도입 실현.<br>
+          • <strong>완전 에어갭:</strong> 외부 통신 0바이트로 보안성 검토 즉시 통과.<br>
+          • <strong>완성형 결과물:</strong> 단순 검색을 넘어 결재 양식 보고서 초안 직접 완성.
+        </p>
+      </div>
+
+      <!-- 약점 -->
+      <div class="card-item">
+        <div class="card-tag">Weakness (약점)</div>
+        <div class="card-title">브랜드 인지도 & 초기 레퍼런스</div>
+        <p class="card-desc">
+          • 대형 엔터프라이즈 구매팀 입찰 시 신생 스타트업의 신뢰도 장벽.<br>
+          • 표준화 패키지 특성상 개별 고객사의 극단적인 커스텀 요구 대응 제한.
+        </p>
+      </div>
+
+      <!-- 기회 -->
+      <div class="card-item highlight">
+        <div class="card-tag">Opportunity (기회)</div>
+        <div class="card-title">소버린 AI 확산 & 망분리 규제</div>
+        <p class="card-desc">
+          • <strong>국내 AI 시장 연 33.4% 급성장:</strong> 공공·금융의 국산 AI 선호 기조.<br>
+          • <strong>클라우드 토큰 피로도:</strong> 누적 종량제 요금 부담으로 온프레미스 회귀 가속.<br>
+          • <strong>중견·준대기업 공백:</strong> 10억+ 대형 SI를 쓰지 못하는 대규모 틈새 수요.
+        </p>
+      </div>
+
+      <!-- 위협 -->
+      <div class="card-item">
+        <div class="card-tag">Threat (위협)</div>
+        <div class="card-title">빅테크의 번들링 & 규제 변동</div>
+        <p class="card-desc">
+          • 네이버, 삼성SDS 등 빅테크의 중저가형 패키지 상품 출시 가능성.<br>
+          • 금융권 망분리 규제 완화로 퍼블릭 SaaS 진입 장벽이 낮아질 가능성.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 핵심 리스크 및 선제적 방어 전략 -->
+  <section class="section-block">
+    <h2 class="section-h2">2. 핵심 리스크 시나리오별 대응 방안</h2>
+    <p class="report-p">
+      시장 진입 및 확장 단계에서 마주할 3대 위협 요인에 대한 구체적인 대응 설계입니다.
+    </p>
+
+    <div class="report-table-wrapper">
+      <table class="report-table">
+        <thead>
+          <tr>
+            <th>리스크 요인</th>
+            <th>구체적 위협 상황</th>
+            <th>선제적 방어 및 극복 전략</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>빅테크의 모방 및 가격 인하</strong></td>
+            <td>네이버/통신사가 유사한 중소형 온프레미스 패키지를 출시하는 경우</td>
+            <td>
+              <strong>도메인 워크플로우 락인:</strong> 엔진 경쟁이 아닌, '특정 산업군(제조/금융) 결재 템플릿 및 업무 로직 최적화'로 전환 비용(Switching Cost)을 극대화하여 방어.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>금융 망분리 규제 완화</strong></td>
+            <td>퍼블릭 클라우드 SaaS 사용이 전면 허용될 경우</td>
+            <td>
+              <strong>비용 우위(Token Free) 소구:</strong> 규제가 풀려도 대량 호출에 따른 월간 수천만 원 토큰 비용은 남으므로, '무제한 쿼리 고정비 솔루션'이라는 경제성으로 시장 설득.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>초기 벤더 등록 장벽</strong></td>
+            <td>대기업의 엄격한 재무·업력 기준에 가로막히는 경우</td>
+            <td>
+              <strong>채널 파트너십(MSP/하드웨어 벤더):</strong> 서버 하드웨어 총판 및 전문 MSP 파트너사와 컨소시엄을 구성하여 공급함으로써 벤더 등록 문제를 우회 해결.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 3. 최종 결론 (Executive Conclusion) -->
+  <section class="section-block">
+    <h2 class="section-h2">3. 최종 제언 및 기대 효과</h2>
+    <div class="callout-box success">
+      <div class="callout-title">🏁 결론: "보안, 비용, 실무 효용의 완전한 교차점"</div>
+      <p class="callout-desc">
+        본 솔루션은 <strong>'단 1바이트도 새어나가지 않는 완전 폐쇄망'</strong> 안에서, <strong>'대기업 SI 대비 1/5 이하의 합리적 비용'</strong>으로, <strong>'실무자가 즉시 결재선에 올릴 수 있는 완성형 보고서'</strong>를 추출하는 가장 현실적이고 강력한 엔터프라이즈 AI 대안입니다.
+        2주 온사이트 PoC를 통해 고객사는 위험 부담 없이 즉각적인 생산성 혁신을 체감할 수 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- 레퍼런스 -->
+  <footer class="reference-box">
+    <div class="reference-title">📑 주요 전략 프레임워크 출처</div>
+    <ul class="reference-list">
+      <li>
+        <span>[엔터프라이즈 소프트웨어 방어 전략]</span>
+        <a href="https://hbr.org/2014/11/how-smart-connected-products-are-transforming-competition" target="_blank" rel="noopener noreferrer">
+          Harvard Business Review, 「지속 가능한 소프트웨어 경쟁 우위와 전환 비용(Switching Cost) 구축」
+        </a>
+      </li>
+      <li>
+        <span>[생성형 AI 엔터프라이즈 도입 트렌드]</span>
+        <a href="https://www.bain.com/insights/topics/technology-report/" target="_blank" rel="noopener noreferrer">
+          Bain & Company, 「Technology Report: 엔터프라이즈 맞춤형 AI 애플리케이션의 경제성」
+        </a>
+      </li>
+    </ul>
+  </footer>
+</div>

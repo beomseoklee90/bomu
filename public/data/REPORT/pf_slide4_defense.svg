@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="100%" height="100%">
+  <rect width="680" height="320" rx="24" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Left: Overload Input -->
+  <g transform="translate(42, 48)">
+    <rect width="176" height="178" rx="18" fill="#fff7ed" stroke="#fdba74" stroke-width="1.5"/>
+    <text x="88" y="48" font-family="Pretendard, sans-serif" font-size="26" text-anchor="middle">⚠️</text>
+    <text x="88" y="86" font-family="Pretendard, sans-serif" font-size="15" font-weight="800" fill="#9a3412" text-anchor="middle">과도한 부담감 유입</text>
+    <text x="88" y="114" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="600" fill="#c2410c" text-anchor="middle">높은 기준 · 심리적 압박</text>
+    <text x="88" y="136" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="600" fill="#c2410c" text-anchor="middle">인지 과부하 경고</text>
+  </g>
+
+  <path d="M 228 137 L 254 137" stroke="#f97316" stroke-width="3"/>
+  <polygon points="260,137 250,131 250,143" fill="#f97316"/>
+
+  <!-- Center: Protective Brake Shield -->
+  <g transform="translate(266, 36)">
+    <rect width="156" height="202" rx="20" fill="#eff6ff" stroke="#38bdf8" stroke-width="2"/>
+    <circle cx="78" cy="64" r="30" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <rect x="67" y="51" width="8" height="26" rx="2.5" fill="#0369a1"/>
+    <rect x="81" y="51" width="8" height="26" rx="2.5" fill="#0369a1"/>
+
+    <text x="78" y="122" font-family="Pretendard, sans-serif" font-size="15.5" font-weight="800" fill="#0c4a6e" text-anchor="middle">방어적 브레이크</text>
+    <text x="78" y="146" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="700" fill="#0369a1" text-anchor="middle">(과부하 회피 반응)</text>
+    <text x="78" y="174" font-family="Pretendard, sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">뇌의 자기보호 작동</text>
+  </g>
+
+  <path d="M 432 137 L 458 137" stroke="#0284c7" stroke-width="3"/>
+  <polygon points="464,137 454,131 454,143" fill="#0284c7"/>
+
+  <!-- Right: Protected Pause State -->
+  <g transform="translate(470, 48)">
+    <rect width="168" height="178" rx="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="84" y="48" font-family="Pretendard, sans-serif" font-size="26" text-anchor="middle">🛡️</text>
+    <text x="84" y="86" font-family="Pretendard, sans-serif" font-size="15" font-weight="800" fill="#334155" text-anchor="middle">일시 정지 상태</text>
+    <text x="84" y="114" font-family="Pretendard, sans-serif" font-size="12.5" font-weight="600" fill="#64748b" text-anchor="middle">책상 앞 멈춤 · 미루기</text>
+    <text x="84" y="138" font-family="Pretendard, sans-serif" font-size="12" font-weight="700" fill="#0f766e" text-anchor="middle">시스템 과열 방지 결과</text>
+  </g>
+
+  <text x="340" y="282" font-family="Pretendard, sans-serif" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">단순한 게으름이 아니라 과부하를 막기 위해 일시적으로 브레이크를 밟은 결과입니다</text>
+</svg>

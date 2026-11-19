@@ -1,0 +1,431 @@
+스마트폰을 계속 보게 되는 이유 - 뇌의 보상 체계와 습관의 원리
+<style>
+  @keyframes spFadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .sp-slide-deck {
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #2c3545;
+    line-height: 1.75;
+    word-break: keep-all;
+    width: 100%;
+    max-height: 86vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    border-radius: 20px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.18);
+  }
+
+  .sp-slide-deck * {
+    box-sizing: border-box;
+  }
+
+  .sp-slide-deck::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .sp-slide-deck::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 8px;
+  }
+
+  .sp-slide-deck::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 8px;
+  }
+
+  .sp-slide-deck .sp-slide {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 54px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(203, 213, 225, 0.45);
+  }
+
+  .sp-slide-deck .sp-slide-inner {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+    animation: spFadeSlideUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .sp-slide-deck .sp-tone-1 {
+    background: linear-gradient(145deg, #fbfaf8 0%, #f3f6f9 100%);
+  }
+
+  .sp-slide-deck .sp-tone-2 {
+    background: linear-gradient(145deg, #fdfbf7 0%, #f4f7fb 100%);
+  }
+
+  .sp-slide-deck .sp-tone-3 {
+    background: linear-gradient(145deg, #f6f9fc 0%, #f8fafc 100%);
+  }
+
+  .sp-slide-deck .sp-tone-4 {
+    background: linear-gradient(145deg, #f8fafc 0%, #f3f8f6 100%);
+  }
+
+  .sp-slide-deck .sp-tone-5 {
+    background: linear-gradient(145deg, #f4f9f8 0%, #f7f9fc 100%);
+  }
+
+  .sp-slide-deck .sp-tone-6 {
+    background: linear-gradient(145deg, #f6fbf8 0%, #f8fafc 100%);
+  }
+
+  .sp-slide-deck .sp-header-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .sp-slide-deck .sp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .sp-slide-deck .sp-page-indicator {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+  }
+
+  .sp-slide-deck .sp-slide-title {
+    margin: 0 0 22px;
+    font-size: clamp(1.35rem, 2.3vw, 1.82rem);
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+
+  .sp-slide-deck .sp-visual-frame {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    border: 1px solid rgba(203, 213, 225, 0.7);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .sp-slide-deck .sp-visual-frame img {
+    display: block;
+    width: 100%;
+    max-height: 295px;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .sp-slide-deck .sp-key-box {
+    background: #ffffff;
+    border-left: 4px solid #3b82f6;
+    border-radius: 0 16px 16px 0;
+    padding: 18px 24px;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+  }
+
+  .sp-slide-deck .sp-key-box.amber {
+    border-left-color: #f59e0b;
+  }
+
+  .sp-slide-deck .sp-key-box.teal {
+    border-left-color: #0d9488;
+  }
+
+  .sp-slide-deck .sp-key-box.emerald {
+    border-left-color: #10b981;
+  }
+
+  .sp-slide-deck .sp-key-text {
+    margin: 0;
+    font-size: clamp(1.06rem, 1.75vw, 1.24rem);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.55;
+  }
+
+  .sp-slide-deck .sp-sub-text {
+    margin: 0;
+    font-size: 1.01rem;
+    color: #475569;
+    line-height: 1.8;
+    padding: 0 4px;
+  }
+
+  .sp-slide-deck .sp-ref-box {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+  }
+
+  .sp-slide-deck .sp-ref-title {
+    margin: 0 0 8px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #334155;
+    letter-spacing: 0.02em;
+  }
+
+  .sp-slide-deck .sp-ref-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  .sp-slide-deck .sp-ref-list li {
+    margin-bottom: 4px;
+  }
+
+  .sp-slide-deck .sp-ref-list a {
+    color: #0284c7;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+  }
+
+  .sp-slide-deck .sp-ref-list a:hover {
+    color: #0369a1;
+  }
+
+  .sp-slide-deck .sp-scroll-hint {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .sp-slide-deck {
+      max-height: none;
+      scroll-snap-type: y proximity;
+    }
+
+    .sp-slide-deck .sp-slide {
+      min-height: 92vh;
+      padding: 36px 20px;
+    }
+
+    .sp-slide-deck .sp-visual-frame {
+      padding: 12px;
+    }
+  }
+</style>
+
+<div class="sp-slide-deck">
+  <!-- 슬라이드 1 -->
+  <section class="sp-slide sp-tone-1">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 01 · 도입</span>
+        <span class="sp-page-indicator">01 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">의지력만의 문제가 아닙니다</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide1_attention.svg" alt="책상 위 과제와 스마트폰 사이에서 시선이 분산되는 모습을 표현한 일러스트" />
+      </div>
+
+      <div class="sp-key-box">
+        <p class="sp-key-text">
+          할 일을 앞에 두고 나도 모르게 스마트폰 화면을 계속 내리고 있다면, 이는 단순히 의지력이 약해서만은 아닙니다.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        스마트폰 사용에는 개인의 의지력뿐만 아니라 우리 뇌의 보상 체계, 습관 형성 과정, 그리고 주변 환경 자극이 함께 영향을 줍니다.
+      </p>
+
+      <div class="sp-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 2 -->
+  <section class="sp-slide sp-tone-2">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 02 · 도파민의 역할</span>
+        <span class="sp-page-indicator">02 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">도파민의 역할: 쾌락보다 '기대와 동기'</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide2_dopamine.svg" alt="성취 결과보다 보상에 대한 기대감에 불이 켜지는 뇌 신호 개념도" />
+      </div>
+
+      <div class="sp-key-box amber">
+        <p class="sp-key-text">
+          도파민은 쾌락 자체보다 보상에 대한 기대와 학습, 동기 형성과 관련된 역할로 설명되는 경우가 많습니다.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        흔히 도파민을 '행복 물질'로만 알지만, 실제로는 "다음엔 어떤 새로운 정보가 있을까?"라는 기대감이 생길 때 작동하여 행동을 이끌어내는 연료에 가깝습니다.
+      </p>
+
+      <div class="sp-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 3 -->
+  <section class="sp-slide sp-tone-3">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 03 · 간헐적 보상</span>
+        <span class="sp-page-indicator">03 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">왜 스마트폰 앞에서는 집중이 어려워질까?</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide3_variable.svg" alt="새 알림, 새 영상, 무한 스크롤 아이콘이 불규칙하게 등장하는 간헐적 보상 다이어그램" />
+      </div>
+
+      <div class="sp-key-box">
+        <p class="sp-key-text">
+          보상에 대한 기대가 커질수록 뇌는 현재 과제보다 다음 자극을 탐색하려는 경향을 보일 수 있습니다.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        특히 화면을 내릴 때마다 예상치 못한 새 알림이나 영상이 나오는 '간헐적 보상 구조'는 뇌의 기대 회로를 반복적으로 자극해 한 가지 일에 차분히 집중하는 것을 어렵게 만듭니다.
+      </p>
+
+      <div class="sp-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 4 -->
+  <section class="sp-slide sp-tone-4">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 04 · 자극과 민감도</span>
+        <span class="sp-page-indicator">04 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">익숙해질수록 느린 보상이 덜 매력적으로 느껴지는 이유</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide4_waves.svg" alt="가파르고 빠른 자극 파형과 완만하고 느린 일상 파형이 대비되는 그래프" />
+      </div>
+
+      <div class="sp-key-box teal">
+        <p class="sp-key-text">
+          빠르고 새로운 자극에 익숙해질수록 상대적으로 느린 보상의 매력이 덜 크게 느껴질 수 있습니다.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        즉각적이고 강렬한 자극에 반복적으로 노출되면 보상 민감도와 주의 배치가 달라지면서, 큰 재미가 없는데도 습관적으로 화면을 켜고 닫기를 반복하는 루프에 머물기 쉬워집니다.
+      </p>
+
+      <div class="sp-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 5 -->
+  <section class="sp-slide sp-tone-5">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 05 · 현실적인 조절 원리</span>
+        <span class="sp-page-indicator">05 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">루프에서 빠져나오는 현실적인 원리: 서서히 간격 늘리기</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide5_timeline.svg" alt="촘촘하던 스마트폰 확인 간격이 10분, 30분 단위로 점점 넓어지는 타임라인 일러스트" />
+      </div>
+
+      <div class="sp-key-box teal">
+        <p class="sp-key-text">
+          오랫동안 길들여진 습관 회로를 하루아침에 극단적으로 끊어내려 하면 오히려 답답함과 반동이 커질 수 있습니다.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        핵심은 완벽한 차단이 아니라, 스마트폰을 확인하는 주기를 서서히 늘려가며 우리 뇌와 행동이 새로운 사용 패턴에 적응할 시간을 주는 것입니다.
+      </p>
+
+      <div class="sp-scroll-hint">↓ 아래로 스크롤하여 다음 슬라이드 보기</div>
+    </div>
+  </section>
+
+  <!-- 슬라이드 6 -->
+  <section class="sp-slide sp-tone-6">
+    <div class="sp-slide-inner">
+      <div class="sp-header-meta">
+        <span class="sp-badge">SLIDE 06 · 결론 및 참고 자료</span>
+        <span class="sp-page-indicator">06 / 06</span>
+      </div>
+      <h2 class="sp-slide-title">결론: 작은 통제 경험이 만드는 주도권</h2>
+
+      <div class="sp-visual-frame">
+        <img src="/data/REPORT/sp_slide6_checklist.svg" alt="작은 체크리스트 칸들이 하나씩 채워지며 안정감을 주는 일러스트" />
+      </div>
+
+      <div class="sp-key-box emerald">
+        <p class="sp-key-text">
+          거창한 계획 대신 '지금 20분만 집중하고 확인하자'처럼 작게라도 스스로 약속을 지켰다는 성취감을 쌓아보세요.
+        </p>
+      </div>
+
+      <p class="sp-sub-text">
+        이렇게 내가 내 행동을 조절했다는 작은 성공 경험과 자기효능감이 쌓이기 시작하면, 나중에는 스마트폰을 보다가도 원하는 순간에 화면을 끄고 주도권을 되찾는 데 도움이 될 수 있습니다.
+      </p>
+
+      <div class="sp-ref-box">
+        <p class="sp-ref-title">📚 참고 자료 및 과학 칼럼 (보상 예측 오류 · 간헐적 보상 · 습관 형성)</p>
+        <ul class="sp-ref-list">
+          <li>
+            <strong>KAIST 뉴스 (한국과학기술원 연구 해설)</strong> — 기대와 실제 보상 사이의 차이(보상 예측 오류)를 처리하는 뇌 신경회로 원리:
+            <a href="https://www.kaist.ac.kr/news/html/news/?mode=V&mng_no=8019" target="_blank" rel="noopener noreferrer">
+              https://www.kaist.ac.kr/news/html/news/?mode=V&amp;mng_no=8019
+            </a>
+          </li>
+          <li>
+            <strong>KISTI 과학향기 (한국과학기술정보연구원 과학 칼럼)</strong> — 「휴대폰이 우리 몸과 뇌를 바꾼다」 (디지털 기기 자극과 뇌 인지·습관의 관계):
+            <a href="https://scent.kisti.re.kr/site/main/archive/article/%ED%9C%B4%EB%8C%80%ED%8F%B0%EC%9D%B4-%EC%9A%B0%EB%A6%AC-%EB%AA%B8%EA%B3%BC-%EB%87%8C%EB%A5%BC-%EB%B0%94%EA%BE%BC%EB%8B%A4" target="_blank" rel="noopener noreferrer">
+              https://scent.kisti.re.kr/site/main/archive/article/휴대폰이-우리-몸과-뇌를-바꾼다
+            </a>
+          </li>
+          <li>
+            <strong>Stanford Medicine Insights (스탠퍼드 의과대학 신경과학 해설)</strong> — 「Addictive potential of social media, explained」 (도파민 보상 체계, 간헐적 보상 및 자기조절 원리):
+            <a href="https://med.stanford.edu/news/insights/2021/10/addictive-potential-of-social-media-explained.html" target="_blank" rel="noopener noreferrer">
+              https://med.stanford.edu/news/insights/2021/10/addictive-potential-of-social-media-explained.html
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
